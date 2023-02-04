@@ -13,6 +13,16 @@ html {
     /* 1 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    font-size: 62.5%;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+
+}
+/* add default css */
+.d-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Sections

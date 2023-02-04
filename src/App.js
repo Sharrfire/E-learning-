@@ -1,6 +1,6 @@
-import '../src/assets/css/main.css';
-import '../src/assets/css/reset.css';
 import './App.css';
+import '../src/assets/css/reset.css';
+import '../src/assets/css/main.css';
 import Header from './Layouts/Header/Header';
 
 function App() {
