@@ -1,6 +1,9 @@
-.search_wrapper{
-    width: 400px;
-    height: 32px;
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 420px;
+    height: 40px;
     padding: 0 16px 0 8px;
     border: 2px solid #e8e8e8;
     border-radius: 20px;
@@ -8,7 +11,7 @@
     &:focus-within{
         border-color: #444;
     }
-    .search_icon{
+    .icon{
         width: 30px;
         height: 32px;
         background-image:url(https://fullstack.edu.vn/static/media/search.9bd3926522ea0937310c.svg);
@@ -23,12 +26,20 @@
             opacity: 1;
         }
     }
-    .search_input{
+    .input{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border: none;
         caret-color: #444;
-        flex:1 1;
+        flex:1 1 ;
         height: 100%;
         outline: none;
         padding: 0 4px;
+        overflow: visible;
+        font-size: 1.4rem;
+        line-height:1.15;
+        font-weight: 400;
     }
+
 }

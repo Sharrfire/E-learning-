@@ -6,23 +6,22 @@ import SideBar from "../SideBar/SideBar";
 const cx = classnames.bind(styles);
 
 export default function Header() {
+  const heading = "Học Lập Trình Để Đi Làm";
   return (
     <div className={cx("header")}>
-      <div className={cx("header_logo")}>
+      <div className={cx("logo")}>
         <a href="#!">
           <img
             src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
             alt="img"
           />
         </a>
-        <h4 className={cx("desc")}>Học Lập Trình Để Kiếm Tiền</h4>
+        <h4 className={cx("logo-heading")}>{heading}</h4>
       </div>
-      <div className={`${cx("header_search")} d-flex-center`}>
+      <div className={`${cx("search")} `}>
         <Search />
       </div>
-      <div className={cx("header_sideBar")}>
-        <SideBar />
-      </div>
+      <SideBar />
     </div>
   );
 }

@@ -5,9 +5,9 @@ const cx = classnames.bind(styles);
 export default function Search() {
   return (
     <div>
-        <div className={`${cx("search_wrapper")} d-flex-center`}>
-          <div className={cx("search_icon")}></div>
-          <input className={cx("search_input")}  spellCheck="false" placeholder='Tìm kiếm khóa học,video,...'/>
+        <div className={`${cx("wrapper")} `}>
+          <div className={cx("icon")}></div>
+          <input className={cx("input")}  spellCheck="false" placeholder='Tìm kiếm khóa học, bài viết, video, ...'/>
         </div>
     </div>
   )
