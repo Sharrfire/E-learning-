@@ -1,0 +1,102 @@
+.wrapper {
+    width: 1920px;
+    padding-top: 68px;
+    padding-bottom: 40px;
+    background-color: #181821;
+    color: #fff;
+}
+.grid {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.row {
+    display: flex;
+    margin: 0 -12px;
+}
+.col {
+    padding: 0 12px;
+    display: flex;
+    width: 26%;
+    align-items: flex-start;
+    flex-direction: column;
+    .col-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            border-radius: 8px;
+            height: 38px;
+            margin-right: 10px;
+            width: 38px;
+        }
+        .top-slogan {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    }
+    .contact-list {
+        height: 88px;
+        margin: 14px 0;
+        color: #a9b3bb;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        position: relative;
+        a {
+            color: #a9b3bb;
+            text-decoration: none;
+        }
+        .certificate {
+            margin-top: 20px;
+        }
+    }
+    .col-heading {
+        color: #fff;
+        font-size: 1.8rem;
+        line-height: 1.6;
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .footer-list {
+        padding-left: 0;
+        margin: 10px 0;
+
+        list-style-type: none;
+    }
+    .footer-item {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        margin-bottom: 8px;
+        position: relative;
+        color: #a9b3bb;
+    }
+    .footer-item a {
+        cursor: pointer;
+        position: relative;
+        transition: 0.3s ease;
+    }
+}
+.footer-bottom {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    width: 100%;
+    .footer-copyright {
+        color: #ffffff;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        margin-bottom: 8px;
+        position: relative;
+        color: #a9b3bb;
+    }
+}
+.col.col-min {
+    width: 16.66%;
+}
+.footer-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
