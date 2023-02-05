@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./header.module.scss";
 import classnames from "classnames/bind";
 import Search from "../Search/Search";
-import SideBar from "../SideBar/SideBar";
+import NavBar from "../navBar/NavBar";
 const cx = classnames.bind(styles);
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
       <div className={`${cx("search")} `}>
         <Search />
       </div>
-      <SideBar />
+      <NavBar />
     </div>
   );
 }

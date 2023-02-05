@@ -1,13 +1,14 @@
 .wrapper {
-    width: 1920px;
+    width: 1536px;
     padding-top: 68px;
     padding-bottom: 40px;
     background-color: #181821;
     color: #fff;
 }
 .grid {
-    max-width: 1100px;
     margin: 0 auto;
+    max-width: 1100px;
+    
 }
 .row {
     display: flex;
