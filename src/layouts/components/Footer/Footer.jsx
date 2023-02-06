@@ -129,9 +129,9 @@ function Footer(props) {
             <p className={cx("footer-copyright")}>
               © 2018 - 2023 F8. Nền tảng học lập trình hàng đầu Việt Nam
             </p>
-            <div class="social-list">
+            <div className="social-list">
               <a
-                class="Footer_social-item__GydUc social-item-first Footer_youtube__p9tJ3"
+                className="Footer_social-item__GydUc social-item-first Footer_youtube__p9tJ3"
                 href="https://www.youtube.com/c/F8VNOfficial"
                 title="F8 trên Youtube"
                 target="_blank"
@@ -151,9 +151,9 @@ function Footer(props) {
                     y2="41.301"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop offset="0" stop-color="#f44f5a" />
-                    <stop offset=".443" stop-color="#ee3d4a" />
-                    <stop offset="1" stop-color="#e52030" />
+                    <stop offset="0" stopColor="#f44f5a" />
+                    <stop offset=".443" stopColor="#ee3d4a" />
+                    <stop offset="1" stopColor="#e52030" />
                   </linearGradient>
                   <path
                     fill="url(#PgB_UHa29h0TpFV_moJI9a)"
@@ -174,7 +174,7 @@ function Footer(props) {
                 </svg>{" "}
               </a>
               <a
-                class="Footer_social-item__GydUc Footer_facebook__9kuWE"
+                className="Footer_social-item__GydUc Footer_facebook__9kuWE"
                 href="https://www.facebook.com/groups/f8official"
                 title="F8 trên Facebook"
                 target="_blank"
@@ -194,8 +194,8 @@ function Footer(props) {
                     y2="43.432"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop offset="0" stop-color="#0d61a9" />
-                    <stop offset="1" stop-color="#16528c" />
+                    <stop offset="0" stopColor="#0d61a9" />
+                    <stop offset="1" stopColor="#16528c" />
                   </linearGradient>
                   <path
                     fill="url(#awSgIinfw5_FS5MLHI~A9a)"
@@ -216,7 +216,7 @@ function Footer(props) {
                 </svg>
               </a>{" "}
               <a
-                class="Footer_social-item__GydUc Footer_tiktok__OiXpU"
+                className="Footer_social-item__GydUc Footer_tiktok__OiXpU"
                 href="https://www.tiktok.com/@f8official"
                 title="F8 trên Tiktok"
                 target="_blank"

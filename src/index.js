@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './components/GlobalStyle';
+import { configureStore } from '@reduxjs/toolkit';
+import userSlice from './redux/redux-toolkid/userSlice';
+import { Provider } from 'react-redux';
 
+
+export const store = configureStore({
+    reducer:{
+        userSlice:userSlice,
+    },
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <GlobalStyle>
-
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </GlobalStyle>
 );
 

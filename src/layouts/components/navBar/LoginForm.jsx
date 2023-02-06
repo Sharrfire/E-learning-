@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Button, Form, Input } from "antd";
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -72,6 +71,5 @@ function LoginForm(props) {
   );
 }
 
-LoginForm.propTypes = {};
 
 export default LoginForm;

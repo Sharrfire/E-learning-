@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Button, Form, Input, InputNumber, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 const layout = {
   labelCol: {
     span: 8,
@@ -144,6 +143,5 @@ function RegisterForm(props) {
   );
 }
 
-RegisterForm.propTypes = {};
 
 export default RegisterForm;
