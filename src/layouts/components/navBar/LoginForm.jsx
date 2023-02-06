@@ -1,12 +1,26 @@
 import React from "react";
 import { Button, Form, Input } from "antd";
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setLoginAction } from "~/redux/actions/userAction";
+
+
 function LoginForm(props) {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  const onFinish = (values) => {
+    console.log("Success:", values);
+    let onNavigate = ()=>{
+      setTimeout(()=>{
+        navigate("/");
+      },1000);
+    };
+    dispatch(setLoginAction(values,onNavigate));
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <div
       style={{
@@ -29,12 +43,12 @@ function LoginForm(props) {
         autoComplete="off"
       >
         <Form.Item
-          label="Username"
-          name="username"
+          label="Tài khoản"
+          name="taiKhoan"
           rules={[
             {
               required: true,
-              message: "Please input your username!",
+              message: "Tài khoản không được để trống!",
             },
           ]}
         >
@@ -42,12 +56,12 @@ function LoginForm(props) {
         </Form.Item>
 
         <Form.Item
-          label="Password"
-          name="password"
+          label="Mật Khẩu"
+          name="matKhau"
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: "Mật khẩu không được để trống!",
             },
           ]}
         >

@@ -58,7 +58,7 @@ function RegisterForm(props) {
               required: true,
             },
             {
-              pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$",
+              pattern: "(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",
               message:"mật khẩu phải ít nhất 8 kí tự (ít nhất 1 chữ hoa, 1 chữ thường và 1 số)",
             },
           ]}

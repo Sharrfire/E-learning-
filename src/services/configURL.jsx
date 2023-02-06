@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import axios from "axios";
 import { userLocalService } from "./localStorage";
 
 
@@ -11,7 +11,7 @@ export const createConfig = ()=>    {
         Authorization: "bearer "+ userLocalService.get()?.accessToken,
     };
 };
-export const https = Axios.create({
+export const https = axios.create({
     baseURL:BASE_URL,
     headers:createConfig(),
 });
