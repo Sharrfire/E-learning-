@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styles from "./navBar.module.scss";
+import { Modal } from "antd";
 import classnames from "classnames/bind";
-import { Button, Modal } from "antd";
-import LoginForm from './LoginForm';
-import RegisterForm from "./RegisterForm";
+import { useState } from "react";
+import LoginForm from "~/features/Auth/components/LoginrForm/LoginForm";
+import RegisterForm from "~/features/Auth/components/RegisterForm/RegisterForm";
+import styles from "./navBar.module.scss";
 const cx = classnames.bind(styles);
 
 export default function NavBar() {

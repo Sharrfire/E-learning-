@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { userLocalService } from "~/services/localStorage"
+import userApi from "~/api/userApi";
 
 const initialState = {
-    userInfor:userLocalService.get(),
+    userInfor: userApi.get(),
 };
 
 const userSlice = createSlice({

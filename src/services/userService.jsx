@@ -1,4 +1,4 @@
-import { BASE_URL, https } from "./configURL";
+import { BASE_URL, https } from "../api/configURL";
 export const userService = {
     postLogin:(userData)=>{
         return https.post(`${BASE_URL}/api/QuanLyNguoiDung/DangNhap`,userData);

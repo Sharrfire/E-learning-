@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userLocalService } from "./localStorage";
+import userApi from "./userApi";
 
 
 
@@ -8,7 +8,7 @@ export const TOKEN_CYBERSOFT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3A
 export const createConfig = ()=>    {
     return{
         TokenCybersoft: TOKEN_CYBERSOFT,
-        Authorization: "bearer "+ userLocalService.get()?.accessToken,
+        Authorization: "bearer "+ userApi.get()?.accessToken,
     };
 };
 export const https = axios.create({

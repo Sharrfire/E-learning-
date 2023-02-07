@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './components/GlobalStyle';
 import { configureStore } from '@reduxjs/toolkit';
-import userSlice from './redux/redux-toolkid/userSlice';
+import userSlice from './features/Auth/userSlice';
 import { Provider } from 'react-redux';
 
 
