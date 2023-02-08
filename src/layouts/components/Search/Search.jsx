@@ -7,7 +7,7 @@ export default function Search() {
     <div>
         <div className={`${cx("wrapper")} `}>
           <div className={cx("icon")}></div>
-          <input className={cx("input")}  spellCheck="false" placeholder='Tìm kiếm khóa học, bài viết, video, ...'/>
+          <input className={cx("input")}  spellCheck="false" placeholder='Tìm kiếm khóa học,...'/>
         </div>
     </div>
   )
