@@ -1,17 +1,9 @@
-export const USER_LOGIN = "USER_LOGIN"; const userApi = {
-  set: (userData) => {
-    localStorage.setItem(USER_LOGIN, JSON.stringify(userData));
-  },
-  get: () => {
-    let userJson = localStorage.getItem(USER_LOGIN);
-    if (userJson != null) {
-      return JSON.parse(userJson);
-    } else {
-      return null;
-    };
-  },
-  remove:()=>{
-    localStorage.removeItem(USER_LOGIN);
-  },
+import { BASE_URL, https } from "./configURL";
+export const userService = {
+    postLogin:(userData)=>{
+        return https.post(`${BASE_URL}/api/QuanLyNguoiDung/DangNhap`,userData);
+    },
+    postRegister:(userData)=>{
+        return https.post(`${BASE_URL}/api/QuanLyNguoiDung/DangKy`,userData);
+    },
 };
-export default userApi;

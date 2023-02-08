@@ -1,7 +1,7 @@
-import { userService } from "~/services/userService";
+import { userService } from "~/api/userApi";
 import { setUserInfor } from "../../features/Auth/userSlice";
 import { message } from "antd";
-import userApi from "~/api/userApi";
+import userApi from "~/api/localStorage";
 
 // redux thunk
 export const setLoginAction = (userData, onNavigate) => {
@@ -10,11 +10,12 @@ export const setLoginAction = (userData, onNavigate) => {
     userService
       .postLogin(userData)
       .then((res) => {
+        
         message.success("Đăng nhập thành công");
         // push user to local storage
-        userApi.set(res.data.content);
+        userApi.set(res.data);
         // dispatch action to redux
-        dispatch(setUserInfor(res.data.content));
+        dispatch(setUserInfor(res.data));
         onNavigate();
       })
       .catch((err) => {
