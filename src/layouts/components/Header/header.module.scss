@@ -2,17 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
   height: 96px;
   background-color: #fff;
   // border-bottom: 1px solid #e8ebed;
   font-size: 1.4rem;
   position: sticky;
   left: 0;
-  padding: 10px 50px;
+  padding: 10px 30px;
   right: 0;
   top: 0;
-  z-index: 20;
+  z-index: 999;
   .logo {
     // flex: 1 1;
     display: inline-flex;
@@ -56,15 +55,14 @@
   }
   .item-list {
     width: 100%;
-    li {
-      padding: 10px;
-    }
     li a {
+      padding: 10px;
       display: block;
       color: #000;
     }
     li:hover a {
-      color: #fff;
+      color: var(--primary-color);
+
     }
   }
 
@@ -72,7 +70,14 @@
   .event-list-container {
     display: none;
 
-    background-color: rgb(244, 116, 37, 0.5);
+    background-color: #fff;
+
+    // box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
+    // -webkit-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
+    // -moz-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);  
+    box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
+    -webkit-box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
+    -moz-box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
     border-radius: 10px;
   }
   .item-list-container {

@@ -1,12 +1,11 @@
-import React from "react";
-import styles from "./header.module.scss";
 import classnames from "classnames/bind";
+import Action from "../Action/Action";
 import Search from "../Search/Search";
-import NavBar from "../navBar/NavBar";
+import styles from "./header.module.scss";
 const cx = classnames.bind(styles);
 
 export default function Header() {
-  const heading = "Học Lập Trình Để Đi Làm";
+  // const heading = "Học Lập Trình Để Đi Làm";
   return (
     <div className={cx("header")}>
       <div className={cx("header-left")}>
@@ -86,7 +85,7 @@ export default function Header() {
         </ul>
       </div>
       <div className={cx("header-right")}>
-        <NavBar />
+        <Action />
       </div>
     </div>
   );
