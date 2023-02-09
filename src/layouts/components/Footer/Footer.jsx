@@ -57,7 +57,7 @@ function Footer(props) {
               </ul>
             </div>
           </div>{" "}
-          <div className={cx("col", "col-min")}>
+          {/* <div className={cx("col", "col-min")}>
             <div className={cx("footer-column")}>
               <h2 className={cx("col-heading")}>SẢN PHẨM</h2>
               <ul className={cx("footer-list")}>
@@ -81,7 +81,7 @@ function Footer(props) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div className={cx("col", "col-min")}>
             <div className={cx("footer-column")}>
               <h2 className={cx("col-heading")}>CÔNG CỤ </h2>
