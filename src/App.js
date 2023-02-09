@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./features/Auth/components/login-register/Login";
 import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
 import Home from "./pages/home/Home";
@@ -17,6 +18,7 @@ function App() {
               </>
             }
           />
+          <Route path="/login" element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </div>
