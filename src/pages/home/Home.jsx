@@ -1,14 +1,17 @@
+import classNames from "classnames/bind";
+import InfoCourses from "./InfoCourses";
+import styles from "./home.module.scss";
+Home.propTypes = {};
+const cx = classNames.bind(styles);
 
-Home.propTypes = {
-    
-};
+function Home() {
+  return <div className={ cx('container')}>
 
-function Home(props) {
-    return (
-        <div style={{height:'4000px'}}>
-            
-        </div>
-    );
+    <InfoCourses/>
+  </div>;
 }
 
 export default Home;
+
+
+

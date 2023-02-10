@@ -3,7 +3,6 @@
   align-items: center;
   display: flex;
   justify-content: flex-end;
-
   .login,
   .logout,
   .register {
@@ -56,6 +55,7 @@
     .myCourses-wrapper,
     .notification-wrapper {
       padding: 5px 5px 5px 5px ;
+      z-index: 10;
       display: block;
       min-height: 400px;
       min-width: 380px;
@@ -86,17 +86,10 @@
           font-size: 1.8rem;
           margin: 0;
           font-weight: 500;
+          cursor: default;
         }
       }
     }
-
-
-    // .courses:active .myCourses-wrapper,
-    // .courses:hover .myCourses-wrapper,
-    // .notification:active .notification-wrapper,
-    // .notification:hover .notification-wrapper {
-    //   display: block;
-    // }
     .notification {
       margin-top: 5px;
       text-align: center;
@@ -126,4 +119,16 @@
       }
     }
   }
+
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: -99;
+  cursor: default;
 }

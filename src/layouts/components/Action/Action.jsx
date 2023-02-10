@@ -2,6 +2,7 @@ import classnames from "classnames/bind";
 import { useState } from "react";
 import styles from "./action.module.scss";
 import avatar from "~/assets/imgs/fallback-avatar.jpg";
+import Tippy from "@tippyjs/react/headless";
 
 const cx = classnames.bind(styles);
 
@@ -12,33 +13,42 @@ export default function Action() {
   const handleOpenCourses = () => {
     setOpenCourses(!openCourses);
     setOpenNotification(false);
-
+  };
+  const handleCloseCourses = () => {
+    setOpenCourses(false);
+    setOpenNotification(false);
   };
   const handleOpenNotification = () => {
     setOpenNotification(!openNotification);
     setOpenCourses(false);
-
   };
   return (
-    <div className={cx("container")}>
+    <div className={cx("container")} onClick={handleOpenCourses}>
       {isLoggedIn && (
         <div className={cx("action")}>
           <div className={cx("courses")} onClick={handleOpenCourses}>
             <p>Khóa học của tôi</p>
             {openCourses && (
-              <div className={cx("myCourses-wrapper")}>
-                <div className={cx("label")}>
-                  <h6>Khóa học của tôi</h6>
+              <>
+                <div
+                  className={cx("overlay")}
+                  onClick={handleCloseCourses}
+                ></div>
 
-                  <a href="#!">Xem tất cả</a>
+                <div className={cx("myCourses-wrapper")}>
+                  <div className={cx("label")}>
+                    <h6>Khóa học của tôi</h6>
+
+                    <a href="#!">Xem tất cả</a>
+                  </div>
+                  <div className={cx("courses-list")}>
+                    <div className={cx("courses-item")}></div>
+                  </div>
                 </div>
-                <div className={cx("courses-list")}>
-                  <div className={cx("courses-item")}></div>
-                </div>
-              </div>
+              </>
             )}
           </div>
-          <div className={cx("notification")}   onClick={handleOpenNotification}>
+          <div className={cx("notification")} onClick={handleOpenNotification}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -50,10 +60,7 @@ export default function Action() {
               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
             </svg>
             {openNotification && (
-              <div
-                className={cx("notification-wrapper")}
-              
-              >
+              <div className={cx("notification-wrapper")}>
                 <div className={cx("label")}>
                   <h6>Thông báo</h6>
 
