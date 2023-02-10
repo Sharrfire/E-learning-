@@ -40,7 +40,7 @@
 }
 
 #container {
-  background: var(--colorWhite);
+  background: var(--white-color);
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -53,7 +53,7 @@
 }
 
 .form-container form {
-  background: var(--colorWhite);
+  background: var(--white-color);
   display: flex;
   flex-direction: column;
   padding: 0 50px;
@@ -117,7 +117,7 @@
   border-radius: 20px;
   border: 1px solid var(--button-color);
   background: var(--button-color);
-  color: var(--colorWhite);
+  color: var(--white-color);
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -136,7 +136,7 @@
 
 .loginBody button.ghost {
   background: var(--button-color);
-  border-color: var(--colorWhite);
+  /* border-color: var(--white-color); */
 }
 
 .form-container {
