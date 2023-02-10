@@ -1,7 +1,7 @@
 import classnames from "classnames/bind";
 import { useState } from "react";
 import avatar from "~/assets/imgs/fallback-avatar.jpg";
-
+import styles from './action.module.scss'
 const cx = classnames.bind(styles);
 
 export default function Action() {
