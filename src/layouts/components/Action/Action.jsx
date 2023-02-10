@@ -2,7 +2,6 @@ import classnames from "classnames/bind";
 import { useState } from "react";
 import styles from "./action.module.scss";
 import avatar from "~/assets/imgs/fallback-avatar.jpg";
-import Tippy from "@tippyjs/react/headless";
 
 const cx = classnames.bind(styles);
 

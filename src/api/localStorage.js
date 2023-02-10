@@ -1,5 +1,5 @@
 export const USER_LOGIN = "USER_LOGIN";
-const userApi = {
+const userLocal = {
   set: (userData) => {
     localStorage.setItem(USER_LOGIN, JSON.stringify(userData));
   },
@@ -15,4 +15,4 @@ const userApi = {
     localStorage.removeItem(USER_LOGIN);
   },
 };
-export default userApi;
+export default userLocal;

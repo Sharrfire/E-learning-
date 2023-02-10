@@ -4,13 +4,12 @@ import { message } from "antd";
 import userApi from "~/api/localStorage";
 
 // redux thunk
-export const setLoginAction = (userData, onNavigate) => {
+export const setLoginAction = (userData,onNavigate) => {
   // api Login action
   return (dispatch) => {
     userService
       .postLogin(userData)
       .then((res) => {
-        
         message.success("Đăng nhập thành công");
         // push user to local storage
         userApi.set(res.data);

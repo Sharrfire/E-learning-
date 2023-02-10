@@ -1,49 +1,52 @@
-import React, { useState } from "react";
-import style from "./login.module.scss";
-import classNames from "classnames/bind";
-const cx = classNames.bind(style);
+import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import "./login.css";
+import { setLoginAction } from "./../../../../redux/actions/userAction";
+import { Formik } from "formik";
 
-export const  Login = () => {
-  const [action,setAction] = useState(cx("container"));
+const Login = () => {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  let handleLoginSubmit = (values) => {
+    let onNavigate = () => {
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    };
+    dispatch(setLoginAction(values, onNavigate));
+  
+  };
   function signUp() {
-    setAction(cx("container","right-panel-active")) 
+    document.getElementById("container").classList.add("right-panel-active");
   }
 
   function signIn() {
-    setAction(cx("container"));
+    document.getElementById("container").classList.remove("right-panel-active");
   }
 
   return (
-    <div className={cx("login")}>
-      <div className={action} >
-        <div className={cx("form-container","signUp-container")}>
-          <form action="#">
-            <h2>ĐĂNG KÝ</h2>
+    <div className="loginBody">
+      <div className="container" id="container">
+        <div className="form-container sign-up-container">
+          <form action="#" className="form-signUp">
+            <h2>Đăng Ký</h2>
+            <input type="text" placeholder="Tài khoản" name="taiKhoan" />
+            <div className="message" />
+            <input type="text" placeholder="Họ và tên" name="hoTen" />
+            <div className="message" />
             <input
-              type="text"
-              placeholder="Tài khoản"
-              name="taiKhoan"
-              />
-            <div className={cx("message")} />
-            <input type="text" placeholder="Họ và tên" name="hoTen"  />
-            <div className={cx("message")} />
-            <input
+              autoComplete="on"
               type="password"
               placeholder="Mật khẩu"
               name="matKhau"
-              
             />
-            <div className={cx("message")} />
-            <input type="email" placeholder="Email" name="email"  />
-            <div className={cx("message")} />
-            <input
-              type="phone"
-              placeholder="Số điện thoại"
-              name="soDT"
-              
-            />
-            <div className={cx("message")} />
-            <select  name="maNhom">
+            <div className="message" />
+            <input type="email" placeholder="Email" name="email" />
+            <div className="message" />
+            <input type="phone" placeholder="Số điện thoại" name="soDT" />
+            <div className="message" />
+            <select name="maNhom">
               <option value="GP01">GP01</option>
               <option value="GP02">GP02</option>
               <option value="GP03">GP03</option>
@@ -58,33 +61,40 @@ export const  Login = () => {
             <button type="submit">Đăng ký</button>
           </form>
         </div>
-        <div className={cx("form-container","signIn-container")}>
-          <form className={cx("formLoginUser")} action="#">
-            <h1>Đăng nhập</h1>
-            <span>hoặc sử dụng tài khoản đã đăng ký của bạn</span>
-            <input
-              type="text"
-              placeholder="Tài khoản"
-              name="taiKhoan"
-              
-            />
-            <input
-              type="password"
-              placeholder="Mật khẩu"
-              name="matKhau"
-              
-            />
-            <a href="#!">Quên mật khẩu?</a>
-            <button type="submit">Đăng nhập</button>
-          </form>
+        <div className="form-container sign-in-container">
+          <Formik
+            initialValues={{
+              taiKhoan: "",
+              matKhau: "",
+            }}
+            onSubmit={handleLoginSubmit}
+          >
+            {({ handleChange, handleSubmit,isSubmitting }) => (
+              <form onSubmit={handleSubmit} className="formLoginUser" action="#">
+                <h1>Đăng nhập</h1>
+                <span>hoặc sử dụng tài khoản đã đăng ký của bạn</span>
+                <input type="text" placeholder="Tài khoản" name="taiKhoan"  onChange={handleChange}/>
+                <input
+                onChange={handleChange}
+                  autoComplete="on"
+                  type="password"
+                  placeholder="Mật khẩu"
+                  name="matKhau"
+                />
+                <a href="#!">Quên mật khẩu?</a>
+                <button disabled={isSubmitting} type="submit" >Đăng nhập</button>
+              </form>
+            )}
+          </Formik>
         </div>
-        <div className={cx("overlay-container")}>
-          <div className={cx("overlay")}>
-            <div className={cx("overlay-panel","overlay-left")}>
+        <div className="overlay-container">
+          <div className="overlay">
+            <div className="overlay-panel overlay-left">
               <h1>Chào mừng bạn đã trở lại!</h1>
-              <p>Vui lòng đăng nhập để kết nối với tài khoản của bạn</p>
+              <span>Vui lòng đăng nhập để kết nối với tài khoản của bạn</span>
               <button
-                className={cx("ghost")}
+                className="ghost"
+                id="signIn"
                 onClick={() => {
                   signIn();
                 }}
@@ -92,13 +102,14 @@ export const  Login = () => {
                 Đăng nhập
               </button>
             </div>
-            <div className={cx("overlay-panel","overlay-right")}>
+            <div className="overlay-panel overlay-right">
               <h1>Xin chào!</h1>
-              <p>
+              <span>
                 Vui lòng nhấn đăng ký để thiết lập thông tin tài khoản của bạn!
-              </p>
+              </span>
               <button
-                className={cx("ghost")}
+                className="ghost"
+                id="signUp"
                 onClick={() => {
                   signUp();
                 }}
