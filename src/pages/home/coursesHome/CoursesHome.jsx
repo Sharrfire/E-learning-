@@ -21,14 +21,14 @@ function CoursesHome(props) {
               src="https://elearningnew.cybersoft.edu.vn/hinhanh/lap-trinh-c-.jpg"
               alt=""
             />
-            <span class={cx("sticker-card")}>Lập trình xu thế</span>
+            <span className={cx("sticker-card")}>Lập trình xu thế</span>
             <div className={cx("card-body-global")}>
-              <h6 classname={cx('line-clamp','line-2')}>
+              <h6 className={cx('line-clamp','line-2')}>
                 Lập trình hiện đang là xu hướng trên toàn thế giới.Lập trình hiện đang là xu hướng trên toàn thế giới...
               </h6>
               <div className={cx("title-maker")}>
                 <div className={cx("img-card-footer")}>
-                  <img class={cx("avatar")} src={avatar} alt="avatar" />
+                  <img className={cx("avatar")} src={avatar} alt="avatar" />
                 </div>
                 <span>Elon Musk</span>
               </div>
@@ -43,9 +43,9 @@ function CoursesHome(props) {
                 </p>
               </div>
               <div>
-                <i class={cx("fa", " fa-star")}></i>
-                <span class={cx("text-star")}>4.9</span>
-                <span class={cx("color-card-title")}>(7840)</span>
+                <i className={cx("fa", " fa-star")}></i>
+                <span className={cx("text-star")}>4.9</span>
+                <span className={cx("color-card-title")}>(7840)</span>
               </div>
             </div>
           </a>
@@ -56,14 +56,14 @@ function CoursesHome(props) {
               src="https://elearningnew.cybersoft.edu.vn/hinhanh/lap-trinh-c-.jpg"
               alt=""
             />
-            <span class={cx("sticker-card")}>Lập trình xu thế</span>
+            <span className={cx("sticker-card")}>Lập trình xu thế</span>
             <div className={cx("card-body-global")}>
-              <h6 classname={cx('title','line-clamp','line-2')}>
+              <h6 className={cx('title','line-clamp','line-2')}>
                 Lập trình hiện đang là xu hướng trên toàn thế giới...
               </h6>
               <div className={cx("title-maker")}>
                 <div className={cx("img-card-footer")}>
-                  <img class={cx("avatar")} src={avatar} alt="avatar" />
+                  <img className={cx("avatar")} src={avatar} alt="avatar" />
                 </div>
                 <span>Elon Musk</span>
               </div>
@@ -78,9 +78,9 @@ function CoursesHome(props) {
                 </p>
               </div>
               <div>
-                <i class={cx("fa", " fa-star")}></i>
-                <span class={cx("text-star")}>4.9</span>
-                <span class={cx("color-card-title")}>(7840)</span>
+                <i className={cx("fa", " fa-star")}></i>
+                <span className={cx("text-star")}>4.9</span>
+                <span className={cx("color-card-title")}>(7840)</span>
               </div>
             </div>
           </a>
@@ -91,14 +91,14 @@ function CoursesHome(props) {
               src="https://elearningnew.cybersoft.edu.vn/hinhanh/lap-trinh-c-.jpg"
               alt=""
             />
-            <span class={cx("sticker-card")}>Back End</span>
+            <span className={cx("sticker-card")}>Back End</span>
             <div className={cx("card-body-global")}>
-              <h6 classname={cx('title','line-clamp','line-2')}>
+              <h6 className={cx('title','line-clamp','line-2')}>
                 Lập trình hiện đang là xu hướng trên toàn thế giới...
               </h6>
               <div className={cx("title-maker")}>
                 <div className={cx("img-card-footer")}>
-                  <img class={cx("avatar")} src={avatar} alt="avatar" />
+                  <img className={cx("avatar")} src={avatar} alt="avatar" />
                 </div>
                 <span>Elon Musk</span>
               </div>
@@ -113,9 +113,9 @@ function CoursesHome(props) {
                 </p>
               </div>
               <div>
-                <i class={cx("fa", " fa-star")}></i>
-                <span class={cx("text-star")}>4.9</span>
-                <span class={cx("color-card-title")}>(7840)</span>
+                <i className={cx("fa","fa-star")}></i>
+                <span className={cx("text-star")}>4.9</span>
+                <span className={cx("color-card-title")}>(7840)</span>
               </div>
             </div>
           </a>
@@ -126,16 +126,16 @@ function CoursesHome(props) {
               src="https://elearningnew.cybersoft.edu.vn/hinhanh/lap-trinh-c-.jpg"
               alt=""
             />
-            <span class={cx("sticker-card")}>
+            <span className={cx("sticker-card")}>
               Front End Cơ Bản Đến Nâng Cao.
             </span>
             <div className={cx("card-body-global")}>
-              <h6 classname={cx('title','line-clamp','line-2')}>
+              <h6 className={cx('title','line-clamp','line-2')}>
                 Lập trình hiện đang là xu hướng trên toàn thế giới...
               </h6>
               <div className={cx("title-maker")}>
                 <div className={cx("img-card-footer")}>
-                  <img class={cx("avatar")} src={avatar} alt="avatar" />
+                  <img className={cx("avatar")} src={avatar} alt="avatar" />
                 </div>
                 <span>Elon Musk</span>
               </div>
@@ -150,9 +150,9 @@ function CoursesHome(props) {
                 </p>
               </div>
               <div>
-                <i class={cx("fa", " fa-star")}></i>
-                <span class={cx("text-star")}>4.9</span>
-                <span class={cx("color-card-title")}>(7840)</span>
+                <i className={cx("fa","fa-star")}></i>
+                <span className={cx("text-star")}>4.9</span>
+                <span className={cx("color-card-title")}>(7840)</span>
               </div>
             </div>
           </a>
