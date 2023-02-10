@@ -7,7 +7,7 @@
   background-color: #fff;
   // border-bottom: 1px solid #e8ebed;
   font-size: 1.4rem;
-  position: sticky;
+  position: fixed;
   left: 0;
   padding: 10px 30px;
   right: 0;
@@ -70,8 +70,8 @@
   .item-list-container,
   .event-list-container {
     display: none;
-
     background-color: #fff;
+    animation: slideIn .5s  ;
 
     // box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
     // -webkit-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
@@ -97,4 +97,17 @@
       display: block;
     }
   }
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(-20%);
+    opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+    opacity: 1;
+
+	}
 }

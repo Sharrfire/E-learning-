@@ -1,17 +1,16 @@
 import classNames from "classnames/bind";
-import InfoCourses from "./InfoCourses";
+import InfoCourses from "./infoCourses/InfoCourses";
 import styles from "./home.module.scss";
-Home.propTypes = {};
+import CoursesHome from "./coursesHome/CoursesHome";
 const cx = classNames.bind(styles);
 
 function Home() {
-  return <div className={ cx('container')}>
-
-    <InfoCourses/>
-  </div>;
+  return (
+    <div className={cx("container")}>
+      <InfoCourses />
+      <CoursesHome />
+    </div>
+  );
 }
 
 export default Home;
-
-
-

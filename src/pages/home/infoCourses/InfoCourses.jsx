@@ -1,8 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./infoCouses.module.scss";
 import classNames from "classnames/bind";
-InfoCourses.propTypes = {};
+import styles from "./infoCouses.module.scss";
 const cx = classNames.bind(styles);
 function InfoCourses(props) {
   return (
