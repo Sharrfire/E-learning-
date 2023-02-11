@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./features/Auth/components/login-register/Login";
 import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
+import CourseDetail from "./pages/courseDetail/CourseDetail";
 import Home from "./pages/home/Home";
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/"
+          <Route
+            path="/"
             element={
               <>
                 <Header />
@@ -18,7 +20,16 @@ function App() {
               </>
             }
           />
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/detail"
+            element={
+              <>
+                <Header />
+                <CourseDetail /> <Footer />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
