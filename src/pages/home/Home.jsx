@@ -9,6 +9,8 @@ function Home() {
     <div className={cx("container")}>
       <InfoCourses />
       <CoursesHome />
+       <CoursesHome />
+      <CoursesHome />
     </div>
   );
 }

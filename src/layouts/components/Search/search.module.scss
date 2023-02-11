@@ -9,7 +9,7 @@
     border-radius: 20px;
     transition: border-color .2s ease-in-out;
     &:focus-within{
-        border-color: #444;
+        border-color: var(--primary-color);
     }
     .icon{
         width: 30px;
@@ -34,7 +34,7 @@
         caret-color: #444;
         flex:1 1 ;
         height: 100%;
-        outline: none;
+        outline: none ;
         padding: 0 4px;
         overflow: visible;
         font-size: 1.4rem;
