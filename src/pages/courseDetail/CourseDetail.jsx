@@ -1,35 +1,40 @@
-import React from "react";
 import classNames from "classnames/bind";
-import styles from "./courseDetail.module.scss";
+import { useNavigate } from "react-router-dom";
 import avatar from "~/assets/vendor/instrutor5.2e4bd1e6.jpg";
-import {star,halfStar} from '~/constants/rate'
+import { halfStar, star } from "~/constants/rate";
+import styles from "./courseDetail.module.scss";
+import CourseDetailItem from "./CourseDetailItem";
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
 
 function CourseDetail(props) {
- 
+  let navigate = useNavigate();
+  const handleLogin = () => {
+    let path = `/login`;
+    navigate(path);
+  };
   return (
     <section className={cx("container")}>
       <div className={cx("title")}>
         <h3>THÔNG TIN KHÓA HỌC</h3>
       </div>
-      <div className={cx("content")} style={{ height: "2000px" }}>
+      <div className={cx("wrapper")} style={{ height: "2000px" }}>
         <div className={cx("row")}>
-          <div className={cx("col", "main-content")}>
+          <div className={cx("col", "l-8", "m-7", "main-content")}>
             <div className={cx("title-detail")}>
               <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4>
             </div>{" "}
             <div className={cx("header-detail")}>
-              <div className={cx("detail-course-info")}>
+              <div className={cx("col", "c-4", "detail-course-info")}>
                 <div>
                   <img src={avatar} alt="" />
                 </div>
                 <div className={cx("instrutor-title")}>
                   <p>Giảng viên</p>
-                  <p>Robert Ngô Ngọc</p>
+                  <p className={cx("name")}>Robert Ngô Ngọc</p>
                 </div>
               </div>
-              <div className={cx("detail-course-info")}>
+              <div className={cx("col", "c-4", "detail-course-info")}>
                 <div>
                   <img
                     className={cx("graduation-cap")}
@@ -39,10 +44,10 @@ function CourseDetail(props) {
                 </div>
                 <div className={cx("instrutor-title")}>
                   <p>Lĩnh vực</p>
-                  <p>Lập trình Backend</p>
+                  <p className={cx("name")}>Lập trình Backend</p>
                 </div>
               </div>
-              <div className={cx("detail-course-info")}>
+              <div className={cx("col", "c-4", "detail-course-info")}>
                 <div className={cx("review-detail")}>
                   <span>
                     {star}
@@ -50,14 +55,176 @@ function CourseDetail(props) {
                     {star}
                     {star}
                     {halfStar}
-                    3.5
+                    4.5
                   </span>
                   <p>100 đánh giá</p>
                 </div>
               </div>
             </div>
+            <p className={cx("text-desc")}>
+              React.js là thư viện JavaScript phổ biến nhất mà bạn có thể sử
+              dụng và tìm hiểu ngày nay để xây dựng giao diện người dùng hiện
+              đại, phản ứng cho web.Khóa học này dạy bạn về React chuyên sâu, từ
+              cơ bản, từng bước đi sâu vào tất cả các kiến ​​thức cơ bản cốt
+              lõi, khám phá rất nhiều ví dụ và cũng giới thiệu cho bạn các khái
+              niệm nâng cao.Bạn sẽ nhận được tất cả lý thuyết, hàng tấn ví dụ và
+              bản trình diễn, bài tập và bài tập cũng như vô số kiến ​​thức quan
+              trọng bị hầu hết các nguồn khác bỏ qua - sau cùng, có một lý do
+              tại sao khóa học này lại rất lớn! Và trong trường hợp bạn thậm chí
+              không biết tại sao bạn lại muốn học React và bạn chỉ ở đây vì một
+              số quảng cáo hoặc "thuật toán" - đừng lo lắng: ReactJS là một công
+              nghệ quan trọng với tư cách là một nhà phát triển web và trong
+              khóa học này, tôi sẽ cũng giải thích TẠI SAO điều đó lại quan
+              trọng!
+            </p>
+            <div className={cx("course-learn")}>
+              <h6>Những gì bạn sẽ học</h6>
+              <div className={cx("row")}>
+                {" "}
+                <div className={cx("col", "c-6")}>
+                  <ul>
+                    <li>
+                      Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện
+                      với người dùng và phản ứng nhanh
+                    </li>
+                    <li>
+                      Đăng ký công việc được trả lương cao hoặc làm freelancer
+                      trong một trong những lĩnh vực được yêu cầu nhiều nhất mà
+                      bạn có thể tìm thấy trong web dev ngay bây giờ
+                    </li>
+                    <li>
+                      Cung cấp trải nghiệm người dùng tuyệt vời bằng cách tận
+                      dụng sức mạnh của JavaScript một cách dễ dàng
+                    </li>
+                    <li>Tìm hiểu tất cả về React Hooks và React Components</li>
+                  </ul>
+                </div>
+                <div className={cx("col", "c-6")}>
+                  <ul>
+                    <li>
+                      Thông thạo chuỗi công cụ hỗ trợ React, bao gồm cú pháp
+                      Javascript NPM, Webpack, Babel và ES6 / ES2015
+                    </li>
+                    <li>
+                      Nhận ra sức mạnh của việc xây dựng các thành phần có thể
+                      kết hợp
+                    </li>
+                    <li>
+                      Hãy là kỹ sư giải thích cách hoạt động của Redux cho mọi
+                      người, bởi vì bạn biết rất rõ các nguyên tắc cơ bản
+                    </li>
+                    <li>
+                      Nắm vững các khái niệm cơ bản đằng sau việc cấu trúc các
+                      ứng dụng Redux
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={cx("course-content")}>
+              <h6>Nội dung khóa học</h6>
+              <div className={cx("course-detail-item")}>
+                <div className={cx("course-detail-content")}>
+                  <div className={cx("course-section")}>
+                    <span>Mục 1: Giới thiệu</span>
+                    <p className={cx("btn-preview")}>Xem trước</p>
+                  </div>
+                  <p>Bài học</p>
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                </div>
+              </div>
+              <div className={cx("course-detail-item")}>
+                <div className={cx("course-detail-content")}>
+                  <div className={cx("course-section")}>
+                    <span>Mục 1: Giới thiệu</span>
+                    <p className={cx("btn-preview")}>Xem trước</p>
+                  </div>
+                  <p>Bài học</p>
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                </div>
+              </div>
+              <div className={cx("course-detail-item")}>
+                <div className={cx("course-detail-content")}>
+                  <div className={cx("course-section")}>
+                    <span>Mục 1: Giới thiệu</span>
+                    <p className={cx("btn-preview")}>Xem trước</p>
+                  </div>
+                  <p>Bài học</p>
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                  <CourseDetailItem />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className={cx("col")}></div>
+          <div className={cx("col", "l-4", "m-5")}>
+            <div className={cx("sidebar-course-detail")}>
+              <img
+                src="https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg"
+                alt=""
+              />
+              <div className={cx("course-price")}>
+                <div className={cx("course-price-normal")}>
+                  <span>
+                    500.000<sup>đ</sup>
+                  </span>
+                </div>
+                <div className={cx("course-price-sale")}>
+                  <span>
+                    400.000<sup>đ</sup>
+                  </span>
+                </div>
+              </div>
+              <div className={cx("course-buy-btn")}>
+                <button onClick={handleLogin}>Đăng ký</button>
+              </div>
+              <div className={cx("detail-content")}>
+                <ul>
+                  <li>
+                    <p>Ghi danh:</p>
+                    <p>
+                      <span> 10 học viên</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p> Thời gian:</p>
+
+                    <p>
+                      <span> 18 giờ</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>Bài học:</p>
+                    <p>
+                      <span> 10</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>Video:</p>
+                    <p>
+                      <span> 14</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>Trình độ:</p>
+                    <p>
+                      <span> Người mới bắt đầu</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <form action="" className={cx("form-coupon")}>
+                <input type="text" placeholder="Nhập mã" />
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
