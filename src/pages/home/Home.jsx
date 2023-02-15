@@ -12,7 +12,6 @@ function Home() {
       <InfoCourses />
       <CoursesHome />
        <CoursesHome />
-      <CoursesHome />
     </div>
   );
 }

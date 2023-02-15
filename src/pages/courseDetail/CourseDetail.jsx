@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import avatar from "~/assets/vendor/instrutor5.2e4bd1e6.jpg";
 import { halfStar, star } from "~/constants/rate";
 import styles from "./courseDetail.module.scss";
-import CourseDetailItem from "./CourseDetailItem";
+import CourseSection from "./CourseSection";
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
 
@@ -13,12 +13,92 @@ function CourseDetail(props) {
     let path = `/login`;
     navigate(path);
   };
+  const sectionNameList = [
+    {
+      id: "s1",
+      sectionName: "Mục 1: Giới thiệu",
+      lessonList: [
+        {
+          id: "s1-1",
+          name: "Các khái niệm về React Component",
+          duration: "14:35",
+        },
+        {
+          id: "s1-2",
+          name: "Thiết lập môi trường cho Windows",
+          duration: "14:35",
+        },
+        {
+          id: "s1-3",
+          name: "Tạo ứng dụng React - React-Scripts",
+          duration: "14:35",
+        },
+        {
+          id: "s1-4",
+          name: "Ghi chú nhanh về dấu ngoặc kép cho string interpolation",
+          duration: "14:35",
+        },
+      ],
+    },
+    {
+      id: "s2",
+      sectionName: "MỤC 2: KIẾN THỨC CĂN BẢN",
+      lessonList: [
+        {
+          id: "s2-1",
+          name: "Trang chủ và thành phần thư mục",
+          duration: "14:35",
+        },
+        {
+          id: "s2-2",
+          name: "Hướng dẫn khóa học + Liên kết Github",
+          duration: "14:35",
+        },
+        {
+          id: "s2-3",
+          name: "Trang chủ thương mại điện tử + thiết lập SASS",
+          duration: "14:35",
+        },
+        {
+          id: "s2-4",
+          name: "Tệp CSS và SCSS",
+          duration: "14:35",
+        },
+        {
+          id: "s2-5",
+          name: "React 17: Cập nhật các gói + Phiên bản React mới nhất",
+          duration: "14:35",
+        },
+      ],
+    },
+    {
+      id: "s3",
+      sectionName: "MỤC 3: KIẾN THỨC CHUYÊN SÂU",
+      lessonList: [
+        {
+          id: "s3-1",
+          name: "connect() and mapStateToProps",
+          duration: "14:35",
+        },
+        {
+          id: "s3-2",
+          name: "Trạng thái thư mục vào Redux",
+          duration: "14:35",
+        },
+        {
+          id: "s3-3",
+          name: "Tạo ứng dụng React - React-Scripts",
+          duration: "14:35",
+        },
+      ],
+    },
+  ];
   return (
     <section className={cx("container")}>
       <div className={cx("title")}>
         <h3>THÔNG TIN KHÓA HỌC</h3>
       </div>
-      <div className={cx("wrapper")} style={{ height: "2000px" }}>
+      <div className={cx("wrapper")}>
         <div className={cx("row")}>
           <div className={cx("col", "l-8", "m-7", "main-content")}>
             <div className={cx("title-detail")}>
@@ -124,43 +204,15 @@ function CourseDetail(props) {
             <div className={cx("course-content")}>
               <h6>Nội dung khóa học</h6>
               <div className={cx("course-detail-item")}>
-                <div className={cx("course-detail-content")}>
-                  <div className={cx("course-section")}>
-                    <span>Mục 1: Giới thiệu</span>
-                    <p className={cx("btn-preview")}>Xem trước</p>
+                {sectionNameList.map((sessionName) => (
+                  <div className={cx("course-detail-content")}>
+                    <CourseSection
+                      key={sessionName.id}
+                      sectionName={sessionName.sectionName}
+                      lessonList={sessionName.lessonList}
+                    />
                   </div>
-                  <p>Bài học</p>
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                </div>
-              </div>
-              <div className={cx("course-detail-item")}>
-                <div className={cx("course-detail-content")}>
-                  <div className={cx("course-section")}>
-                    <span>Mục 1: Giới thiệu</span>
-                    <p className={cx("btn-preview")}>Xem trước</p>
-                  </div>
-                  <p>Bài học</p>
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                </div>
-              </div>
-              <div className={cx("course-detail-item")}>
-                <div className={cx("course-detail-content")}>
-                  <div className={cx("course-section")}>
-                    <span>Mục 1: Giới thiệu</span>
-                    <p className={cx("btn-preview")}>Xem trước</p>
-                  </div>
-                  <p>Bài học</p>
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                  <CourseDetailItem />
-                </div>
+                ))}
               </div>
             </div>
           </div>

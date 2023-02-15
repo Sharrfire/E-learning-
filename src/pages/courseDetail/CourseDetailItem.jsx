@@ -1,17 +1,17 @@
 import classNames from "classnames/bind";
-import styles from "./courseDetail.module.scss";
+import styles from "./CourseDetailItem.module.scss";
 const cx = classNames.bind(styles);
 CourseDetailItem.propTypes = {};
 
-function CourseDetailItem(props) {
+function CourseDetailItem({name, duration}) {
   return (
     <>
       <div className={cx("lesson-content")}>
         <span>
-          <i class="fa fa-play"></i>Các khái niệm về React Component
+          <i className="fa fa-play"></i>{name}
         </span>
         <span>
-          <i class="fa fa-clock"></i>14:35
+          <i className="fa fa-clock"></i>{duration}
         </span>
       </div>
     </>

@@ -5,7 +5,7 @@ import styles from './action.module.scss';
 const cx = classnames.bind(styles);
 
 export default function Action() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const [openCourses, setOpenCourses] = useState(false);
   const handleOpenCourses = () => {
     setOpenCourses(!openCourses);

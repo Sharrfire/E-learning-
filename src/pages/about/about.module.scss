@@ -1,0 +1,75 @@
+.wrapper {
+    .slider {
+        padding: 150px 0;
+        background-image: url(/assets/vendor/bgAbout.19ac825c.png);
+        background-position: 50%;
+        padding: 150px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        .slider-content {
+            text-align: center;
+            padding: 50px;
+            p {
+                font-size: 18px;
+                color: var(--white-color);
+            }
+            h6 {
+                color: var(--yellow-color);
+                font-size: 40px;
+                font-weight: 600;
+            }
+            .slider-title {
+                color: var(--primary-color);
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 20px;
+            }
+        }
+    }
+    .item {
+       display: flex;
+        padding: 50px;
+  
+        p {
+            line-height: 2.2;
+            color: #8c8c8c;
+            &::first-letter{
+                font-size: calc(60px + .75vw);
+                line-height: 40px;
+                color: #cd5c5c;
+                float: left;
+                padding-top: 10px;
+                padding-right: 5px;
+                font-family: Sansita One;
+            }
+        }
+      
+        h6 {
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 600;
+        }
+        h5 {
+            color: #012025;
+            font-size: 40px;
+            padding: 10px 0;
+        }
+        .background {
+            background: url(/assets/vendor/solutions-hero-green-bg.15753edf.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            img {
+                width: 100%;
+                height: 100%;
+                height: 382px;
+                object-fit: contain;
+                border-radius: 30%;
+                vertical-align: middle;
+                border-style: none;
+            }
+        }
+    }
+}
