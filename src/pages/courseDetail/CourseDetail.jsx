@@ -100,7 +100,7 @@ function CourseDetail(props) {
       </div>
       <div className={cx("wrapper")}>
         <div className={cx("row")}>
-          <div className={cx("col", "l-8", "m-7", "main-content")}>
+          <div className={cx("col","s-12","m-7", "c-8",  "main-content")}>
             <div className={cx("title-detail")}>
               <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4>
             </div>{" "}
@@ -216,7 +216,7 @@ function CourseDetail(props) {
               </div>
             </div>
           </div>
-          <div className={cx("col", "l-4", "m-5")}>
+          <div className={cx("col",'s-12', "m-5","c-4")}>
             <div className={cx("sidebar-course-detail")}>
               <img
                 src="https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg"

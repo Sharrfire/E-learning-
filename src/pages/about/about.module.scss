@@ -28,14 +28,22 @@
         }
     }
     .item {
-       display: flex;
         padding: 50px;
-  
+        .item-content {
+            display: flex;
+            flex-direction: row;
+
+        }
+        .item-content:nth-child(even) {
+            flex-direction: row-reverse;
+            display: flex;
+        }
+
         p {
             line-height: 2.2;
             color: #8c8c8c;
-            &::first-letter{
-                font-size: calc(60px + .75vw);
+            &::first-letter {
+                font-size: calc(60px + 0.75vw);
                 line-height: 40px;
                 color: #cd5c5c;
                 float: left;
@@ -44,7 +52,7 @@
                 font-family: Sansita One;
             }
         }
-      
+
         h6 {
             text-transform: uppercase;
             color: var(--primary-color);

@@ -62,11 +62,11 @@ function CoursesHome(props) {
         </h6>
       </div>
 
-      <div className={cx("courses-list", "row")}>
+      <div className={cx( "row","courses-list",)}>
         {courseList.map((course) => (
           <div
             key={course.id}
-            className={cx("card-global-res", "col")}
+            className={cx( "col",'m-6','s-12',"card-global-res")}
             onClick={handleCourseClick}
           >
             <div href="" className={cx("card-global")}>
