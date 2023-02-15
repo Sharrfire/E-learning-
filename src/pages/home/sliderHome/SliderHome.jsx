@@ -23,7 +23,7 @@ export default function SliderHome() {
                 </div>
                 <h1>Chào mừng</h1>
                 <h1>đến với chúng tôi</h1>
-                <h1>E<span>-learning</span></h1>
+                <h1>E<span>learning</span></h1>
                 <button className={cx("btnSlider")}>Cùng học nào!</button>
             </div> 
         </div>

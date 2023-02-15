@@ -57,10 +57,14 @@
     }
     .sloganContainer {
       h1:nth-of-type(3) {
-        font-size: 65px;
+        font-size:6.5rem;
         color: var(--primary-color);
         overflow: hidden;
-        animation:tracking-out-contract 5s infinite alternate-reverse;
+        animation:aniText 4s steps(10) infinite;
+        span{
+          font-size: 5.0rem;
+          margin-left: 20px;
+        }
       }
       h1 {
         position: relative;
@@ -133,30 +137,15 @@
   }
 }
 
-@-webkit-keyframes tracking-out-contract {
-  0% {
-    opacity: 1;
+@keyframes aniText{
+  0%{
+    width: 0;
   }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    letter-spacing: -0.5em;
-    opacity: 0;
+  50%{
+    width: 230px;
   }
 }
-@keyframes tracking-out-contract {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-}
+
 @keyframes aniCodeImg{
   0%{
     opacity: 0;

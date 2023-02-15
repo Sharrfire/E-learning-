@@ -3,6 +3,8 @@ import InfoCourses from "./infoCourses/InfoCourses";
 import styles from "./home.module.scss";
 import CoursesHome from "./coursesHome/CoursesHome";
 import SliderHome from "./sliderHome/SliderHome";
+import BoxNumber from "./boxNumber/BoxNumber";
+import Instrutor from "./instrutor/Instrutor";
 const cx = classNames.bind(styles);
 
 function Home() {
@@ -11,8 +13,8 @@ function Home() {
       <SliderHome/>
       <InfoCourses />
       <CoursesHome />
-       <CoursesHome />
-      <CoursesHome />
+      <BoxNumber/>
+      <Instrutor/>
     </div>
   );
 }

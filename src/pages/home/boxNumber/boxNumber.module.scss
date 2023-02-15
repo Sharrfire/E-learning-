@@ -1,0 +1,22 @@
+.boxNumberContainer{
+    padding: 50px;
+    background-color:#f0f8ff;
+    margin: 0 -50px;
+    margin-top: 50px;
+    .boxNumber{
+        width: 100%;
+        text-align: center;
+        .boxNumberImg{
+            width: 80px;
+            height: 80px;
+        }
+        .textNumber{
+            font-weight: 700;
+            font-size: 5rem;
+            color: var(--primary-color);
+        }
+        .textNumberTitle{
+            font-weight: 500;
+        }
+    }
+}
