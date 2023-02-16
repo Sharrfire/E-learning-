@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./blog.module.scss";
+import BlogItem from "./BlogItem";
 const cx = classNames.bind(styles);
 Blog.propTypes = {};
 
@@ -24,26 +25,7 @@ function Blog(props) {
               className={cx("col", "s-12", "m-12", "l-8", "main-content")}
             >
               <div className={cx("blog-left")}>
-                <div className={cx("post-item-wrapper")}>
-                  <div className={cx("post-item-header")}>
-                    <div className={cx("post-item-author")}>
-                      <a href="#!">
-                        <div className={cx("fallback-avatar")}>
-                          <img
-                            src="https://files.fullstack.edu.vn/f8-prod/user_avatars/256991/63b63dc6657a1.jpg"
-                            alt="Vịt Vịt"
-                          />
-                        </div>
-                      </a>
-                      <a href="#!">
-                        <span>Vịt Vịt</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div className={cx("post-item-body")}>
-                    <div className={cx("post-item-body")}></div>
-                  </div>
-                </div>
+                <BlogItem />
               </div>
             </section>
             <section className={cx("col", "s-12", "m-12", "l-4")}></section>

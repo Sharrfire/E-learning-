@@ -30,66 +30,7 @@
             .blog-left {
                 padding: 0 64px 44px 0;
             }
-            .post-item-wrapper {
-                border: 2px solid #e8e8e8;
-                border-radius: 16px;
-                padding: 24px;
-                .post-item-header,
-                .post-item-body,
-                .post-item-author,
-                .post-item-action {
-                    display: flex;
-                    align-items: center;
-                }
-                .post-item-header {
-                    .post-item-author {
-                        display: flex;
-                        align-items: center;
-                        .fallback-avatar {
-                            --font-size: 5.8px;
-                            align-items: center;
-                            background: linear-gradient(180deg, #ffd900, #b45264 93.68%);
-                            display: flex;
-                            justify-content: center;
-                            padding: 0.7em;
-                            position: relative;
-                            background: transparent;
-                            border-radius: 50%;
-                            font-size: var(--font-size);
-                            img {
-                                border-radius: 50%;
-                                height: 9em;
-                                object-fit: cover;
-                                width: 9em;
-                            }
-                        }
-                        span {
-                            color: #292929;
-                            font-size: 1.8rem;
-                            font-weight: 600;
-                            margin-left: 8px;
-                        }
-                    }
-                    .post-item-action {
-                        color: #757575;
-                        display: flex;
-                        font-size: 1.6rem;
-                        margin-right: -8px;
-                        -webkit-user-select: none;
-                        -ms-user-select: none;
-                        user-select: none;
-                        .bookmark-toggle {
-                            color: #757575;
-                        }
-                        .post-item-option-btn {
-                            cursor: pointer;
-                            padding: 4px 8px;
-                        }
-                    }
-                }
-                .post-item-body {
-                }
-            }
+          
         }
     }
 }
