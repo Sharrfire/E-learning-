@@ -13,14 +13,18 @@
 .courses-list {
     display: flex;
     justify-content: space-around;
-    margin-top: 24px;
-    margin-right: -15px;
-    margin-left: -15px;
+    padding: 0 12px;
+    align-items: center;
+    margin: 24px -15px;
+    // margin-right: -15px;
+    // margin-left: -15px;
 }
 .card-global-res {
     display: flex;
+    justify-content: center;
     padding: 0 15px;
     margin-top: 24px;
+    cursor: pointer;
 
     .card-global {
         position: relative;

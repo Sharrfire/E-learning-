@@ -1,4 +1,5 @@
 import classnames from "classnames/bind";
+import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
@@ -78,9 +79,9 @@ export default function Header() {
             </div>
           </li>
           <li className={cx("header-item")}>
-            <a className={cx("header-item-link")} href="#!">
+            <Link className={cx("header-item-link")} to="/about">
               Thông tin
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
