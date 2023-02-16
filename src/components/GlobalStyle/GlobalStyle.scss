@@ -3,26 +3,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,300&family=Roboto:wght@300;500;700;900&display=swap");
 
 :root {
-    --font-family: "Roboto", sans-serif;
-    --primary-color: #41b294;
-    --yellow-color: #f6ba35;
-    --black-color: #000;
-    --white-color: #fff;
-    --gray-color: #666;
-    --text-color: #333;
-    --plum-color: #b80257;
-    --fb-color: #4080ff;
-    --mail-color: #f47425;
-    --invalid-color: #f33a58;
-    --desc-color: #0000008a;
-    --text-color:#8c8c8c;
-    --first-color: #1dbfaf;
-    --second-color: #1dbfaf;
-    --button-color: #1dbfaf;
-    --button-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
-    --system-ui: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
-
+  --font-family: "Roboto", sans-serif;
+  --primary-color: #41b294;
+  --yellow-color: #f6ba35;
+  --black-color: #000;
+  --white-color: #fff;
+  --gray-color: #666;
+  --text-color: #333;
+  --plum-color: #b80257;
+  --fb-color: #4080ff;
+  --mail-color: #f47425;
+  --invalid-color: #f33a58;
+  --desc-color: #0000008a;
+  --text-color: #8c8c8c;
+  --first-color: #1dbfaf;
+  --second-color: #1dbfaf;
+  --button-color: #1dbfaf;
+  --button-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+  --system-ui: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 * {
@@ -76,15 +75,19 @@ a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 .line-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 1);
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .line-clamp.line-2 {
-    --line-clamp: 2;
+  --line-clamp: 2;
 }
-img{
+img {
   vertical-align: middle;
   border-style: none;
+}
+h1 {
+  font-size: 2.8rem;
+  margin: 20px;
 }

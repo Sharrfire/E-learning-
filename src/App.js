@@ -3,6 +3,7 @@ import Login from "./features/Auth/components/login-register/Login";
 import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
 import About from "./pages/about/About";
+import Blog from "./pages/blog/Blog";
 import CourseDetail from "./pages/courseDetail/CourseDetail";
 import Home from "./pages/home/Home";
 
@@ -28,11 +29,20 @@ function App() {
                 <Footer />
               </>
             }
-          />   <Route
+          />  
+           <Route
             path="/about" element={
               <>
                 <Header />
                 <About />
+                <Footer />
+              </>
+            }
+          />   <Route
+            path="/blog" element={
+              <>
+                <Header />
+                <Blog />
                 <Footer />
               </>
             }

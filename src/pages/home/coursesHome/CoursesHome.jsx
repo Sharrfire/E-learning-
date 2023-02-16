@@ -59,14 +59,15 @@ function CoursesHome(props) {
       <div className={cx("container")}>
         <h6>
           <a href="#!">Khóa học phổ biến</a>
-        </h6>
+        </h6> 
       </div>
 
       <div className={cx( "row","courses-list",)}>
         {courseList.map((course) => (
           <div
             key={course.id}
-            className={cx( "col",'m-6','s-12',"card-global-res")}
+            className={cx( "col",'s-12','m-6','l-3',"card-global-res")}
+            style={{display:'flex'}}
             onClick={handleCourseClick}
           >
             <div href="" className={cx("card-global")}>
