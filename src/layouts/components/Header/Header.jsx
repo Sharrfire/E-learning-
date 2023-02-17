@@ -11,12 +11,12 @@ export default function Header() {
     <div className={cx("header")}>
       <div className={cx("header-left")}>
         <div className={cx("logo")}>
-          <a href="#!">
+          <Link to="/">
             <img
               src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
               alt="img"
             />
-          </a>
+          </Link>
           {/* <h4 className={cx("logo-heading")}>{heading}</h4> */}
           <div className={cx("search")}></div>
           <Search />
@@ -55,9 +55,9 @@ export default function Header() {
             </a>
           </li>
           <li className={cx("header-item")}>
-            <a className={cx("header-item-link")} href="#!">
+            <Link className={cx("header-item-link")} to="/blog">
               Blog
-            </a>
+            </Link>
           </li>
           <li className={cx("header-item")}>
             <a className={cx("header-item-link")} href="#!">

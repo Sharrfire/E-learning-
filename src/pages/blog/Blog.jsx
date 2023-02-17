@@ -1,10 +1,22 @@
 import classNames from "classnames/bind";
+import { useEffect, useState } from "react";
 import styles from "./blog.module.scss";
 import BlogItem from "./BlogItem";
+
 const cx = classNames.bind(styles);
 Blog.propTypes = {};
 
 function Blog(props) {
+  const [blogList, setBlogList] = useState([]);
+  const BASE_URL =
+    "https://e-learning-976fe-default-rtdb.asia-southeast1.firebasedatabase.app/";
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(BASE_URL + "blog.json");
+      var blogListData = await response.json();
+      setBlogList([...blogListData.data]);
+    })();
+  }, []);
   return (
     <section className={cx("container")}>
       <div className={cx("title")}>
@@ -22,13 +34,48 @@ function Blog(props) {
         <div className={cx("container-body")}>
           <section className={cx("row")}>
             <section
-              className={cx("col", "s-12", "m-12", "l-8", "main-content")}
+              className={cx(
+                "col",
+                "s-12",
+                "m-12",
+                "m-o-1",
+                "l-8",'l-o-0',
+                "main-content"
+              )}
             >
               <div className={cx("blog-left")}>
-                <BlogItem />
+                {blogList.map((blog) => (
+                  <BlogItem key={blog.id} {...blog} />
+                ))}
               </div>
             </section>
-            <section className={cx("col", "s-12", "m-12", "l-4")}></section>
+            <section className={cx("col","s-12", "m-12", "m-o-1",  "l-4",'l-o-0', "main-content")}>
+              <div className={cx("topic-list-wrapper")}>
+                <h3>Các chủ đề được đề xuất</h3>
+                <ul className={cx("topics-list")}>
+                  <li>
+                    <a href="/blog/topic/front-end-mobile-apps">
+                      Front-end / Mobile apps
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                  </li>{" "}
+                  <li>
+                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                  </li>{" "}
+                  <li>
+                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                  </li>
+                  <li>
+                    <a href="/blog/topic/ui-ux-design">UI / UX / Design</a>
+                  </li>
+                  <li>
+                    <a href="/blog/topic/others">Others</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
           </section>
         </div>
       </div>

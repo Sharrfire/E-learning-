@@ -140,7 +140,7 @@
 }
 
 /* >= Mobile */
-@media (min-width: 350px) {
+@media (max-width: 420px) {
     .row {
         margin-left: -4px;
         margin-right: -4px;
@@ -520,7 +520,9 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-
+    .l-o-0 {
+        margin-left: 0;
+    }
     .l-o-1 {
         margin-left: 8.33333%;
     }

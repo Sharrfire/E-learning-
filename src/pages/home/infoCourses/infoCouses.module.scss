@@ -8,6 +8,12 @@
         color: #fff;
         grid-gap: 20px;
         gap: 20px;
+
+        @media screen and (max-width: 750px) {
+            
+                grid-template-columns: none;
+            
+        }
     }
     .item {
         position: relative;
@@ -19,7 +25,7 @@
         grid-row: 1 / span 2;
     }
     .small-item-a {
-        background-color:rgb(92, 130, 149,0.9);
+        background-color: rgb(92, 130, 149, 0.9);
     }
     .small-item-b {
         background-color: rgb(246, 186, 53, 0.9);

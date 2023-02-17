@@ -1,4 +1,93 @@
-.instrutorContainer{
-    padding: 0 50px ;
-    margin-top: 50px;
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    h3 a {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #f6ba35;
+    }
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 30px 0px;
+    .item-container {
+        width: 100%;
+        padding: 10px 15px;
+        .item-list {
+            margin: 12px -15px 24px 12px;
+            padding: 24px;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            .item {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .item-content {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: space-between;
+                    padding: 30px 15px;
+                    border-radius: 5px;
+                    border: none;
+                    transition: all 0.5s;
+                    &:hover {
+                        box-shadow: 0 0 10px 6px rgb(0 0 0 / 13%);
+                    }
+                    img {
+                        height: 80px;
+                        width: 80px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                    h6 {
+                        font-size: 1.6rem;
+                        color: #252525;
+                    }
+                    .role {
+                        padding: 3px 0;
+                        p{
+                            word-break: break-all;
+                        }
+                    }
+                    .review-mentor {
+                        i {
+                            color: var(--yellow-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 12px;
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            opacity: 0.25;
+            &.active {
+                opacity: 1;
+                &:hover {
+                    cursor: default;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }

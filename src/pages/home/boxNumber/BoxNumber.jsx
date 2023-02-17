@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
     >
         <div className={cx("boxNumberContainer")}>
             <div className={cx("row")}>
-                <div className={cx("col","l-3","m-6","p-4")}>
+                <div className={cx("col",'s-12',"l-3","m-6","p-4")}>
                     <div className={cx("boxNumber")}>
                         <div>
                             <img className={cx("boxNumberImg")} src={studentImg} alt="" />
@@ -28,7 +28,7 @@ const cx = classNames.bind(styles);
                         <p className={cx("textNumberTitle")}>Học viên</p>
                     </div>
                 </div>
-                <div className={cx("col","l-3","m-6","p-4")}>
+                <div className={cx("col",'s-12',"l-3","m-6","p-4")}>
                 <div className={cx("boxNumber")}>
                         <div>
                             <img className={cx("boxNumberImg")} src={timeImg} alt="" />
@@ -39,7 +39,7 @@ const cx = classNames.bind(styles);
                         <p className={cx("textNumberTitle")}>Khóa Học</p>
                     </div>
                 </div>
-                <div className={cx("col","l-3","m-6","p-4")}>
+                <div className={cx("col",'s-12',"l-3","m-6","p-4")}>
                 <div className={cx("boxNumber")}>
                         <div>
                             <img className={cx("boxNumberImg")} src={hourglassImg} alt="" />
@@ -50,7 +50,7 @@ const cx = classNames.bind(styles);
                         <p className={cx("textNumberTitle")}>Giờ Học</p>
                     </div>
                 </div>
-                <div className={cx("col","l-3","m-6","p-4")}>
+                <div className={cx("col",'s-12',"l-3","m-6","p-4")}>
                 <div className={cx("boxNumber")}>
                         <div>
                             <img className={cx("boxNumberImg")} src={teacherImg} alt="" />
