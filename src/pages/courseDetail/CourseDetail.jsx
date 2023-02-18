@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import { useNavigate } from "react-router-dom";
 import avatar from "~/assets/vendor/instrutor5.2e4bd1e6.jpg";
 import { halfStar, star } from "~/constants/rate";
+import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
 const cx = classNames.bind(styles);
@@ -95,9 +96,7 @@ function CourseDetail(props) {
   ];
   return (
     <section className={cx("container")}>
-      <div className={cx("title")}>
-        <h3>THÔNG TIN KHÓA HỌC</h3>
-      </div>
+      <Title title={"THÔNG TIN KHÓA HỌC"} />
       <div className={cx("wrapper")}>
         <div className={cx("row")}>
           <div className={cx("col", "s-12", "m-12", "l-8", "main-content")}>

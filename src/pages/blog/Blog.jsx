@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
+import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./blog.module.scss";
 import BlogItem from "./BlogItem";
 
@@ -19,9 +20,7 @@ function Blog(props) {
   }, []);
   return (
     <section className={cx("container")}>
-      <div className={cx("title")}>
-        <h2>BLOG</h2>
-      </div>
+      <Title title={"blog"} />
       <div className={cx("wrapper")}>
         <section className={cx("container-top")}>
           <h3>Bài viết nổi bật</h3>
@@ -39,7 +38,8 @@ function Blog(props) {
                 "s-12",
                 "m-12",
                 "m-o-1",
-                "l-8",'l-o-0',
+                "l-8",
+                "l-o-0",
                 "main-content"
               )}
             >
@@ -49,7 +49,17 @@ function Blog(props) {
                 ))}
               </div>
             </section>
-            <section className={cx("col","s-12", "m-12", "m-o-1",  "l-4",'l-o-0', "main-content")}>
+            <section
+              className={cx(
+                "col",
+                "s-12",
+                "m-12",
+                "m-o-1",
+                "l-4",
+                "l-o-0",
+                "main-content"
+              )}
+            >
               <div className={cx("topic-list-wrapper")}>
                 <h3>Các chủ đề được đề xuất</h3>
                 <ul className={cx("topics-list")}>

@@ -1,4 +1,5 @@
 import classnames from "classnames/bind";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
@@ -7,6 +8,19 @@ const cx = classnames.bind(styles);
 
 export default function Header() {
   // const heading = "Học Lập Trình Để Đi Làm";
+
+  const [cateList, setCateList] = useState([]);
+
+  const BASE_URL =
+    "https://e-learning-976fe-default-rtdb.asia-southeast1.firebasedatabase.app/";
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(BASE_URL + "cate.json");
+      var cateListData = await response.json();
+      setCateList([...cateListData.data]);
+    })();
+  }, []);
+
   return (
     <div className={cx("header")}>
       <div className={cx("header-left")}>
@@ -31,21 +45,11 @@ export default function Header() {
 
             <div className={cx("item-list-container")}>
               <ul className={cx("item-list")}>
-                <li>
-                  <a href="#!">Lập trình BackEnd</a>
-                </li>
-                <li>
-                  <a href="#!">Lập trình FrontEnd</a>
-                </li>
-                <li>
-                  <a href="#!">Lập trình Di Động</a>
-                </li>
-                <li>
-                  <a href="#!">Lập trình FullStack</a>
-                </li>
-                <li>
-                  <a href="#!">Tư duy lập trình</a>
-                </li>
+                {cateList.map((cate, index) => (
+                  <li key={index}>
+                    <a href="#!">{cate.tenDanhMuc}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </li>
@@ -68,13 +72,12 @@ export default function Header() {
                 <li>
                   <a href="#!">Sự kiện sale backfriday</a>
                 </li>
-                 <li>
+                <li>
                   <a href="#!">Sự kiện sale noel</a>
                 </li>
-                 <li>
+                <li>
                   <a href="#!">Sự kiện sale Tết</a>
                 </li>
-              
               </ul>
             </div>
           </li>

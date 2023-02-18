@@ -90,7 +90,7 @@ export default function Instrutor() {
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star"></i>
 
-                    <span class="textStar"> {instructor.rate}</span>
+                    <span className="textStar"> {instructor.rate}</span>
                   </p>
                 </div>
               </div>
