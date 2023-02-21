@@ -27,8 +27,15 @@ function CourseList(props) {
         {courseList?.map((course) => (
           <div
             key={course.id}
-            className={cx("col", "s-12", "m-12",'ml-4', "l-3", "card-global-res")}
-            style={{ display: "flex",flex:'auto' }}
+            className={cx(
+              "col",
+              "s-12",
+              "m-12",
+              "ml-4",
+              "l-3",
+              "card-global-res"
+            )}
+            style={{ display: "flex", flex: "auto" }}
             onClick={handleCourseClick}
           >
             <div href="" className={cx("card-global")}>

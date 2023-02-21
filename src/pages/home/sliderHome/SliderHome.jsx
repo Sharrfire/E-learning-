@@ -27,7 +27,7 @@ export default function SliderHome() {
                 <button className={cx("btnSlider")}>Cùng học nào!</button>
             </div> 
         </div>
-        <div className={cx("col","l-6")}>
+        <div className={cx("col",'m-6',"l-6")}>
           <div className={cx("sliderRight")}>
             <dir>
               <img className={cx("sliderMainImg")} src={sliderImg} alt="" />
