@@ -1,0 +1,60 @@
+.userInfoBot {
+    padding: 30px 0;
+  }
+  
+  .userInfoBot h4 {
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 500;
+  }
+  
+  .mySkill {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  
+  .skillAll {
+    padding: 15px 0;
+  }
+  .skillBtnCustom {
+    width: 60px;
+    height: 45px;
+    color: var(--colorWhite);
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+  
+  .progress {
+    width: 100%;
+    height: 16px;
+  }
+  
+  .skillBtnHtml button,
+  .skillBtnHtml .progress-bar {
+    background-color: #f9ca9a;
+    color: #fff;
+  }
+  
+  .skillBtnCss button,
+  .skillBtnCss .progress-bar {
+    background-color: #f8bebb;
+    color: #fff;
+  }
+  
+  .skillBtnJs button,
+  .skillBtnJs .progress-bar {
+    background-color: #f0cc6b;
+    color: #fff;
+  }
+  
+  .skillBtnReact button,
+  .skillBtnReact .progress-bar {
+    background-color: #113d3c;
+    color: #fff;
+  }
+  

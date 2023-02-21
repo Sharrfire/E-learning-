@@ -7,6 +7,7 @@ import Blog from "./pages/blog/Blog";
 import CourseDetail from "./pages/courseDetail/CourseDetail";
 import Course from "./pages/courseList/Course";
 import Home from "./pages/home/Home";
+import PersonalInfo from "./pages/personalInfo/PersonalInfo";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/PersonalInfo" element={<PersonalInfo />} />
       </Routes>
     </BrowserRouter>
   );
