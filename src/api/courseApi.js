@@ -7,12 +7,16 @@ const productApi = {
     // Remove un-needed key
     delete newParams._page;
     // Fetch product list + count
-    const productList = await axiosClient.get('/courses.json', { params: newParams });
-    // const count = await axiosClient.get('/courses/count.json', { params: newParams });
+    const productList = await axiosClient.get('/coursesList.json', { params: newParams });
+    const count = await axiosClient.get('/courseList/page.json', { params: newParams });
     // Build response and return
     return {
-      productList
-
+      data: productList,
+      pagination: {
+        page: params._page,
+        limit: params._limit,
+        total: count
+      }
     };
   },
 

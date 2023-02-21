@@ -2,15 +2,17 @@
     margin-top: 96px;
     margin-bottom: 60px;
     color: #000000;
+    
 }
 .filter-wrapper {
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.05);
+ 
 }
 .wrapper {
     padding: 20px 50px;
+display: flex;
+justify-content: center;
+align-items: center;
     .nav-filter {
         h3 {
             font-size: 2.5rem;
@@ -34,4 +36,24 @@
             }
         }
     }
+    .course-list-item{
+        align-items: flex-start;
+        box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
+        -webkit-box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
+        -moz-box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
+    }
+
+}
+
+.pagination {
+    padding: 30px;
+    text-transform: uppercase;
+    background-color: var(--white-color);
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   li{
+    font-size: 20px;
+
+   }
 }

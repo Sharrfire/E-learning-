@@ -1,21 +1,31 @@
+import { Pagination } from "@mui/material";
 import classNames from "classnames/bind";
-import { useEffect } from "react";
-import productApi from "~/api/courseApi";
+
 import TitleLayout from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./course.module.scss";
 import CourseFilter from "./CourseFilter";
 import CourseList from "./CourseList";
 
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: "#41b291",
+      contrastText: "#ffffff",
+    },
+  },
+  pagination: {
+    display: "flex",
+    fontSize: "2rem",
+  },
+});
 const cx = classNames.bind(styles);
 Course.propTypes = {};
 
 function Course(props) {
-  useEffect(() => {
-    (async () => {
-      const response = await productApi.getAll({ _page: 1, _limit: 10 });
-      console.log({ response });
-    })();
-  }, []);
+
   const star = <i className="fa fa-star"></i>;
   const star2 = (
     <>
@@ -47,7 +57,7 @@ function Course(props) {
         <TitleLayout title={"KHÓA HỌC"} />
         <div className={cx("wrapper")}>
           <div className={cx("row")}>
-            <div className={cx("col", 's-12',"m-4", "l-2", "filter-wrapper")}>
+            <div className={cx("col", "s-12", "m-4", "l-2", "filter-wrapper")}>
               <div className={cx("nav-filter")}>
                 <h3>
                   <i classnamename="fa fa-book-open"></i>Lọc
@@ -79,13 +89,13 @@ function Course(props) {
                         <CourseFilter labelName={"Tất cả"} />
                       </li>
                       <li>
-                        <CourseFilter labelName={"Front End"} />
+                        <CourseFilter labelName={"Nâng cao"} />
                       </li>
                       <li>
-                        <CourseFilter labelName={" Back End"} />
+                        <CourseFilter labelName={"Trung bình"} />
                       </li>
                       <li>
-                        <CourseFilter labelName={"HTML/CSS"} />
+                        <CourseFilter labelName={"Cơ bản"} />
                       </li>
                     </ul>
                   </div>
@@ -114,13 +124,17 @@ function Course(props) {
                 </div>
               </div>
             </div>
-            <div className={cx("col", 's-12',"m-8", "l-10")}>
+            <div
+              className={cx("col", "s-12", "m-8", "l-10", "course-list-item")}
+            >
               <CourseList />
-              <CourseList />
-              <CourseList />
-             
             </div>
           </div>
+        </div>
+        <div className={cx('pagination')}>
+          <ThemeProvider theme={theme}>
+            <Pagination color="primary" count={3} page={2} size="large" />
+          </ThemeProvider>
         </div>
       </section>
     </div>

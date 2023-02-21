@@ -64,24 +64,22 @@ function Blog(props) {
                 <h3>Các chủ đề được đề xuất</h3>
                 <ul className={cx("topics-list")}>
                   <li>
-                    <a href="/blog/topic/front-end-mobile-apps">
-                      Front-end / Mobile apps
-                    </a>
+                    <a href="#!">Front-end / Mobile apps</a>
                   </li>
                   <li>
-                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                    <a href="#!">Back-end / Devops</a>
                   </li>{" "}
                   <li>
-                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                    <a href="#!">Back-end / Devops</a>
                   </li>{" "}
                   <li>
-                    <a href="/blog/topic/back-end-devops">Back-end / Devops</a>
+                    <a href="#!">Back-end / Devops</a>
                   </li>
                   <li>
-                    <a href="/blog/topic/ui-ux-design">UI / UX / Design</a>
+                    <a href="#!">UI / UX / Design</a>
                   </li>
                   <li>
-                    <a href="/blog/topic/others">Others</a>
+                    <a href="#!">Others</a>
                   </li>
                 </ul>
               </div>

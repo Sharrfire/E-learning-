@@ -10,11 +10,13 @@ CourseList.propTypes = {};
 function CourseList(props) {
   const [courseList, setcourseList] = useState([]);
 
+
+
   useEffect(() => {
     (async () => {
       const response = await courseApi.getAll({ _page: 1, _limit: 12 });
       setcourseList([...response.data.data]);
- console.log(response)
+
     })();
   }, []);
   let navigate = useNavigate();

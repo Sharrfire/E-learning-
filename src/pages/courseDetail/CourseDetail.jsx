@@ -10,90 +10,227 @@ CourseDetail.propTypes = {};
 
 function CourseDetail(props) {
   let navigate = useNavigate();
+  const data = {
+    course: {
+      id: 4,
+      title: "App Đừng Chạm Tay Lên Mặt",
+      slug: "tool-canh-bao-so-len-mat",
+      students_count: 6871,
+      old_price: 500000,
+      price: 400000,
+      description:
+        "Xây dựng ứng dụng đưa ra cảnh báo khi người dùng sờ tay lên mặt. Chúng ta sẽ sử dụng thư viện ReactJS & Tensoflow để hoàn thiện ứng dụng này.",
+      image: "courses/4/61a9e9e701506.png",
+      tracks: [
+        {
+          id: 14,
+          course_id: 4,
+          title: "Giới thiệu",
+          position: 1,
+          track_steps: [
+            {
+              track_id: 1,
+              step: {
+                id: 155,
+                title: "Giới thiệu",
+                duration: 238,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 14,
+              step: {
+                id: 170,
+                title: "Demo AI hoạt động",
+                duration: 22,
+                image_url: "",
+                video_url: null,
+              },
+            },
+          ],
+        },
+        {
+          id: 15,
+          course_id: 4,
+          title: "Xây dựng",
+          position: 2,
+
+          track_steps: [
+            {
+              track_id: 15,
+              step: {
+                id: 156,
+                title: "Install NodeJS",
+                duration: 191,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 15,
+              step: {
+                id: 157,
+                title: "Create react app",
+                duration: 367,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 15,
+              step: {
+                id: 158,
+                title: "Install dependencies",
+                duration: 576,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 15,
+              step: {
+                id: 159,
+                title: "Build UI frame",
+                duration: 282,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 15,
+              step: {
+                id: 162,
+                title: "Import dependencies",
+                duration: 385,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 15,
+              step: {
+                id: 163,
+                title: "Setup camera",
+                duration: 568,
+                image_url: "",
+                video_url: null,
+              },
+            },
+          ],
+        },
+        {
+          id: 114,
+          course_id: 4,
+          title: "Trainning functions",
+          position: 3,
+
+          track_steps: [
+            {
+              track_id: 114,
+              step: {
+                id: 164,
+                title: "Train function",
+                duration: 697,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 114,
+              step: {
+                id: 165,
+                title: "Training function",
+                duration: 477,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 114,
+              step: {
+                id: 166,
+                title: "Running function",
+                duration: 896,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 114,
+              step: {
+                id: 167,
+                title: "Implement audio and notification",
+                duration: 885,
+                image_url: "",
+                video_url: null,
+              },
+            },
+            {
+              track_id: 114,
+              step: {
+                id: 168,
+                title: "Traning guide",
+                duration: 74,
+                image_url: "",
+                video_url: null,
+              },
+            },
+          ],
+        },
+      ],
+      level: {
+        id: 1,
+        title: "Trình độ cơ bản",
+        level: 1,
+        created_at: null,
+        updated_at: null,
+      },
+      image_url:
+        "https://files.fullstack.edu.vn/f8-prod/courses/4/61a9e9e701506.png",
+      will_learns: [
+        {
+          id: 15,
+          course_id: 4,
+          content: "Làm được tool cảnh báo khi sờ tay lên mặt",
+        },
+        {
+          id: 16,
+          course_id: 4,
+          content: "Biết áp dụng làm tool có concept tương tự",
+        },
+        {
+          id: 17,
+          course_id: 4,
+          content: "Làm quen với tư tưởng Máy học",
+        },
+        {
+          id: 18,
+          course_id: 4,
+          content: "Biết thêm một số kỹ thuật với Javascript",
+        },
+        {
+          id: 19,
+          course_id: 4,
+          content:
+            "Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với người dùng và phản ứng nhanh",
+        },
+        {
+          id: 20,
+          course_id: 4,
+          content:
+            "  Đăng ký công việc được trả lương cao có thể tìm thấy trong web dev ngay bây giờ",
+        },
+      ],
+      requirements: [],
+      related_courses: [],
+    },
+  };
   const handleLogin = () => {
     let path = `/login`;
     navigate(path);
   };
-  const sectionNameList = [
-    {
-      id: "s1",
-      sectionName: "Mục 1: Giới thiệu",
-      lessonList: [
-        {
-          id: "s1-1",
-          name: "Các khái niệm về React Component",
-          duration: "14:35",
-        },
-        {
-          id: "s1-2",
-          name: "Thiết lập môi trường cho Windows",
-          duration: "14:35",
-        },
-        {
-          id: "s1-3",
-          name: "Tạo ứng dụng React - React-Scripts",
-          duration: "14:35",
-        },
-        {
-          id: "s1-4",
-          name: "Ghi chú nhanh về dấu ngoặc kép cho string interpolation",
-          duration: "14:35",
-        },
-      ],
-    },
-    {
-      id: "s2",
-      sectionName: "MỤC 2: KIẾN THỨC CĂN BẢN",
-      lessonList: [
-        {
-          id: "s2-1",
-          name: "Trang chủ và thành phần thư mục",
-          duration: "14:35",
-        },
-        {
-          id: "s2-2",
-          name: "Hướng dẫn khóa học + Liên kết Github",
-          duration: "14:35",
-        },
-        {
-          id: "s2-3",
-          name: "Trang chủ thương mại điện tử + thiết lập SASS",
-          duration: "14:35",
-        },
-        {
-          id: "s2-4",
-          name: "Tệp CSS và SCSS",
-          duration: "14:35",
-        },
-        {
-          id: "s2-5",
-          name: "React 17: Cập nhật các gói + Phiên bản React mới nhất",
-          duration: "14:35",
-        },
-      ],
-    },
-    {
-      id: "s3",
-      sectionName: "MỤC 3: KIẾN THỨC CHUYÊN SÂU",
-      lessonList: [
-        {
-          id: "s3-1",
-          name: "connect() and mapStateToProps",
-          duration: "14:35",
-        },
-        {
-          id: "s3-2",
-          name: "Trạng thái thư mục vào Redux",
-          duration: "14:35",
-        },
-        {
-          id: "s3-3",
-          name: "Tạo ứng dụng React - React-Scripts",
-          duration: "14:35",
-        },
-      ],
-    },
-  ];
+ 
   return (
     <section className={cx("container")}>
       <Title title={"THÔNG TIN KHÓA HỌC"} />
@@ -101,7 +238,8 @@ function CourseDetail(props) {
         <div className={cx("row")}>
           <div className={cx("col", "s-12", "m-12", "l-8", "main-content")}>
             <div className={cx("title-detail")}>
-              <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4>
+              {/* <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4> */}
+              <h4>{data.course.title}</h4>
             </div>{" "}
             <div className={cx("header-detail")}>
               <div className={cx("col", "c-4", "detail-course-info")}>
@@ -140,98 +278,45 @@ function CourseDetail(props) {
                 </div>
               </div>
             </div>
-            <p className={cx("text-desc")}>
-              React.js là thư viện JavaScript phổ biến nhất mà bạn có thể sử
-              dụng và tìm hiểu ngày nay để xây dựng giao diện người dùng hiện
-              đại, phản ứng cho web.Khóa học này dạy bạn về React chuyên sâu, từ
-              cơ bản, từng bước đi sâu vào tất cả các kiến ​​thức cơ bản cốt
-              lõi, khám phá rất nhiều ví dụ và cũng giới thiệu cho bạn các khái
-              niệm nâng cao.Bạn sẽ nhận được tất cả lý thuyết, hàng tấn ví dụ và
-              bản trình diễn, bài tập và bài tập cũng như vô số kiến ​​thức quan
-              trọng bị hầu hết các nguồn khác bỏ qua - sau cùng, có một lý do
-              tại sao khóa học này lại rất lớn! Và trong trường hợp bạn thậm chí
-              không biết tại sao bạn lại muốn học React và bạn chỉ ở đây vì một
-              số quảng cáo hoặc "thuật toán" - đừng lo lắng: ReactJS là một công
-              nghệ quan trọng với tư cách là một nhà phát triển web và trong
-              khóa học này, tôi sẽ cũng giải thích TẠI SAO điều đó lại quan
-              trọng!
-            </p>
+            <p className={cx("text-desc")}>{data.course.description}</p>
             <div className={cx("course-learn")}>
               <h6>Những gì bạn sẽ học</h6>
               <div className={cx("row")}>
-                {" "}
-                <div className={cx("col", "c-6")}>
-                  <ul>
-                    <li>
-                      Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện
-                      với người dùng và phản ứng nhanh
-                    </li>
-                    <li>
-                      Đăng ký công việc được trả lương cao hoặc làm freelancer
-                      trong một trong những lĩnh vực được yêu cầu nhiều nhất mà
-                      bạn có thể tìm thấy trong web dev ngay bây giờ
-                    </li>
-                    <li>
-                      Cung cấp trải nghiệm người dùng tuyệt vời bằng cách tận
-                      dụng sức mạnh của JavaScript một cách dễ dàng
-                    </li>
-                    <li>Tìm hiểu tất cả về React Hooks và React Components</li>
-                  </ul>
-                </div>
-                <div className={cx("col", "c-6")}>
-                  <ul>
-                    <li>
-                      Thông thạo chuỗi công cụ hỗ trợ React, bao gồm cú pháp
-                      Javascript NPM, Webpack, Babel và ES6 / ES2015
-                    </li>
-                    <li>
-                      Nhận ra sức mạnh của việc xây dựng các thành phần có thể
-                      kết hợp
-                    </li>
-                    <li>
-                      Hãy là kỹ sư giải thích cách hoạt động của Redux cho mọi
-                      người, bởi vì bạn biết rất rõ các nguyên tắc cơ bản
-                    </li>
-                    <li>
-                      Nắm vững các khái niệm cơ bản đằng sau việc cấu trúc các
-                      ứng dụng Redux
-                    </li>
-                  </ul>
-                </div>
+                <ul className={cx("col", "c-12")}>
+                  {data.course.will_learns.map((learn) => (
+                    <li>{learn.content} </li>
+                  ))}
+                </ul>
               </div>
             </div>
             <div className={cx("course-content")}>
               <h6>Nội dung khóa học</h6>
               <div className={cx("course-detail-item")}>
-                {sectionNameList.map((sessionName) => (
-                  <div
-                    className={cx("course-detail-content")}
-                    key={sessionName.id}
-                  >
-                    <CourseSection
-                      sectionName={sessionName.sectionName}
-                      lessonList={sessionName.lessonList}
-                    />
-                  </div>
-                ))}
+                {/* {sectionNameList.map((sessionName) => (
+                 
+                ))} */}
+                <div className={cx("course-detail-content")}>
+                  <CourseSection tracks={data.course.tracks} />
+                </div>
               </div>
             </div>
           </div>
           <div className={cx("col", "s-12", "m-12", "l-4")}>
             <div className={cx("sidebar-course-detail")}>
-              <img
-                src="https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg"
-                alt=""
-              />
+              <img src={data.course.image_url} alt={data.course.slug} />
               <div className={cx("course-price")}>
                 <div className={cx("course-price-normal")}>
                   <span>
-                    500.000<sup>đ</sup>
+                    {new Intl.NumberFormat("de-DE").format(
+                      data.course.old_price
+                    )}
+                    <sup>đ</sup>
                   </span>
                 </div>
                 <div className={cx("course-price-sale")}>
                   <span>
-                    400.000<sup>đ</sup>
+                    {new Intl.NumberFormat("de-DE").format(data.course.price)}
+                    <sup>đ</sup>
                   </span>
                 </div>
               </div>
@@ -243,7 +328,7 @@ function CourseDetail(props) {
                   <li>
                     <p>Ghi danh:</p>
                     <p>
-                      <span> 10 học viên</span>
+                      <span> {data.course.students_count} học viên</span>
                     </p>
                   </li>
                   <li>
@@ -268,7 +353,7 @@ function CourseDetail(props) {
                   <li>
                     <p>Trình độ:</p>
                     <p>
-                      <span> Người mới bắt đầu</span>
+                      <span> {data.course.level.title}</span>
                     </p>
                   </li>
                 </ul>

@@ -22,7 +22,7 @@ function BlogItem(props) {
         </div>
         <div className={cx('row',"post-item-body")}>
           <div className={cx('col','s-12','m-12','l-8',"post-item-info")}>
-            <a href="/blog/lap-trinh-web-la-gi-ky-nang-nao-lap-trinh-vien-web-can-co.html">
+            <a href="!#">
               <h2 className={cx("post-item-title")}>{title}</h2>
             </a>
             <p className={cx("post-item-desc")}>{desc}</p>
@@ -41,7 +41,7 @@ function BlogItem(props) {
             </div>
           </div>
           <div className={cx('col','s-12','m-12', 'l-4',"post-item-thumb")}>
-            <a href="https://fullstack.edu.vn/blog/lap-trinh-web-la-gi-ky-nang-nao-lap-trinh-vien-web-can-co.html">
+            <a href="#!">
               <img src={image_url} alt={title} />
             </a>
           </div>

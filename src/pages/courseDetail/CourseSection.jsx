@@ -5,18 +5,37 @@ import CourseDetailItem from "./CourseDetailItem";
 const cx = classNames.bind(styles);
 CourseSection.propTypes = {};
 
-function CourseSection({  sectionName, lessonList }) {
-  
+function CourseSection({ tracks }) {
+  console.log(tracks);
+  function formatSeconds(seconds) {
+    var date = new Date(1970, 0, 1);
+    date.setSeconds(seconds);
+    return date.toTimeString().replace(/.*(\d{2}:\d{2}).*/, "$1");
+  }
   return (
     <>
-      <div className={cx("course-section")}>
-        <span>{sectionName}</span>
-        <a href="#!" className={cx("btn-preview")}>Xem trước</a>
-      </div>
-      <p>Bài học</p>
-
-      {lessonList.map((lesson) => (
-        <CourseDetailItem key={lesson.id} name={lesson.name} duration={lesson.duration} />
+      {tracks.map((track) => (
+        <>
+          <div className={cx("course-section")}>
+            <span>
+              Mục {track.position}. {track.title}
+            </span>
+            <a href="#!" className={cx("btn-preview")}>
+              Xem trước
+            </a>
+          </div>
+          {track.track_steps.map((track_steps) => (
+            <CourseDetailItem
+              key={track_steps.id}
+              name={track_steps.step.title}
+              duration={formatSeconds(track_steps.step.duration)}
+            />
+          ))}
+          {/* 
+          {lessonList.map((lesson) => (
+            <CourseDetailItem key={lesson.id} name={lesson.name} duration={lesson.duration} />
+          ))} */}
+        </>
       ))}
     </>
   );

@@ -1,14 +1,10 @@
-.container {
-
+.paginantion{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
-    h6 a {
-        font-size: 1.6rem;
-        font-weight: 600;
-        color: #f6ba35;
-    }
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+
 }
 .courses-list {
     display: flex;
@@ -47,7 +43,7 @@
             height: 185px;
         }
         .sticker-card {
-            display: inline-block;
+            width: 100%;
             position: absolute;
             z-index: 10;
             top: 174px;
@@ -59,8 +55,12 @@
 
     .card-body-global {
         flex: 1 1 auto;
-        min-height: 1px;
+        min-height: 50px;
         padding: 20px;
+        .card-description {
+            min-height: 85px;
+        }
+
         h6 {
             margin: 0 0 10px;
             font-size: 16px;
@@ -82,15 +82,16 @@
                 height: 40px;
                 width: 40px;
                 padding: 2px;
-                border-color: #f6ba35 transparent;
-                border-left: 1px solid transparent;
-                border-bottom: 1px solid #f6ba35;
-                border-right: 1px solid transparent;
-                border-top: 1px solid #f6ba35;
-                border-radius: 50%;
                 img {
+                    border-radius: 50%;
+                    border-color: #f6ba35 transparent;
+                    border-left: 1px solid transparent;
+                    border-bottom: 1px solid #f6ba35;
+                    border-right: 1px solid transparent;
+                    border-top: 1px solid #f6ba35;
                     width: 34px;
                     height: 34px;
+                    padding: 2px;
                 }
             }
         }
