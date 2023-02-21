@@ -410,6 +410,143 @@
         margin-left: 91.66667%;
     }
 }
+
+
+/* >= medium-large */
+@media (min-width: 1113px) and (max-width: 1481px) {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .col {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .ml-0 {
+        display: none;
+    }
+
+    .ml-1,
+    .ml-2,
+    .ml-3,
+    .ml-4,
+    .ml-5,
+    .ml-6,
+    .ml-7,
+    .ml-8,
+    .ml-9,
+    .ml-10,
+    .ml-11,
+    .ml-12 {
+        display: block;
+    }
+
+    .ml-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .ml-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    .ml-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .ml-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .ml-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .ml-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .ml-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .ml-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    .ml-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .ml-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
+    .ml-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+    .ml-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .ml-o-1 {
+        margin-left: 8.33333%;
+    }
+
+    .ml-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .ml-o-3 {
+        margin-left: 25%;
+    }
+
+    .ml-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .ml-o-5 {
+        margin-left: 41.66667%;
+    }
+
+    .ml-o-6 {
+        margin-left: 50%;
+    }
+
+    .ml-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .ml-o-8 {
+        margin-left: 66.66667%;
+    }
+
+    .ml-o-9 {
+        margin-left: 75%;
+    }
+
+    .ml-o-10 {
+        margin-left: 83.33333%;
+    }
+
+    .ml-o-11 {
+        margin-left: 91.66667%;
+    }
+}
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
     .wide {
@@ -417,7 +554,7 @@
     }
 }
 /* PC medium resolution > */
-@media (min-width: 1113px) {
+@media (min-width: 1239px) {
     .row {
         margin-left: -12px;
         margin-right: -12px;
@@ -574,7 +711,7 @@
 }
 
 /*  PC high resolution */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 1482px) {
     .wide {
         width: 984px;
     }

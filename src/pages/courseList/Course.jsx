@@ -57,7 +57,7 @@ function Course(props) {
         <TitleLayout title={"KHÓA HỌC"} />
         <div className={cx("wrapper")}>
           <div className={cx("row")}>
-            <div className={cx("col", "s-12", "m-4", "l-2", "filter-wrapper")}>
+            <div className={cx("col", "s-12",'m-4','ml-2', "l-2", "filter-wrapper")}>
               <div className={cx("nav-filter")}>
                 <h3>
                   <i classnamename="fa fa-book-open"></i>Lọc
@@ -125,7 +125,7 @@ function Course(props) {
               </div>
             </div>
             <div
-              className={cx("col", "s-12", "m-8", "l-10", "course-list-item")}
+              className={cx("col", "s-12",'m-8','ml-10', "l-10", "course-list-item")}
             >
               <CourseList />
             </div>

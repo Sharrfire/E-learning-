@@ -19,9 +19,9 @@ function Action() {
           <a className={cx("info")} href="/personalinfo">
             <img className={cx("avatar")} src={avatar} alt="" />
             <span onClick={handleLogout} className={cx("logout")}>
-              <a href="/">
+              {/* <a href="/"> */}
                 <i className="fas fa-power-off"></i>
-              </a>
+              {/* </a> */}
             </span>
           </a>
         </div>

@@ -13,8 +13,7 @@ function CourseList(props) {
   useEffect(() => {
     (async () => {
       const response = await courseApi.getAll({ _page: 1, _limit: 12 });
-      setcourseList([...response.data.data]);
- console.log(response)
+      setcourseList([...response.data]);
     })();
   }, []);
   let navigate = useNavigate();
@@ -28,8 +27,8 @@ function CourseList(props) {
         {courseList?.map((course) => (
           <div
             key={course.id}
-            className={cx("col", "s-12", "m-12", "l-3", "card-global-res")}
-            style={{ display: "flex" }}
+            className={cx("col", "s-12", "m-12",'ml-4', "l-3", "card-global-res")}
+            style={{ display: "flex",flex:'auto' }}
             onClick={handleCourseClick}
           >
             <div href="" className={cx("card-global")}>

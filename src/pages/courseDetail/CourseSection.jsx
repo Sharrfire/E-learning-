@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 CourseSection.propTypes = {};
 
 function CourseSection({ tracks }) {
-  console.log(tracks);
+  // console.log(tracks);
   function formatSeconds(seconds) {
     var date = new Date(1970, 0, 1);
     date.setSeconds(seconds);
@@ -15,8 +15,8 @@ function CourseSection({ tracks }) {
   return (
     <>
       {tracks.map((track) => (
-        <>
-          <div className={cx("course-section")}>
+        <div key={track.id}>
+          <div  className={cx("course-section")}>
             <span>
               Mục {track.position}. {track.title}
             </span>
@@ -24,18 +24,18 @@ function CourseSection({ tracks }) {
               Xem trước
             </a>
           </div>
-          {track.track_steps.map((track_steps) => (
+          {track.track_steps.map((track_step) => (
             <CourseDetailItem
-              key={track_steps.id}
-              name={track_steps.step.title}
-              duration={formatSeconds(track_steps.step.duration)}
+              key={track_step.track_id}
+              name={track_step.step.title}
+              duration={formatSeconds(track_step.step.duration)}
             />
           ))}
           {/* 
           {lessonList.map((lesson) => (
             <CourseDetailItem key={lesson.id} name={lesson.name} duration={lesson.duration} />
           ))} */}
-        </>
+        </div>
       ))}
     </>
   );

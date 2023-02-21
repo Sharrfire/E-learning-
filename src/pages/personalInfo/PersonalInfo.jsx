@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./personalInfo.module.scss";
 import classNames from "classnames/bind";
 import avatar from "~/assets/vendor/fallbackAvatar.jpg";
 import crown from "~/assets/vendor/crown.svg";
-import { Tabs } from "antd";
+import { Progress, Tabs } from "antd";
 import { useSelector } from "react-redux";
 import "./personalInfo.css";
+import styles from "./personalInfo.module.scss";
+
 const cx = classNames.bind(styles);
 
 export default function PersonalInfo() {
@@ -124,55 +125,44 @@ export default function PersonalInfo() {
               <div className={cx("col", "c-8", "skillAll")}>
                 <div className={cx("mySkill", "skillBtnHtml")}>
                   <button className={cx("skillBtnCustom")}>Html</button>
-                  <div className={cx("progress")}>
-                    <div
-                      className="progress-bar progress-bar-striped progress-bar-animated"
-                      role="progressbar"
-                      aria-valuenow={100}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: "100%" }}
-                    ></div>
-                  </div>
+                  <div className={cx("progress")}></div>
+                  <Progress
+                    className=""
+                    percent={100}
+                    status="active"
+                    size="large"
+                    strokeColor="#f9ca9a"  trailColor='#cccccc'
+                  />
                 </div>
                 <div className={cx("mySkill", "skillBtnCss")}>
                   <button className={cx("skillBtnCustom")}>Css</button>
-                  <div className={cx("progress")}>
-                    <div
-                      className="progress-bar progress-bar-striped progress-bar-animated"
-                      role="progressbar"
-                      aria-valuenow={75}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: "75%" }}
-                    ></div>
-                  </div>
+                  <div className={cx("progress")}></div>
+                  <Progress
+                    percent={75}
+                    status="active"
+                    size="large"
+                    strokeColor="#f8bebb"  trailColor='#cccccc'
+                  />
                 </div>
                 <div className={cx("mySkill", "skillBtnJs")}>
                   <button className={cx("skillBtnCustom")}>js</button>
-                  <div className={cx("progress")}>
-                    <div
-                      className="progress-bar progress-bar-striped progress-bar-animated"
-                      role="progressbar"
-                      aria-valuenow={50}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: "50%" }}
-                    ></div>
-                  </div>
+                  <div className={cx("progress")}></div>
+                  <Progress
+                    percent={75}
+                    status="active"
+                    size="large"
+                    strokeColor="#f0cc6b" trailColor='#cccccc'
+                  />
                 </div>
                 <div className={cx("mySkill", "skillBtnReact")}>
                   <button className={cx("skillBtnCustom")}>react</button>
-                  <div className={cx("progress")}>
-                    <div
-                      className="progress-bar progress-bar-striped progress-bar-animated"
-                      role="progressbar"
-                      aria-valuenow={25}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: "25%" }}
-                    ></div>
-                  </div>
+                  <div className={cx("progress")}></div>
+                  <Progress
+                    percent={75}
+                    status="active"
+                    size="large"
+                    strokeColor="#113d3c" trailColor='#cccccc'
+                  />
                 </div>
               </div>
               <div className={cx("col", "c-4")}>

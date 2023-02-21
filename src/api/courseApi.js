@@ -1,27 +1,24 @@
 import axiosClient from './axiosClient';
 const productApi = {
   async getAll(params) {
-    // Transform _page to _start
-    const newParams = { ...params };
-    newParams._start = !params._page || params._page <= 1 ? 0 : (params._page - 1) * (params._limit || 50);
-    // Remove un-needed key
-    delete newParams._page;
-    // Fetch product list + count
-    const productList = await axiosClient.get('/coursesList.json', { params: newParams });
-    const count = await axiosClient.get('/courseList/page.json', { params: newParams });
+    const newParams = { ...params, };
+    newParams._page > 0 ? newParams._page = newParams._page - 1 : newParams._page = 0
+    const productList = await axiosClient.get(`/courseList/page/${newParams._page}.json `);
+    const totalPage = await axiosClient.get('/courseList.json', { params: newParams });
     // Build response and return
     return {
-      data: productList,
+      data: productList.data.items,
       pagination: {
         page: params._page,
         limit: params._limit,
-        total: count
+        totalPage: totalPage.data.page.length
       }
     };
   },
 
   get(id) {
-    const url = `/courses/${id}`;
+    id > 0 ? id = id - 1 : id = 0
+    const url = `/coursesList/${id}.json`;
     return axiosClient.get(url);
   },
 

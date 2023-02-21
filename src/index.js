@@ -6,7 +6,6 @@ import GlobalStyle from './components/GlobalStyle';
 import { Provider } from 'react-redux';
 import store from './app/store';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';  
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 

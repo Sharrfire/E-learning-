@@ -23,16 +23,20 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/detail"
-          element={
-            <>
-              <Header />
-              <CourseDetail />
-              <Footer />
-            </>
-          }
-        />
+        <Route path="/detail">
+          <Route
+            path=":courseId"
+            element={
+              <>
+                <Header />
+                <CourseDetail />
+                <Footer />
+              </>
+            }
+          />
+        </Route>
+
+
         <Route
           path="/about"
           element={
