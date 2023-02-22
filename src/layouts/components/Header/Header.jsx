@@ -17,7 +17,8 @@ export default function Header() {
     (async () => {
       const response = await fetch(BASE_URL + "cate.json");
       var cateListData = await response.json();
-      setCateList([...cateListData.data]);
+      setCateList([...cateListData]);
+      // console.log(cateListData)
     })();
   }, []);
 
@@ -47,16 +48,17 @@ export default function Header() {
               <ul className={cx("item-list")}>
                 {cateList.map((cate, index) => (
                   <li key={index}>
-                    <a href="#!">{cate.tenDanhMuc}</a>
+                    <a href="#!">{cate.categoryName}</a>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
           <li className={cx("header-item")}>
-            <a className={cx("header-item-link")} href="#!">
-              Khóa học
-            </a>
+      
+            <Link className={cx("header-item-link")} to="/courseList">
+            Khóa học
+            </Link>
           </li>
           <li className={cx("header-item")}>
             <Link className={cx("header-item-link")} to="/blog">

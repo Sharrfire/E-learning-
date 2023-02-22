@@ -1,24 +1,16 @@
 // import { Pagination } from "@mui/material";
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./courseList.module.scss";
-import courseApi from "~/api/courseApi";
+
 const cx = classNames.bind(styles);
 CourseList.propTypes = {};
 
-function CourseList(props) {
-  const [courseList, setcourseList] = useState([]);
+function CourseList({courseList}) {
 
-  useEffect(() => {
-    (async () => {
-      const response = await courseApi.getAll({ _page: 1, _limit: 12 });
-      setcourseList([...response.data]);
-    })();
-  }, []);
   let navigate = useNavigate();
-  const handleCourseClick = () => {
-    let path = `/detail`;
+  const handleCourseClick = (id) => {
+    let path = `/detail/${id}`;
     navigate(path);
   };
   return (
@@ -36,7 +28,7 @@ function CourseList(props) {
               "card-global-res"
             )}
             style={{ display: "flex", flex: "auto" }}
-            onClick={handleCourseClick}
+            onClick={()=>handleCourseClick(course.id)}
           >
             <div href="" className={cx("card-global")}>
               <img src={course.image_url} alt={course.title} />

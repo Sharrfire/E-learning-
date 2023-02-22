@@ -5,7 +5,8 @@ import TitleLayout from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./course.module.scss";
 import CourseFilter from "./CourseFilter";
 import CourseList from "./CourseList";
-
+import { useEffect, useState } from "react";
+import courseApi from "~/api/courseApi";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -25,6 +26,14 @@ const cx = classNames.bind(styles);
 Course.propTypes = {};
 
 function Course(props) {
+  const [courseList, setcourseList] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await courseApi.getAll({ _page: 1, _limit: 12 });
+      setcourseList([...response.data]);
+    })();
+  }, []);
 
   const star = <i className="fa fa-star"></i>;
   const star2 = (
@@ -127,7 +136,7 @@ function Course(props) {
             <div
               className={cx("col", "s-12",'m-8','ml-10', "l-10", "course-list-item")}
             >
-              <CourseList />
+              <CourseList  courseList={courseList}/>
             </div>
           </div>
         </div>
