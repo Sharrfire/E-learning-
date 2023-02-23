@@ -63,7 +63,6 @@
     }
     li:hover a {
       color: var(--primary-color);
-
     }
   }
 
@@ -71,14 +70,14 @@
   .event-list-container {
     display: none;
     background-color: #fff;
-    animation: slideIn .5s  ;
+    animation: slideIn 0.5s;
 
     // box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
     // -webkit-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
-    // -moz-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);  
-    box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
-    -webkit-box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
-    -moz-box-shadow: 3px 1px 9px 7px rgba(0,0,0,0.06);
+    // -moz-box-shadow: -1px 26px 44px 12px rgba(0,0,0,0.1);
+    box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
   }
   .item-list-container {
@@ -98,16 +97,94 @@
     }
   }
 }
-
+.courses {
+  margin-right: 16px;
+  position: relative;
+}
+.myCourses-wrapper,
+.notification-wrapper {
+  background: #fff;
+  padding: 5px 5px 5px 5px;
+  display: block;
+  min-height: 400px;
+  min-width: 380px;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+.notification {
+  margin-top: 5px;
+  text-align: center;
+  padding: 8px 0;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #707070;
+  font-size: 2rem;
+  .notification-icon {
+    width: 17.5px;
+    height: 20px;
+    font-size: 2rem;
+  }
+}
+.wrapper {
+  margin-left: 12px;
+  .avatar {
+    --font-size: 3.2px;
+  }
+  img {
+    border-radius: 50%;
+    height: 30px;
+    object-fit: cover;
+    width: 30px;
+  }
+}
+.courses {
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-right: 16px;
+  padding: 8px;
+  i{
+    font-size: 2.5rem;
+  }
+}
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .courses,
+  .notification,
+  .avatar {
+    padding: 8px;
+    cursor: pointer;
+  }
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: -99;
+  cursor: default;}
 @keyframes slideIn {
-	0% {
-		transform: translateX(-20%);
+  0% {
+    transform: translateX(-20%);
     opacity: 0;
-	}
+  }
 
-	100% {
-		transform: translateX(0);
+  100% {
+    transform: translateX(0);
     opacity: 1;
-
-	}
+  }
 }

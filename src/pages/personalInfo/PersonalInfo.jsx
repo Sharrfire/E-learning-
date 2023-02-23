@@ -122,7 +122,7 @@ export default function PersonalInfo() {
           <div className={cx("userInfoBot")}>
             <h4>Kĩ năng của tôi</h4>
             <div className={cx("row")}>
-              <div className={cx("col", "c-8", "skillAll")}>
+              <div className={cx("col", "c-8", "skillAll","m-6")}>
                 <div className={cx("mySkill", "skillBtnHtml")}>
                   <button className={cx("skillBtnCustom")}>Html</button>
                   <div className={cx("progress")}></div>
@@ -165,7 +165,7 @@ export default function PersonalInfo() {
                   />
                 </div>
               </div>
-              <div className={cx("col", "c-4")}>
+              <div className={cx("col", "c-4","m-6")}>
                 <div className={cx("study_time")}>
                   <div className={cx("study_time-item")}>
                     <i className="fas fa-user-clock"></i>

@@ -20,7 +20,13 @@ export default function Header() {
       setCateList([...cateListData.data]);
     })();
   }, []);
-
+  const [openCourses, setOpenCourses] = useState(false);
+  const handleOpenCourses = () => {
+    setOpenCourses(!openCourses);
+  };
+  const handleCloseCourses = () => {
+    setOpenCourses(false);
+  };
   return (
     <div className={cx("header")}>
       <div className={cx("header-left")}>
@@ -88,6 +94,37 @@ export default function Header() {
           </li>
         </ul>
       </div>
+      <div className={cx("action")}>
+          <div className={cx("courses")} onClick={handleOpenCourses}>
+          <i className="fa fa-bars"></i>
+            {openCourses && (
+              <>
+                <div
+                  className={cx("overlay")}
+                  onClick={handleCloseCourses}
+                ></div>
+                <div className={cx("myCourses-wrapper")}>
+                  <div className={cx("courses-list")}>
+                    <div className={cx("courses-item")}>
+                      <ul>
+                        <li>
+                          <a href="#">Danh mục</a>
+                          <div>
+                            <ul></ul>
+                          </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
       <div className={cx("header-right")}>
         <Action />
       </div>
