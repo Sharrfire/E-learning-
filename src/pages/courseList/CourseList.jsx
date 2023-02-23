@@ -1,13 +1,13 @@
 // import { Pagination } from "@mui/material";
-import classNames from "classnames/bind";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames/bind";
 import styles from "./courseList.module.scss";
+import CourseSkeletonList from "./CourseSkeletonList";
 
 const cx = classNames.bind(styles);
 CourseList.propTypes = {};
 
-function CourseList({courseList}) {
-
+function CourseList({ courseList }) {
   let navigate = useNavigate();
   const handleCourseClick = (id) => {
     let path = `/detail/${id}`;
@@ -74,7 +74,9 @@ function CourseList({courseList}) {
               </div>
             </div>
           </div>
+
         ))}
+     
       </div>
     </div>
   );

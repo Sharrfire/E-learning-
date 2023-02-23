@@ -1,12 +1,11 @@
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import avatar from "~/assets/vendor/instrutor5.2e4bd1e6.jpg";
+import courseApi from "~/api/courseApi";
 import { halfStar, star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
-import courseApi from "~/api/courseApi";
 
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
@@ -42,10 +41,10 @@ function CourseDetail(props) {
 
   useEffect(() => {
     (async () => {
-      const response = await courseApi.get(courseId);
-      setCourseDetail({ ...response.data });
+      const {data} = await courseApi.get(courseId);
+      setCourseDetail(data );
     })();
-  }, []);
+  }, [courseId]);
 
   const handleLogin = () => {
     let path = `/login`;
@@ -117,9 +116,7 @@ function CourseDetail(props) {
               <div className={cx("course-content")}>
                 <h6>Nội dung khóa học</h6>
                 <div className={cx("course-detail-item")}>
-                  {/* {sectionNameList.map((sessionName) => (
-                 
-                ))} */}
+               
                   <div className={cx("course-detail-content")}>
                     <CourseSection tracks={courseDetail.tracks} />
                   </div>
