@@ -1,8 +1,7 @@
 // import { Pagination } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
+import { useNavigate } from "react-router-dom";
 import styles from "./courseList.module.scss";
-import CourseSkeletonList from "./CourseSkeletonList";
 
 const cx = classNames.bind(styles);
 CourseList.propTypes = {};

@@ -65,7 +65,7 @@ export default function Header() {
               Blog
             </Link>
           </li>
-          <li className={cx("header-item")}>
+          {/* <li className={cx("header-item")}>
             <a className={cx("header-item-link")} href="#!">
               Sự kiện
             </a>
@@ -82,7 +82,7 @@ export default function Header() {
                 </li>
               </ul>
             </div>
-          </li>
+          </li> */}
           <li className={cx("header-item")}>
             <Link className={cx("header-item-link")} to="/about">
               Thông tin
