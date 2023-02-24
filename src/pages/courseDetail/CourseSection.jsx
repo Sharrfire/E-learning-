@@ -1,7 +1,5 @@
-import React from "react";
 import classNames from "classnames/bind";
 import styles from "./courseSection.module.scss";
-import CourseDetailItem from "./CourseDetailItem";
 const cx = classNames.bind(styles);
 CourseSection.propTypes = {};
 
@@ -16,7 +14,7 @@ function CourseSection({ tracks }) {
     <>
       {tracks.map((track) => (
         <div key={track.id}>
-          <div  className={cx("course-section")}>
+          <div className={cx("course-section")}>
             <span>
               Mục {track.position}. {track.title}
             </span>
@@ -25,11 +23,16 @@ function CourseSection({ tracks }) {
             </a>
           </div>
           {track.track_steps.map((track_step) => (
-            <CourseDetailItem
-              key={track_step.track_id}
-              name={track_step.step.title}
-              duration={formatSeconds(track_step.step.duration)}
-            />
+            <div className={cx("lesson-content")}>
+              <span>
+                <i className="fa fa-play"></i>
+                {track_step.step.title}
+              </span>
+              <span>
+                <i className="fa fa-clock"></i>
+                {formatSeconds(track_step.step.duration)}
+              </span>
+            </div>
           ))}
           {/* 
           {lessonList.map((lesson) => (

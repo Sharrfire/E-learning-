@@ -1,12 +1,14 @@
-import { Pagination } from "@mui/material";
 import classNames from "classnames/bind";
 
 import TitleLayout from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./course.module.scss";
 import CourseFilter from "./CourseFilter";
 import CourseList from "./CourseList";
-
+import { useEffect, useState } from "react";
+import courseApi from "~/api/courseApi";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Pagination } from "@mui/material";
+import CourseSkeletonList from "./CourseSkeletonList";
 
 const theme = createTheme({
   palette: {
@@ -25,8 +27,28 @@ const cx = classNames.bind(styles);
 Course.propTypes = {};
 
 function Course(props) {
+  const [courseList, setcourseList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const star = <i className="fa fa-star"></i>;
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await courseApi.getAll({ _page: 1, _limit: 12 });
+        setcourseList(data);
+        setLoading(false);
+      } catch (error) {
+        console.log("Falied to fetch course list", error);
+      }
+    })();
+  }, []);
+
+  const pageCount = () => {
+    if (courseList.length / 12 === 0) return courseList.length / 12;
+    else return courseList.length / 12 + 1;
+  };
+
+  const star =  <i className="fa fa-star"></i>;
+  
   const star2 = (
     <>
       {star}
@@ -57,7 +79,16 @@ function Course(props) {
         <TitleLayout title={"KHÓA HỌC"} />
         <div className={cx("wrapper")}>
           <div className={cx("row")}>
-            <div className={cx("col", "s-12",'m-4','ml-2', "l-2", "filter-wrapper")}>
+            <div
+              className={cx(
+                "col",
+                "s-12",
+                "m-4",
+                "ml-2",
+                "l-2",
+                "filter-wrapper"
+              )}
+            >
               <div className={cx("nav-filter")}>
                 <h3>
                   <i classnamename="fa fa-book-open"></i>Lọc
@@ -125,15 +156,28 @@ function Course(props) {
               </div>
             </div>
             <div
-              className={cx("col", "s-12",'m-8','ml-10', "l-10", "course-list-item")}
+              className={cx(
+                "col",
+                "s-12",
+                "m-8",
+                "ml-10",
+                "l-10",
+                "course-list-item"
+              )}
             >
-              <CourseList />
+              {loading?<CourseSkeletonList length={12}/>:<CourseList courseList={courseList}/> }
+         
             </div>
           </div>
         </div>
-        <div className={cx('pagination')}>
+        <div className={cx("pagination")}>
           <ThemeProvider theme={theme}>
-            <Pagination color="primary" count={3} page={2} size="large" />
+            <Pagination
+              color="primary"
+              count={pageCount()}
+              page={1}
+              size="large"
+            />
           </ThemeProvider>
         </div>
       </section>

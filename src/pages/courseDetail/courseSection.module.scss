@@ -19,3 +19,15 @@
       }
     }
   }
+  .lesson-content {
+    margin-top: 4px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 2px 1px rgb(239 244 190 / 27%);
+    i {
+        color: var(--primary-color);
+        margin-right: 10px;
+    }
+}
