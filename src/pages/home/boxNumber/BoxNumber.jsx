@@ -19,7 +19,7 @@ function BoxNumber() {
     >
       <div className={cx("boxNumberContainer")}>
         <div className={cx("row")}>
-          <div className={cx("col", "s-12", "m-6", "l-3", "wide", "p-4")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3", "wide", "p-4")}>
             <div className={cx("boxNumber")}>
               <div>
                 <img className={cx("boxNumberImg")} src={studentImg} alt="" />
@@ -34,7 +34,7 @@ function BoxNumber() {
               <p className={cx("textNumberTitle")}>Học viên</p>
             </div>
           </div>
-          <div className={cx("col", "s-12", "m-6", "l-3", "wide", "p-4")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3", "wide", "p-4")}>
             <div className={cx("boxNumber")}>
               <div>
                 <img className={cx("boxNumberImg")} src={timeImg} alt="" />
@@ -49,7 +49,7 @@ function BoxNumber() {
               <p className={cx("textNumberTitle")}>Khóa Học</p>
             </div>
           </div>
-          <div className={cx("col", "s-12", "m-6", "l-3", "wide", "p-4")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3", "wide", "p-4")}>
             <div className={cx("boxNumber")}>
               <div>
                 <img className={cx("boxNumberImg")} src={hourglassImg} alt="" />
@@ -64,7 +64,7 @@ function BoxNumber() {
               <p className={cx("textNumberTitle")}>Giờ Học</p>
             </div>
           </div>
-          <div className={cx("col", "s-12", "m-6", "l-3", "wide", "p-4")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3", "wide", "p-4")}>
             <div className={cx("boxNumber")}>
               <div>
                 <img className={cx("boxNumberImg")} src={teacherImg} alt="" />
