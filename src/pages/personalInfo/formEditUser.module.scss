@@ -1,0 +1,54 @@
+.formEditUser {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  justify-content: center;
+  gap: 20px;
+  h3{
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+
+  }
+  label{
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.6rem;
+  } 
+  .inputEditUser {
+    background: #eee;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 6px;
+    &:focus {
+      outline: 2px solid var(--primary-color);
+    }
+  }
+  .btn{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+
+    button {
+      &:nth-of-type(2){
+        background: var(--invalid-color);
+        border:1px solid var(--invalid-color) ;
+      }
+      border-radius: 20px;
+      border: 1px solid var(--button-color);
+      background: var(--button-color);
+      color: var(--white-color);
+      font-size: 12px;
+      font-weight: bold;
+      padding: 12px 45px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: transform 80ms ease-in;
+      width: 40%;
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

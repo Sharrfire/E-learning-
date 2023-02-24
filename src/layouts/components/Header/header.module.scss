@@ -39,9 +39,8 @@
   .header-item a {
     color: #000;
   }
-  .header-menu{
+  .header-menu {
     transform: translateX(-33%);
-
   }
   .header-list,
   .item-list {
@@ -94,6 +93,7 @@
   }
   .header-menu {
     .header-item:hover .header-item-link {
+      cursor: pointer;
       color: var(--primary-color);
     }
     .header-item:hover .item-list-container {
@@ -101,17 +101,17 @@
     }
   }
 }
-.courses {
+.menuMobile {
   margin-right: 16px;
   position: relative;
 }
-.myCourses-wrapper,
+.menuMobile-wrapper,
 .notification-wrapper {
   background: #fff;
   padding: 5px 5px 5px 5px;
   display: block;
-  min-height: 400px;
-  min-width: 380px;
+  min-height: 220px;
+  min-width: 180px;
   position: absolute;
   top: 32px;
   right: 0;
@@ -148,7 +148,7 @@
     width: 30px;
   }
 }
-.courses {
+.menuMobile  {
   background-color: transparent;
   color: #333;
   cursor: pointer;
@@ -156,22 +156,13 @@
   font-weight: 500;
   margin-right: 16px;
   padding: 8px;
-  i{
+  display: none;
+  i {
     font-size: 2.5rem;
   }
 }
-.action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .courses,
-  .notification,
-  .avatar {
-    padding: 8px;
-    cursor: pointer;
-  }
-}
-.overlay{
+
+.overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -180,7 +171,22 @@
   align-items: center;
   justify-content: center;
   z-index: -99;
-  cursor: default;}
+  cursor: default;
+}
+
+
+
+.menuMobile-wrapper {
+  animation: slideIn 1s ease-in-out;
+  width: 100%;
+  text-align: center;
+  .header-list {
+    flex-direction: column;
+    margin: 15px 0;
+    }
+  }
+
+
 @keyframes slideIn {
   0% {
     transform: translateX(-20%);
@@ -191,4 +197,14 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+// mobile 
+@media screen and (max-width: 46.1875em) {
+  .header-menu{
+    display: none;
+  }
+  .menuMobile{
+    display: block;
+  }
+
 }

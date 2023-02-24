@@ -6,10 +6,19 @@ import { Progress, Tabs } from "antd";
 import { useSelector } from "react-redux";
 import "./personalInfo.css";
 import styles from "./personalInfo.module.scss";
-
+import { Modal } from "antd";
+import { useState } from "react";
+import FormEditUser from "./FormEditUser";
 const cx = classNames.bind(styles);
 
 export default function PersonalInfo() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const user = useSelector((state) => {
     return state.userSlice.userInfor;
   });
@@ -86,7 +95,7 @@ export default function PersonalInfo() {
               <span>{user.hoTen}</span>
             </div>
           </div>
-          <div className={cx("bg_btn-change")}>
+          <div onClick={showModal} className={cx("bg_btn-change")}>
             <svg
               aria-hidden="true"
               focusable="false"
@@ -104,6 +113,13 @@ export default function PersonalInfo() {
             </svg>
             Chỉnh sửa thông tin
           </div>
+          <Modal
+            footer
+            open={isModalOpen}
+            onCancel={handleCancel}
+          >
+            <FormEditUser />
+          </Modal>
         </div>
         <div className={cx("profile_container")}>
           <div>
@@ -122,7 +138,7 @@ export default function PersonalInfo() {
           <div className={cx("userInfoBot")}>
             <h4>Kĩ năng của tôi</h4>
             <div className={cx("row")}>
-              <div className={cx("col", "c-8", "skillAll","m-6")}>
+              <div className={cx("col", "c-8", "skillAll", "m-6")}>
                 <div className={cx("mySkill", "skillBtnHtml")}>
                   <button className={cx("skillBtnCustom")}>Html</button>
                   <div className={cx("progress")}></div>
@@ -131,7 +147,8 @@ export default function PersonalInfo() {
                     percent={100}
                     status="active"
                     size="large"
-                    strokeColor="#f9ca9a"  trailColor='#cccccc'
+                    strokeColor="#f9ca9a"
+                    trailColor="#cccccc"
                   />
                 </div>
                 <div className={cx("mySkill", "skillBtnCss")}>
@@ -141,7 +158,8 @@ export default function PersonalInfo() {
                     percent={75}
                     status="active"
                     size="large"
-                    strokeColor="#f8bebb"  trailColor='#cccccc'
+                    strokeColor="#f8bebb"
+                    trailColor="#cccccc"
                   />
                 </div>
                 <div className={cx("mySkill", "skillBtnJs")}>
@@ -151,7 +169,8 @@ export default function PersonalInfo() {
                     percent={75}
                     status="active"
                     size="large"
-                    strokeColor="#f0cc6b" trailColor='#cccccc'
+                    strokeColor="#f0cc6b"
+                    trailColor="#cccccc"
                   />
                 </div>
                 <div className={cx("mySkill", "skillBtnReact")}>
@@ -161,11 +180,12 @@ export default function PersonalInfo() {
                     percent={75}
                     status="active"
                     size="large"
-                    strokeColor="#113d3c" trailColor='#cccccc'
+                    strokeColor="#113d3c"
+                    trailColor="#cccccc"
                   />
                 </div>
               </div>
-              <div className={cx("col", "c-4","m-6")}>
+              <div className={cx("col", "c-4", "m-6")}>
                 <div className={cx("study_time")}>
                   <div className={cx("study_time-item")}>
                     <i className="fas fa-user-clock"></i>

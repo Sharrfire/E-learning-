@@ -61,9 +61,8 @@ export default function Header() {
             </div>
           </li>
           <li className={cx("header-item")}>
-      
             <Link className={cx("header-item-link")} to="/courseList">
-            Khóa học
+              Khóa học
             </Link>
           </li>
           <li className={cx("header-item")}>
@@ -71,24 +70,6 @@ export default function Header() {
               Blog
             </Link>
           </li>
-          {/* <li className={cx("header-item")}>
-            <a className={cx("header-item-link")} href="#!">
-              Sự kiện
-            </a>
-            <div className={cx("item-list-container")}>
-              <ul className={cx("item-list")}>
-                <li>
-                  <a href="#!">Sự kiện sale backfriday</a>
-                </li>
-                <li>
-                  <a href="#!">Sự kiện sale noel</a>
-                </li>
-                <li>
-                  <a href="#!">Sự kiện sale Tết</a>
-                </li>
-              </ul>
-            </div>
-          </li> */}
           <li className={cx("header-item")}>
             <Link className={cx("header-item-link")} to="/about">
               Thông tin
@@ -96,37 +77,58 @@ export default function Header() {
           </li>
         </ul>
       </div>
-      <div className={cx("action")}>
-          <div className={cx("courses")} onClick={handleOpenCourses}>
+        <div className={cx("menuMobile")} onClick={handleOpenCourses}>
+          
           <i className="fa fa-bars"></i>
-            {openCourses && (
-              <>
-                <div
-                  className={cx("overlay")}
-                  onClick={handleCloseCourses}
-                ></div>
-                <div className={cx("myCourses-wrapper")}>
-                  <div className={cx("courses-list")}>
-                    <div className={cx("courses-item")}>
-                      <ul>
-                        <li>
-                          <a href="#">Danh mục</a>
-                          <div>
-                            <ul></ul>
-                          </div>
-                        </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                      </ul>
-                    </div>
+          {openCourses && (
+            <>
+              <div className={cx("overlay")} onClick={handleCloseCourses}></div>
+              <div className={cx("menuMobile-wrapper")}>
+                <div className={cx("courses-list")}>
+                  <div className={cx("courses-item")}>
+                    <ul className={cx("header-list")}>
+                      <li className={cx("header-item")}>
+                        <label htmlFor="nav-mobile-input"></label>
+                          <a href="#!" className={cx("header-item-link")}
+                           >
+                            Danh mục{" "}
+                          </a>
+                        <div className={cx("item-list-container")}>
+                          <ul className={cx("item-list")}>
+                            {cateList.map((cate, index) => (
+                              <li key={index}>
+                                <a href="#!">{cate.categoryName}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                      <li className={cx("header-item")}>
+                        <Link
+                          className={cx("header-item-link")}
+                          to="/courseList"
+                        >
+                          Khóa học
+                        </Link>
+                      </li>
+                      <li className={cx("header-item")}>
+                        <Link className={cx("header-item-link")} to="/blog">
+                          Blog
+                        </Link>
+                      </li>
+                      <li className={cx("header-item")}>
+                        <Link className={cx("header-item-link")} to="/about">
+                          Thông tin
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              </>
-            )}
-          </div>
+              </div>
+            </>
+          )}
         </div>
+      
       <div className={cx("header-right")}>
         <Action />
       </div>
