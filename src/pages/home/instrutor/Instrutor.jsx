@@ -74,7 +74,7 @@ export default function Instrutor() {
             {instrutorList.map((instructor, index) => (
               <div
                 key={index}
-                className={cx("col", "s-12", "m-6", "l-2", "item")}
+                className={cx("col", "s-12", "m-6","ml-2", "l-2", "item")}
               >
                 <div className={cx("item-content")}>
                   <img src={instructor.img} alt="i1" />

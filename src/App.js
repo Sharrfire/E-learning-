@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./features/Auth/components/login-register/Login";
 import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
@@ -10,6 +10,8 @@ import Home from "./pages/home/Home";
 import PersonalInfo from "./pages/personalInfo/PersonalInfo";
 
 function App() {
+  const userName = localStorage.getItem("USER_LOGIN");
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -35,8 +37,6 @@ function App() {
             }
           />
         </Route>
-
-
         <Route
           path="/about"
           element={
@@ -68,7 +68,10 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/PersonalInfo" element={<PersonalInfo />} />
+        {userName && <Route path="/PersonalInfo" element={<PersonalInfo />} />}
+        {!userName && (
+          <Route path="/PersonalInfo" element={<Navigate replace to="/" />} />
+        )}
       </Routes>
     </BrowserRouter>
   );

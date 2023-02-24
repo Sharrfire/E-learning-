@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 export default function SliderHome() {
   return (
     <div className={cx("sliderHome")}>
-        <div className={cx("col","l-6","sloganBox")}>
+        <div className={cx("col",'m-6','ml-6',"l-6","sloganBox")}>
             <div className={cx("triangleTopRight")}></div>
             <div className={cx("smallBox","smallBoxLeftTop")}></div>
             <div className={cx("smallBox","smallBoxRightTop")}></div>
@@ -27,7 +27,7 @@ export default function SliderHome() {
                 <button className={cx("btnSlider")}>Cùng học nào!</button>
             </div> 
         </div>
-        <div className={cx("col",'m-6',"l-6")}>
+        <div className={cx("col",'m-6','ml-6',"l-6")}>
           <div className={cx("sliderRight")}>
             <dir>
               <img className={cx("sliderMainImg")} src={sliderImg} alt="" />
