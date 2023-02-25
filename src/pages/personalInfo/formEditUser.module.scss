@@ -4,17 +4,16 @@
   padding: 10px 20px;
   justify-content: center;
   gap: 20px;
-  h3{
+  h3 {
     font-weight: 700;
     font-size: 1.8rem;
     text-align: center;
-
   }
-  label{
+  label {
     margin-bottom: 5px;
     font-weight: 500;
     font-size: 1.6rem;
-  } 
+  }
   .inputEditUser {
     background: #eee;
     border: none;
@@ -25,15 +24,22 @@
       outline: 2px solid var(--primary-color);
     }
   }
-  .btn{
+  .error {
+    margin-top: 5px;
+    text-align: left;
+    color: rgba(240, 23, 23, 0.835);
+    width: 100%;
+    font-size: 10px;
+  }
+  .btn {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
 
     button {
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         background: var(--invalid-color);
-        border:1px solid var(--invalid-color) ;
+        border: 1px solid var(--invalid-color);
       }
       border-radius: 20px;
       border: 1px solid var(--button-color);

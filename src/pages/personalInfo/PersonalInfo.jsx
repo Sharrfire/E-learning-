@@ -32,12 +32,12 @@ export default function PersonalInfo() {
             <div className={cx("col", "c-7")}>
               <div>
                 <p>
-                  Email:
-                  <span>{user.email}</span>
-                </p>
-                <p>
                   Họ và Tên:
                   <span>{user.hoTen}</span>
+                </p>
+                <p>
+                  Email:
+                  <span>{user.email}</span>
                 </p>
                 <p>
                   Số điện thoại:
@@ -113,11 +113,7 @@ export default function PersonalInfo() {
             </svg>
             Chỉnh sửa thông tin
           </div>
-          <Modal
-            footer
-            open={isModalOpen}
-            onCancel={handleCancel}
-          >
+          <Modal footer open={isModalOpen} onCancel={handleCancel}>
             <FormEditUser />
           </Modal>
         </div>
