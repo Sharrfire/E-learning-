@@ -5,9 +5,9 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-myCourse.propTypes = {};
+MyCourseList.propTypes = {};
 
-function myCourse(props) {
+function MyCourseList(props) {
   return (
     <div className={cx("my-courses")}>
       {/* <p>
@@ -55,4 +55,4 @@ function myCourse(props) {
   );
 }
 
-export default myCourse;
+export default MyCourseList;

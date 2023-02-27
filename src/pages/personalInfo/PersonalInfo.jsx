@@ -1,27 +1,31 @@
-import React from "react";
-import classNames from "classnames/bind";
-import avatar from "~/assets/vendor/fallbackAvatar.jpg";
-import crown from "~/assets/vendor/crown.svg";
-import { Progress, Tabs } from "antd";
-import { useSelector } from "react-redux";
 import "./personalInfo.css";
 import styles from "./personalInfo.module.scss";
+import MyCourseList from "./MyCourseList";
+import { Progress, Tabs } from "antd";
+import classNames from "classnames/bind";
+import crown from "~/assets/vendor/crown.svg";
+import avatar from "~/assets/vendor/fallbackAvatar.jpg";
+// import { useSelector } from "react-redux";
 import { Modal } from "antd";
 import { useState } from "react";
+import { USER_LOGIN } from "~/api/userLocal";
 import FormEditUser from "./FormEditUser";
+
 const cx = classNames.bind(styles);
 
 export default function PersonalInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [courseList, setCourseList] = useState([]);
   const showModal = () => {
     setIsModalOpen(true);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  const user = useSelector((state) => {
-    return state.userSlice.userInfor;
-  });
+  // const user = useSelector((state) => {
+  //   return state.userSlice.userInfor;
+  // });
+  const user = JSON.parse(localStorage.getItem(USER_LOGIN));
   const items = [
     {
       key: "1",
@@ -69,14 +73,19 @@ export default function PersonalInfo() {
       key: "2",
       label: `Khóa học của tôi`,
       children: (
-        <p
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "400",
-          }}
-        >
-          Bạn chưa tham gia khóa học nào!
-        </p>
+        <>
+          <p
+            style={{
+              padding: "10px 0 ",
+              fontSize: "1.6rem",
+              fontWeight: 500,
+            }}
+          >
+            <span>Các khóa học đã đăng ký</span>
+          </p>
+          <MyCourseList courseList={courseList}/>
+          <MyCourseList courseList={courseList}/>
+        </>
       ),
     },
   ];
@@ -128,6 +137,7 @@ export default function PersonalInfo() {
               type="card"
               size="large"
               defaultActiveKey="1"
+              tabBarStyle={{}}
               items={items}
             />
           </div>

@@ -1,13 +1,13 @@
 import classNames from "classnames/bind";
 
+import { Pagination } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useEffect, useState } from "react";
+import courseApi from "~/api/courseApi";
 import TitleLayout from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./course.module.scss";
 import CourseFilter from "./CourseFilter";
 import CourseList from "./CourseList";
-import { useEffect, useState } from "react";
-import courseApi from "~/api/courseApi";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Pagination } from "@mui/material";
 import CourseSkeletonList from "./CourseSkeletonList";
 
 const theme = createTheme({

@@ -1,10 +1,9 @@
-.paginantion{
+.paginantion {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     margin: 0 auto;
-
 }
 .courses-list {
     display: flex;
@@ -12,17 +11,15 @@
     padding: 0 12px 24px;
     align-items: center;
     margin: 24px -15px;
-
 }
 .card-global-res {
     display: flex;
     justify-content: center;
     padding: 0 15px;
-    margin-top: 24px;
-    
-    cursor: pointer;
-    
+    margin: 24px 0;
+
     .card-global {
+        cursor: pointer;
         position: relative;
         display: flex;
         flex-direction: column;

@@ -1,4 +1,3 @@
-
 .personalInfo {
   flex: 1 1;
   max-width: 100%;
@@ -32,14 +31,14 @@
             padding: 12px;
             background: linear-gradient(180deg, #ffd900, #b45264 93.68%);
             font-size: 17.2px;
-              border-radius: 50%;
-            .avatar{
+            border-radius: 50%;
+            .avatar {
               border-radius: 50%;
               height: 9em;
               width: 9em;
               object-fit: cover;
             }
-            .crown{
+            .crown {
               position: absolute;
               top: -0.2em;
               right: -2em;
@@ -48,7 +47,7 @@
             }
           }
         }
-        .profile_user-name{
+        .profile_user-name {
           font-size: 28px;
           font-weight: 700;
           margin-bottom: 16px;
@@ -56,7 +55,7 @@
           text-align: center;
         }
       }
-      .bg_btn-change{
+      .bg_btn-change {
         align-items: center;
         background: #fff;
         border-radius: 6px;
@@ -69,7 +68,7 @@
         padding: 10px;
         position: absolute;
         right: 15px;
-        svg{
+        svg {
           color: #4f4d4d;
           font-size: 2rem;
           margin-right: 8px;
@@ -77,26 +76,26 @@
         }
       }
     }
-    .profile_container{
+    .profile_container {
       margin-top: 110px;
-      .user_infor{
-        p{
+      .user_infor {
+        p {
           padding: 10px 0;
           font-size: 1.6rem;
           font-weight: 500;
-          span{
+          span {
             font-size: 1.5rem;
             font-weight: 400;
             margin-left: 8px;
           }
         }
       }
-      .study_time{
+      .study_time {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
         gap: 20px;
-        .study_time-item{
+        .study_time-item {
           background: var(--primary-color);
           color: #fff;
           padding: 15px;
@@ -104,15 +103,15 @@
           justify-content: center;
           align-items: center;
           border-radius: 20px;
-          i{
+          i {
             margin-right: 10px;
           }
-          h6{
+          h6 {
             font-size: 1.6rem;
             line-height: 19px;
             font-weight: 500;
           }
-          p{
+          p {
             font-size: 14px;
             font-weight: 400;
           }
@@ -122,8 +121,10 @@
   }
 }
 
-
-
-
-
-
+.my-courses_title {
+  span {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+}
