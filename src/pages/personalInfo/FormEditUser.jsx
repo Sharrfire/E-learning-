@@ -1,13 +1,11 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
-import styles from "./formEditUser.module.scss";
-import classNames from "classnames/bind";
-import { formEditUserSchema } from "./formEditUserSchema";
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import userLocal from "~/api/localStorage";
-import { setUserInfor } from "~/features/Auth/userSlice";
 import { message } from 'antd';
+import classNames from "classnames/bind";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useDispatch, useSelector } from 'react-redux';
+import userLocal from "~/api/userLocal";
+import { setUserInfor } from "~/features/Auth/userSlice";
+import styles from "./formEditUser.module.scss";
+import { formEditUserSchema } from "./formEditUserSchema";
 const cx = classNames.bind(styles);
 
 

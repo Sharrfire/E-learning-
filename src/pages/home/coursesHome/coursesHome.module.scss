@@ -10,24 +10,24 @@
         color: #f6ba35;
     }
 }
-.courses-list {
+courses-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 0 12px 24px;
     align-items: center;
     margin: 24px -15px;
-    // margin-right: -15px;
-    // margin-left: -15px;
+
 }
 .card-global-res {
     display: flex;
     justify-content: center;
     padding: 0 15px;
-    margin-top: 24px;
-    cursor: pointer;
-
+    margin: 24px 0;
+    
+    
     .card-global {
         position: relative;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         transition: all 0.5s;
@@ -38,6 +38,7 @@
         background-color: #fff;
         background-clip: border-box;
         border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 10px;
         box-shadow: 0 0 10px 4px rgb(0 0 0 / 20%);
         &:hover {
             transform: translateX(-4px);
@@ -47,7 +48,7 @@
             height: 185px;
         }
         .sticker-card {
-            display: inline-block;
+            width: 100%;
             position: absolute;
             z-index: 10;
             top: 174px;
@@ -59,8 +60,12 @@
 
     .card-body-global {
         flex: 1 1 auto;
-        min-height: 1px;
+        min-height: 50px;
         padding: 20px;
+        .card-description {
+            min-height: 85px;
+        }
+
         h6 {
             margin: 0 0 10px;
             font-size: 16px;
@@ -82,15 +87,16 @@
                 height: 40px;
                 width: 40px;
                 padding: 2px;
-                border-color: #f6ba35 transparent;
-                border-left: 1px solid transparent;
-                border-bottom: 1px solid #f6ba35;
-                border-right: 1px solid transparent;
-                border-top: 1px solid #f6ba35;
-                border-radius: 50%;
                 img {
+                    border-radius: 50%;
+                    border-color: #f6ba35 transparent;
+                    border-left: 1px solid transparent;
+                    border-bottom: 1px solid #f6ba35;
+                    border-right: 1px solid transparent;
+                    border-top: 1px solid #f6ba35;
                     width: 34px;
                     height: 34px;
+                    padding: 2px;
                 }
             }
         }
@@ -121,3 +127,4 @@
         }
     }
 }
+

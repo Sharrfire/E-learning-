@@ -27,9 +27,10 @@ function CourseList({ courseList }) {
               "card-global-res"
             )}
             style={{ display: "flex", flex: "auto" }}
+            >
+            <div href="" className={cx("card-global")}
             onClick={()=>handleCourseClick(course.id)}
-          >
-            <div href="" className={cx("card-global")}>
+            >
               <img src={course.image_url} alt={course.title} />
               <span className={cx("sticker-card", "line-clamp")}>
                 {course.title}

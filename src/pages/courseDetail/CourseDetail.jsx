@@ -38,17 +38,17 @@ function CourseDetail(props) {
   });
   let { courseId } = useParams();
   console.log("courseId", courseId);
+  const userName = localStorage.getItem("USER_LOGIN");
 
   useEffect(() => {
     (async () => {
-      const {data} = await courseApi.get(courseId);
-      setCourseDetail(data );
+      const { data } = await courseApi.get(courseId);
+      setCourseDetail(data);
     })();
   }, [courseId]);
 
   const handleLogin = () => {
-    let path = `/login`;
-    navigate(path);
+    userName ? navigate(`/personalInfo`) : navigate(`/login`);
   };
   console.log(courseDetail);
 
@@ -116,7 +116,6 @@ function CourseDetail(props) {
               <div className={cx("course-content")}>
                 <h6>Nội dung khóa học</h6>
                 <div className={cx("course-detail-item")}>
-               
                   <div className={cx("course-detail-content")}>
                     <CourseSection tracks={courseDetail.tracks} />
                   </div>
@@ -145,7 +144,11 @@ function CourseDetail(props) {
                   </div>
                 </div>
                 <div className={cx("course-buy-btn")}>
-                  <button onClick={handleLogin}>Đăng ký</button>
+                  {userName ? (
+                    <button onClick={handleLogin}>Học</button>
+                  ) : (
+                    <button onClick={handleLogin}>Đăng ký</button>
+                  )}
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>

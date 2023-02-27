@@ -53,7 +53,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 12%);
     padding: 12px 24px;
-    z-index: 999;
+    overflow: scroll;
+
     h3 {
         color: var(#000000);
         font-size: 1.6rem;

@@ -11,7 +11,7 @@ export default function Search() {
   useEffect(() => {
     setTimeout(() => {
       setSearhResult([1, 2]);
-    }, 3000);
+    }, 1000);
   }, []);
   
   return (
@@ -21,7 +21,7 @@ export default function Search() {
       onClickOutside={hide}
       
       render={(attrs) => (
-        <div className={cx("search-result")} tabIndex="999" {...attrs}>
+        <div className={cx("search-result")} tabIndex="20" {...attrs}>
           <div className={cx("result-wrapper")}>
             <div className={cx("result-header")}>
               <svg

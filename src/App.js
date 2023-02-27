@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./features/Auth/components/login-register/Login";
+// import Login from "./features/Auth/components/login-register/Login";
 import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
 import About from "./pages/about/About";
