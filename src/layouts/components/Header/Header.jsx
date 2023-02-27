@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
+import logo from '~/assets/vendor/logoElearning.png'
 const cx = classnames.bind(styles);
 
 export default function Header() {
@@ -33,10 +34,7 @@ export default function Header() {
       <div className={cx("header-left")}>
         <div className={cx("logo")}>
           <Link to="/">
-            <img
-              src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
-              alt="img"
-            />
+            <img src={logo} alt="" />
           </Link>
           {/* <h4 className={cx("logo-heading")}>{heading}</h4> */}
           <div className={cx("search")}></div>

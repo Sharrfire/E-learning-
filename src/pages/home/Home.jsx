@@ -5,11 +5,13 @@ import CoursesHome from "./coursesHome/CoursesHome";
 import SliderHome from "./sliderHome/SliderHome";
 import BoxNumber from "./boxNumber/BoxNumber";
 import Instrutor from "./instrutor/Instrutor";
+import ScrollTotop from './scrollToTop/ScrollToTop';
 const cx = classNames.bind(styles);
 
 function Home() {
   return (
     <div className={cx("container")}>
+      <ScrollTotop/>
       <SliderHome/>
       <InfoCourses />
       <CoursesHome />

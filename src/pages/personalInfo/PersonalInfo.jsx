@@ -9,6 +9,8 @@ import styles from "./personalInfo.module.scss";
 import { Modal } from "antd";
 import { useState } from "react";
 import FormEditUser from "./FormEditUser";
+import { FaAngleUp } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 const cx = classNames.bind(styles);
 
 export default function PersonalInfo() {
@@ -82,6 +84,14 @@ export default function PersonalInfo() {
   ];
   return (
     <div className={cx("personalInfo")}>
+      <div className={cx("back-to-home")}>
+        <NavLink to="/">
+          <button className={cx("btn_back-to-home")}>
+            <FaAngleUp className={cx("btn_icon")} />
+            Home
+          </button>
+        </NavLink>
+      </div>
       <div className={cx("content")}>
         <div className={cx("profile_banner")}>
           <div className={cx("profile_user")}>
