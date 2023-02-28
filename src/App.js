@@ -5,6 +5,7 @@ import Footer from "./layouts/components/Footer/Footer";
 import Header from "./layouts/components/Header/Header";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
+import Cart from "./pages/cart/Cart";
 import CourseDetail from "./pages/courseDetail/CourseDetail";
 import Course from "./pages/courseList/Course";
 import Home from "./pages/home/Home";
@@ -65,6 +66,15 @@ function App() {
               <Header />
               <Course />
               <Footer />
+            </>
+          }
+        />  <Route
+          path="/cart"
+          element={
+            <>
+              <Header />
+              <Cart />             
+               <Footer />
             </>
           }
         />

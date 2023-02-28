@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import courseApi from "~/api/courseApi";
-import { halfStar, star } from "~/constants/rate";
+import { star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
@@ -37,7 +37,6 @@ function CourseDetail(props) {
     will_learns: [],
   });
   let { courseId } = useParams();
-  console.log("courseId", courseId);
   const userName = localStorage.getItem("USER_LOGIN");
 
   useEffect(() => {
@@ -50,7 +49,6 @@ function CourseDetail(props) {
   const handleLogin = () => {
     userName ? navigate(`/personalInfo`) : navigate(`/login`);
   };
-  console.log(courseDetail);
 
   return (
     <>
@@ -85,20 +83,16 @@ function CourseDetail(props) {
                   </div>
                   <div className={cx("instrutor-title")}>
                     <p>Lĩnh vực</p>
-                    <p className={cx("name")}>Lập trình Backend </p>
+                    <p className={cx("name")}>Lập trình {courseDetail.categoryId} </p>
                   </div>
                 </div>
                 <div className={cx("col", "c-4", "detail-course-info")}>
                   <div className={cx("review-detail")}>
                     <span>
+                      {courseDetail.rate }                    </span>
                       {star}
-                      {star}
-                      {star}
-                      {star}
-                      {halfStar}
-                      4.5
-                    </span>
-                    <p>100 đánh giá</p>
+                 
+                    <p> {courseDetail.rateAmount } đánh giá</p>
                   </div>
                 </div>
               </div>
@@ -144,11 +138,13 @@ function CourseDetail(props) {
                   </div>
                 </div>
                 <div className={cx("course-buy-btn")}>
-                  {userName ? (
+                  {/* {userName ? (
                     <button onClick={handleLogin}>Học</button>
                   ) : (
                     <button onClick={handleLogin}>Đăng ký</button>
-                  )}
+                  )} */}
+                                      <button onClick={handleLogin}>Đăng ký</button>
+
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>
@@ -185,9 +181,7 @@ function CourseDetail(props) {
                     </li>
                   </ul>
                 </div>
-                <form action="" className={cx("form-coupon")}>
-                  <input type="text" placeholder="Nhập mã" />
-                </form>
+           
               </div>
             </div>
           </div>

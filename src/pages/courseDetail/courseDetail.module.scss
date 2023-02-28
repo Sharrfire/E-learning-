@@ -108,7 +108,7 @@
           font-size: 2rem;
         }
         .course-price-sale {
-          color: #000;
+          color:var(--primary-color);
           font-weight: 700;
           font-size: 2.4rem;
         }
@@ -188,7 +188,6 @@
         justify-content: flex-end;
       }
       .review-detail {
-        text-align: right;
         span {
           width: 25px;
           height: 25px;

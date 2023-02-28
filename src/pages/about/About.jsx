@@ -11,7 +11,7 @@ function About(props) {
     <div className={cx("wrapper")}>
       <div className={cx("slider")}>
         <div className={cx("slider-content")}>
-          <p className={cx("slider-title")}>V learning học là vui</p>
+          <p className={cx("slider-title")}>E learning học là vui</p>
           <h6>Cùng nhau khám phá nhưng điều mới mẻ</h6>
           <p>Học đi đôi với hành</p>
         </div>
