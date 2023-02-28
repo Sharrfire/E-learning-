@@ -5,7 +5,6 @@ import { Progress, Tabs } from "antd";
 import classNames from "classnames/bind";
 import crown from "~/assets/vendor/crown.svg";
 import avatar from "~/assets/vendor/fallbackAvatar.jpg";
-// import { useSelector } from "react-redux";
 import { Modal } from "antd";
 import { useState } from "react";
 import { USER_LOGIN } from "~/api/userLocal";
@@ -81,19 +80,21 @@ export default function PersonalInfo() {
             style={{
               padding: "10px 0 ",
               fontSize: "1.6rem",
-              fontWeight: 500,
+              fontWeight: "500",
             }}
           >
             <span>Các khóa học đã đăng ký</span>
           </p>
-          <MyCourseList courseList={courseList}/>
-          <MyCourseList courseList={courseList}/>
+          <div>
+            <MyCourseList courseList={courseList}/>
+            <MyCourseList courseList={courseList}/>
+          </div>
         </>
       ),
     },
   ];
   return (
-    <div className={cx("personalInfo")}>
+    <div  className={cx("personalInfo")}>
       <div className={cx("back-to-home")}>
         <NavLink to="/">
           <button className={cx("btn_back-to-home")}>
@@ -148,14 +149,13 @@ export default function PersonalInfo() {
               type="card"
               size="large"
               defaultActiveKey="1"
-              tabBarStyle={{}}
               items={items}
             />
           </div>
           <div className={cx("userInfoBot")}>
             <h4>Kĩ năng của tôi</h4>
             <div className={cx("row")}>
-              <div className={cx("col", "c-8", "skillAll", "m-6")}>
+              <div className={cx("col", "c-8","s-12", "skillAll", "m-6")}>
                 <div className={cx("mySkill", "skillBtnHtml")}>
                   <button className={cx("skillBtnCustom")}>Html</button>
                   <div className={cx("progress")}></div>
@@ -202,7 +202,7 @@ export default function PersonalInfo() {
                   />
                 </div>
               </div>
-              <div className={cx("col", "c-4", "m-6")}>
+              <div className={cx("col", "c-4", "m-6","s-12")}>
                 <div className={cx("study_time")}>
                   <div className={cx("study_time-item")}>
                     <i className="fas fa-user-clock"></i>

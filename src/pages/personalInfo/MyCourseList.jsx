@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./myCourse.module.scss";
 import classNames from "classnames/bind";
 
@@ -13,15 +12,15 @@ function MyCourseList(props) {
       {/* <p>
         <span className={cx("my-courses_title")}>Các khóa học đã đăng ký</span>
       </p> */}
-      <div className={cx("inner")}>
-        <a className={cx("thumb")} href="/courses/htmlcss">
+      <div className={cx("inner","row")}>
+        <a className={cx("thumb","col","c-3","m-5","s-12")} href="/courses/htmlcss">
           <img
             src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
             className={cx("thumb-image")}
             alt="HTML CSS Pro"
           />
         </a>
-        <div className={cx("info")}>
+        <div className={cx("info","col","c-8","m-6","s-12")}>
           <h3 className={cx("info-title")}>
             <a href="#!" style={{ color: "#000000" }} >
               Xây Dựng Website với ReactJS

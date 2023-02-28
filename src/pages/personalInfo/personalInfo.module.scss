@@ -176,3 +176,15 @@
     margin: 0 0 8px;
   }
 }
+@media only screen and (max-width:540px) {
+ .personalInfo{
+  .back-to-home{
+    .btn_back-to-home{
+      padding: 0;
+      padding-right: 6px;
+      height: 20px;
+      
+    }
+  }
+ }
+}

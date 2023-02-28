@@ -1,49 +1,47 @@
 .my-courses {
-    min-height: 137px;
-    padding: 10px 0;
-    background-color: #fff;
-    border-radius: 8px;
-    // box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 0 0 1px 0 rgb(0 0 0 / 10%);
-    word-break: break-word;
-  
-    .inner {
-        align-items: flex-start;
-        border-bottom: 1px solid #d0d7de;
-        display: flex;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        padding-bottom: 12px;
-        .thumb {
-            flex-shrink: 0;
-            height: 128px;
-            margin-right: 24px;
-            width: 228px;
-            .thumb-image {
-                border-radius: 16px;
-                height: 100%;
-                object-fit: cover;
-                width: 100%;
-            }
-            .info {
-                .info-title {
-                 
-                    a {
-                        font-size: 1.6rem;
-                        font-weight: 600;
-                        margin-bottom: 0;
-                        margin-top: 0;
-                        color: #000000;
-                    }
-                }
-                .info-desc {
-                    display: -webkit-box !important;
-                    word-wrap: break-word !important;
-                    -webkit-box-orient: vertical !important;
-                    -webkit-line-clamp: 5 !important;
-                    margin-top: 4px !important;
-                    overflow: hidden !important;
-                }
-            }
+  min-height: 137px;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  // box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 0 0 1px 0 rgb(0 0 0 / 10%);
+  word-break: break-word;
+  .inner {
+    // align-items: flex-start;
+    border-bottom: 1px solid #d0d7de;
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 12px;
+    .thumb {
+      flex-shrink: 0;
+      height: 128px;
+      margin-right: 24px;
+      width: 228px;
+      .thumb-image {
+        border-radius: 16px;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+      .info {
+        .info-title {
+          a {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            margin-top: 0;
+            color: #000000;
+          }
         }
+        .info-desc {
+          display: -webkit-box !important;
+          word-wrap: break-word !important;
+          -webkit-box-orient: vertical !important;
+          -webkit-line-clamp: 5 !important;
+          margin-top: 4px !important;
+          overflow: hidden !important;
+        }
+      }
     }
+  }
 }
