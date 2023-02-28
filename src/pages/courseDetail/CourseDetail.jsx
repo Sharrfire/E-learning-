@@ -56,7 +56,7 @@ function CourseDetail(props) {
         <Title title={"THÔNG TIN KHÓA HỌC"} />
         <div className={cx("wrapper")}>
           <div className={cx("row")}>
-            <div className={cx("col", "s-12", "m-12", "l-8", "main-content")}>
+            <div className={cx("col", "s-12", "m-12","ml-8","l-8", "main-content")}>
               <div className={cx("title-detail")}>
                 {/* <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4> */}
                 <h4>{courseDetail.title}</h4>
@@ -116,7 +116,7 @@ function CourseDetail(props) {
                 </div>
               </div>
             </div>
-            <div className={cx("col", "s-12", "m-12", "l-4")}>
+            <div className={cx("col", "s-12", "m-12","ml-4", "l-4")}>
               <div className={cx("sidebar-course-detail")}>
                 <img src={courseDetail.image_url} alt={courseDetail.slug} />
                 <div className={cx("course-price")}>

@@ -12,7 +12,7 @@ function CourseSection({ tracks }) {
   }
   return (
     <>
-      {tracks.map((track) => (
+      {tracks.map((track,index) => (
         <div key={track.id}>
           <div className={cx("course-section")}>
             <span>
@@ -22,8 +22,8 @@ function CourseSection({ tracks }) {
               Xem trước
             </a>
           </div>
-          {track.track_steps.map((track_step) => (
-            <div className={cx("lesson-content")}>
+          {track.track_steps.map((track_step,index) => (
+            <div key={index} className={cx("lesson-content")}>
               <span>
                 <i className="fa fa-play"></i>
                 {track_step.step.title}

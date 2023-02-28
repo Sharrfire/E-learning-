@@ -152,8 +152,27 @@
   }
 }
 
-
-
-
-
-
+@keyframes movebtn_back-to-home {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-15px);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  75% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.my-courses_title {
+  span {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+}
