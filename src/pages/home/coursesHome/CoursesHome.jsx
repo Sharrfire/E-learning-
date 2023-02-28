@@ -95,7 +95,7 @@ function CoursesHome(props) {
         {courseListSplice.map((course) => (
           <div
             key={course.id}
-            className={cx("col", "s-12", "m-6", "l-3", "card-global-res")}
+            className={cx("col", "s-12", "m-6", "ml-3","l-3", "card-global-res")}
             style={{ display: "flex" }}
           >
             <div

@@ -1,0 +1,199 @@
+.container {
+    margin-top: 96px;
+    .wrapper {
+        padding: 50px;
+        .main-content {
+            h3 {
+                font-size: 2.2rem;
+                color: #000000;
+                margin: 5px 0;
+            }
+            .shopping_list {
+                .shopping-item_list {
+                    .shopping-item-wrapper {
+                        padding: 12px 0;
+                        border-top: 1px solid #d0d0d0;
+                        .shopping-item-container {
+                            display: flex;
+                            .shopping-item-image {
+                                width: calc(20% - 16px);
+                                margin-right: 16px;
+                                .shopping-item-image_wrapper {
+                                    img {
+                                        width: 100%;
+                                        object-fit: cover;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                            .shopping-item-detail {
+                                width: 45%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                padding: 0 10px;
+                                .shopping-item-title {
+                                    font-size: 1.8rem;
+                                }
+                                .item_author {
+                                    span {
+                                        width: 25px;
+                                        height: 25px;
+                                        font-size: 1.4rem;
+                                        font-weight: 400;
+                                        color: #a3a3a3;
+                                    }
+                                }
+                                .item-review_detail {
+                                    display: flex;
+                                    align-items: center;
+
+                                    span {
+                                        width: 25px;
+                                        height: 25px;
+                                        font-size: 1.6rem;
+                                        font-weight: 600;
+                                        color: #000000;
+                                    }
+                                    svg {
+                                        text-align: center;
+                                        width: 15px;
+                                        height: 15px;
+                                        fill: rgba(246, 186, 53, 0.9);
+                                    }
+                                    .item-review_rate {
+                                        span {
+                                            font-weight: 400;
+                                            color: #a3a3a3;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                    .item-review_tag {
+                                        display: inline-block;
+                                        padding: 2px 5px;
+                                        // background-color: var(--primary-color);
+                                        background-color: #eceb98;
+                                        margin-right: 10px;
+                                        span {
+                                            color: #3d3c0a;
+                                        }
+                                    }
+                                }
+                                .item-review_info {
+                                    display: flex;
+                                    gap: 10px;
+                                    align-items: center;
+                                    .dot {
+                                        display: block;
+                                        width: 8px;
+                                        height: 8px;
+                                        background: #a3a3a3;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                            .shopping-item-actions {
+                                width: calc(17% - 16px);
+                                margin-top: 0;
+                                margin-left: 16px;
+                                gap: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                justify-content: center;
+                                .btn-cta {
+                                    color: var(--primary-color);
+                                }
+                                .btn-cta:hover {
+                                    cursor: pointer;
+                                    opacity: 0.7;
+                                }
+                            }
+                            .item-price {
+                                width: 18%;
+                                gap: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                justify-content: center;
+                                .course-price_normal {
+                                    text-decoration: line-through;
+                                    color: #d0d0d0;
+                                    font-weight: 600;
+                                    font-size: 1.8rem;
+                                }
+                                .course-price_sale {
+                                    color: var(--primary-color);
+                                    font-weight: 700;
+                                    font-size: 2.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .checkout-wrapper {
+            padding: 10px;
+            box-shadow: 1px 1px 10px 4px #dadada;
+            border-radius: 5px;
+            .checkout-panel {
+                width: 100%;
+                padding: 20px;
+                .total-price_container {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 10px;
+                    .total-price_label {
+                    }
+                    .price-container {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                    }
+                    .price_text {
+                        span {
+                            font-size: 3.2rem;
+                            font-weight: 800;
+                        }
+                        &.original-price {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.course-buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        background-color: transparent;
+        transition: all 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: scale(0.97);
+        }
+    }
+}
