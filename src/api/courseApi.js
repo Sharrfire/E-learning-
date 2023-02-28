@@ -16,6 +16,11 @@ const productApi = {
     };
   },
 
+  
+  getAllForSearch() {
+    const url = `/coursesList.json`;
+    return axiosClient.get(url);
+  },
   get(id) {
     id > 0 ? id = id - 1 : id = 0
     const url = `/coursesList/${id}.json`;

@@ -7,7 +7,7 @@ function Footer(props) {
     <footer className={cx("wrapper")}>
       <section className={cx("grid")}>
         <section className={cx("row","row-footer ")}>
-          <section className={cx("col", "s-12", "m-6", "l-3",'col-footer')}>
+          <section className={cx("col", "s-12", "m-6","ml-3", "l-3",'col-footer')}>
             <div className={cx("footer-column")}>
               <div className={cx("col-heading")}>
                 <a href="#!">
@@ -35,7 +35,7 @@ function Footer(props) {
               <div className={cx("certificate")}>DMCA</div>
             </div>
           </section>{" "}
-          <div className={cx("col", "s-12", "m-6", "l-3","col-footer", "col-min")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3","col-footer", "col-min")}>
             <div className={cx("footer-column")}>
               <h2 className={cx("col-heading")}>VỀ F8</h2>
               <ul className={cx("footer-list")}>
@@ -82,7 +82,7 @@ function Footer(props) {
               </ul>
             </div>
           </div> */}
-          <div className={cx("col", "s-12", "m-6", "l-3", 'col-footer',"col-min")}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3", 'col-footer',"col-min")}>
             <div className={cx("footer-column")}>
               <h2 className={cx("col-heading")}>CÔNG CỤ </h2>
               <ul className={cx("footer-list")}>
@@ -104,7 +104,7 @@ function Footer(props) {
               </ul>
             </div>
           </div>{" "}
-          <div className={cx("col", "s-12", "m-6", "l-3",'col-footer')}>
+          <div className={cx("col", "s-12", "m-6","ml-3", "l-3",'col-footer')}>
             <a
               target="_blank"
               href="https://www.google.com/search?q=C%C3%94NG+TY+C%E1%BB%94+PH%E1%BA%A6N+C%C3%94NG+NGH%E1%BB%86+GI%C3%81O+D%E1%BB%A4C+F8"

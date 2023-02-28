@@ -1,25 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./search.module.scss";
 import classnames from "classnames/bind";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
+import useDebounce from "~/hooks/useDebounce";
+import courseApi from "~/api/courseApi";
+
 const cx = classnames.bind(styles);
-export default function Search() {
-  const [searhResult, setSearhResult] = useState([]);
-  const hide = () => setSearhResult([]);
+export default function Search(props) {
+  const [courseList, setCourseList] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [searchResult, setSearchResult] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+
+  const deBouncedValue = useDebounce(searchValue, 500);
+  const inputRef = useRef();
+
+  const hide = () => setSearchResult([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setSearhResult([1, 2]);
-    }, 1000);
-  }, []);
-  
+    if (!deBouncedValue.trim()) {
+      setSearchResult([]);
+      return;
+    }
+    const fetchApi = async () => {
+      setLoading(true);
+      try {
+        const { data } = await courseApi.getAllForSearch();
+        setSearchResult(data);
+
+        setCourseList(data);
+      } catch (error) {
+        console.log("Falied to fetch course list", error);
+      }
+    };
+    fetchApi();
+  }, [deBouncedValue]);
+  console.log(courseList);
+  const handlespace = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(" ")) {
+      setSearchValue(searchValue);
+    }
+  };
+
+  // const handleClear = () => {
+  //   setSearchValue('');
+  //   inputRef.current.focus();
+  // };
   return (
     <Tippy
-      visible={searhResult.length > 0}
+      visible={showResult && searchResult.length > 0}
       interactive
       onClickOutside={hide}
-      
       render={(attrs) => (
         <div className={cx("search-result")} tabIndex="20" {...attrs}>
           <div className={cx("result-wrapper")}>
@@ -29,7 +63,7 @@ export default function Search() {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="spinner"
-                className={cx("svg-inline--fa"," fa-spinner","search-icon")}
+                className={cx("svg-inline--fa", " fa-spinner", "search-icon")}
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -44,7 +78,11 @@ export default function Search() {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="magnifying-glass"
-                className={cx("svg-inline--fa","fa-magnifying-glass","search-icon")}
+                className={cx(
+                  "svg-inline--fa",
+                  "fa-magnifying-glass",
+                  "search-icon"
+                )}
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -118,6 +156,12 @@ export default function Search() {
             className={cx("input")}
             spellCheck="false"
             placeholder="Tìm kiếm khóa học,..."
+            onChange={handlespace}
+            onFocus={() => {
+              setShowResult(true);
+            }}
+            ref={inputRef}
+            value={searchValue}
           />
         </div>
       </div>

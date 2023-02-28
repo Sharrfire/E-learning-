@@ -1,14 +1,11 @@
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import avatar from "~/assets/vendor/avatar2.bb9626e2.png";
 import styles from "./coursesHome.module.scss";
-import courseApi from "~/api/courseApi";
 
 const cx = classNames.bind(styles);
 CoursesHome.propTypes = {};
 
-function CoursesHome(props) {
+function CoursesHome({ courseList }) {
   // const courseList = [
   //   {
   //     id: "c1",
@@ -62,20 +59,6 @@ function CoursesHome(props) {
   //   },
   // ];
 
-  const [courseList, setcourseList] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await courseApi.getAll({ _page: 1, _limit: 12 });
-        setcourseList(data);
-        setLoading(false);
-      } catch (error) {
-        console.log("Falied to fetch course list", error);
-      }
-    })();
-  }, []);
   const courseListSplice = [...courseList.slice(0, 8)];
   // console.log(courseListSplice);
   let navigate = useNavigate();
@@ -95,7 +78,14 @@ function CoursesHome(props) {
         {courseListSplice.map((course) => (
           <div
             key={course.id}
-            className={cx("col", "s-12", "m-6", "l-3", "card-global-res")}
+            className={cx(
+              "col",
+              "s-12",
+              "m-6",
+              "ml-3",
+              "l-3",
+              "card-global-res"
+            )}
             style={{ display: "flex" }}
           >
             <div

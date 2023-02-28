@@ -19,13 +19,13 @@ function CourseSkeletonList({ length }) {
                         "card-global-res"
                     )}
                     style={{ display: "flex", flex: "auto" }}
+                    key={index}
                 >
                     <div href="" className={cx("card-global")} style={{ borderRadius: '0px' }}>
                         <Skeleton variant="rectangular" width={278} height={185} />
                         <div className={cx("card-body-global")}>
                         <Skeleton variant="text" sx={{ fontSize: '1.6rem' }} />
                         <Skeleton variant="text" sx={{ fontSize: '1.6rem' }} />
-
                             {/* <Skeleton variant="rounded" width={238} height={74} /> */}
                             <Skeleton variant="rounded" width={160} height={40} style={{ marginTop: '52px' }} />
                         </div>

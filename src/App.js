@@ -12,7 +12,7 @@ import PersonalInfo from "./pages/personalInfo/PersonalInfo";
 
 function App() {
   const userName = localStorage.getItem("USER_LOGIN");
-  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -68,11 +68,17 @@ function App() {
             </>
           }
         />
-        <Route path="/login" element={<Login />} />
-        {userName && <Route path="/PersonalInfo" element={<PersonalInfo />} />}
-        {!userName && (
-          <Route path="/PersonalInfo" element={<Navigate replace to="/" />} />
+        {userName && <Route path="/personalInfo" element={<PersonalInfo />} />}
+        {userName && (
+          <Route
+            path="/login"
+            element={<Navigate replace to="/personalInfo" />}
+          />
         )}
+        {!userName && (
+          <Route path="/personalInfo" element={<Navigate replace to="/" />} />
+        )}
+        {!userName && <Route path="/login" element={<Login />} />}
       </Routes>
     </BrowserRouter>
   );

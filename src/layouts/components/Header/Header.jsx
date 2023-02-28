@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
-import logo from '~/assets/vendor/logoElearning.png'
+
+import logo from '~/assets/vendor/logoElearning.png';
 const cx = classnames.bind(styles);
 
 export default function Header() {
@@ -19,9 +20,9 @@ export default function Header() {
       const response = await fetch(BASE_URL + "cate.json");
       var cateListData = await response.json();
       setCateList([...cateListData]);
-      // console.log(cateListData)
     })();
   }, []);
+
   const [openCourses, setOpenCourses] = useState(false);
   const handleOpenCourses = () => {
     setOpenCourses(!openCourses);
