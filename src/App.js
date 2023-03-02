@@ -10,6 +10,7 @@ import CourseDetail from "./pages/courseDetail/CourseDetail";
 import Course from "./pages/courseList/Course";
 import Home from "./pages/home/Home";
 import PersonalInfo from "./pages/personalInfo/PersonalInfo";
+import NotFoundPage from './pages/home/notFounPage/NotFoundPage';
 
 function App() {
   const userName = localStorage.getItem("USER_LOGIN");
@@ -89,6 +90,7 @@ function App() {
           <Route path="/personalInfo" element={<Navigate replace to="/" />} />
         )}
         {!userName && <Route path="/login" element={<Login />} />}
+        <Route path="/*" element={<NotFoundPage/>}/>
       </Routes>
     </BrowserRouter>
   );
