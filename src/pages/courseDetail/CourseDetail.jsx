@@ -1,3 +1,4 @@
+import { message } from "antd";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -64,7 +65,7 @@ function CourseDetail(props) {
       level: courseDetail.level,
       quantity: 1,
     });
-
+    message.success("Đăng ký thành công");
     dispatch(action);
   };
   return (

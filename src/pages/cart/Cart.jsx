@@ -1,3 +1,4 @@
+import { message } from "antd";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +32,8 @@ function Cart(props) {
   const handlePayment = () => {
     const action = removeAll();
     dispatch(action);
+    message.success("Thanh toán thành công")
+    navigate('/')
   };
 
   return (

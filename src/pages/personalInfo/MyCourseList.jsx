@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 MyCourseList.propTypes = {};
 
-function MyCourseList(props) {
+function  MyCourseList(props) {
   return (
     <div className={cx("my-courses")}>
       {/* <p>
