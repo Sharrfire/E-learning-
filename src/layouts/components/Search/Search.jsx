@@ -45,7 +45,7 @@ export default function Search(props) {
       }
     };
     fetchApi();
-  }, [deBouncedValue]);
+  }, [deBouncedValue,searchValue]);
   // const handleClear = () => {
   //   setSearchValue('');
   //   inputRef.current.focus();

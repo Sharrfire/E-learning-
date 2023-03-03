@@ -1,12 +1,19 @@
 import classNames from "classnames/bind";
+import { useSelector } from "react-redux";
 import { star } from "~/constants/rate";
 import TitleLayout from "~/layouts/components/TitleLayout/TitleLayout";
 import styles from "./cart.module.scss";
+// import { cartTotalSelector } from "./selector";
 
 const cx = classNames.bind(styles);
 Cart.propTypes = {};
 
 function Cart(props) {
+  const cartTotal = useSelector((state)=>state.cartItems);
+  console.log("cartTotal", cartTotal);
+
+
+
   return (
     <section className={cx("container")}>
       <TitleLayout title={"Giỏ hàng"} />
@@ -16,7 +23,7 @@ function Cart(props) {
             className={cx("col", "s-12", "m-12", "ml-8", "l-8", "main-content")}
           >
             <div className={cx("shopping_list")}>
-              <h3>Khóa học trong giỏ hàng: 4</h3>
+              <h3>Khóa học trong giỏ hàng: {cartTotal}</h3>
               <div className={cx("shopping-item_list")}>
                 <div className={cx("shopping-item-wrapper")}>
                   <div className={cx("shopping-item-container")}>
@@ -33,7 +40,7 @@ function Cart(props) {
                       <h4
                         className={cx("shopping-item-title", "line-clamp")}
                         style={{
-                          " --line-clamp": 1,
+                          "--lineClamp": 1,
                         }}
                       >
                         HTML-CSS
@@ -108,7 +115,7 @@ function Cart(props) {
                       <h4
                         className={cx("shopping-item-title", "line-clamp")}
                         style={{
-                          " --line-clamp": 1,
+                          lineClamp: 1,
                         }}
                       >
                         HTML-CSS
@@ -171,9 +178,24 @@ function Cart(props) {
               </div>
             </div>
           </div>
-          <div className={cx("col", "s-12", "m-12", "ml-4", "l-4")}>
+          <div className={cx("col", "s-12", "m-12", "ml-4", "l-3")}>
             <div className={cx("checkout-wrapper")}>
               <div className={cx("billing-method")}></div>
+              <div className={cx("checkout-panel")}>
+                <div className={cx("total-price_coupon")}>
+                  <div className={cx("total-price_coupon_label")}>
+                    Mã thanh toán{" "}
+                  </div>
+                  {/* {userName ? (
+                    <button onClick={handleLogin}>Học</button>
+                  ) : (
+                    <button onClick={handleLogin}>Đăng ký</button>
+                  )} */}
+                  <form action="" className={cx("form-coupon")}>
+                    <input type="text" placeholder="Nhập mã" />
+                  </form>{" "}
+                </div>
+              </div>
               <div className={cx("checkout-panel")}>
                 <div className={cx("total-price_container")}>
                   <div className={cx("total-price_label")}>Tổng tiền:</div>
@@ -188,16 +210,17 @@ function Cart(props) {
                       {new Intl.NumberFormat("de-DE").format(7197000)}
                       <sup>đ</sup>
                     </div>
-                
                   </div>
                   <div className={cx("course-buy-btn")}>
-                      {/* {userName ? (
+                    {/* {userName ? (
                     <button onClick={handleLogin}>Học</button>
                   ) : (
                     <button onClick={handleLogin}>Đăng ký</button>
                   )} */}
-                      <button>Thanh toán</button>
-                    </div>
+                    <form>
+                      <button type="submit">Thanh toán</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

@@ -135,17 +135,36 @@
         }
         .checkout-wrapper {
             padding: 10px;
-            box-shadow: 1px 1px 10px 4px #dadada;
+            // box-shadow: 1px 1px 10px 4px #dadada;
             border-radius: 5px;
             .checkout-panel {
                 width: 100%;
-                padding: 20px;
+                padding: 10px;
+                .total-price_coupon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .form-coupon {
+                        input {
+                            width: 100%;
+                            height: 32px;
+                            outline: none;
+                            padding: 3px 10px;
+                            border: 1px solid #d0d0d0;
+                            border-radius: 5px;
+                            &:focus {
+                                border: 1px solid var(--primary-color);
+                            }
+                        }
+                    }
+                }
                 .total-price_container {
                     display: flex;
                     align-items: flex-start;
                     flex-wrap: wrap;
                     flex-direction: column;
-                    gap: 10px;
+                    // gap: 5px;
+
                     .total-price_label {
                     }
                     .price-container {
@@ -176,7 +195,9 @@
     justify-content: center;
     padding: 0;
     width: 100%;
-
+    form {
+        width: 100%;
+    }
     button {
         width: 100%;
         padding: 10px;

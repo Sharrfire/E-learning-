@@ -10,9 +10,9 @@ const cx = classNames.bind(styles);
 
 
 export default function FormEditUser(props) {
-  const user = useSelector((state)=>{
-    return state.userSlice.userInfor;
-  });
+  // const user = useSelector((state)=>{
+  //   return state.userSlice.userInfor;
+  // });
   const dispatch = useDispatch();
   const handleEditUser = (values) => {
     userLocal.set(values);

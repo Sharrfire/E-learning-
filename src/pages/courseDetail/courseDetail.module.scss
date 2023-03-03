@@ -32,12 +32,12 @@
       ul {
         list-style-type: none;
         display: flex;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
         li {
           padding: 5px 0;
           text-align: justify;
           color: #000;
-          flex-basis:   50%;
+          flex-basis: 50%;
           line-height: 1.6;
           margin-bottom: 12px;
           position: relative;
@@ -71,7 +71,6 @@
           color: var(--primary-color);
         }
         padding: 20px 0;
-     
       }
     }
   }
@@ -108,7 +107,7 @@
           font-size: 2rem;
         }
         .course-price-sale {
-          color:var(--primary-color);
+          color: var(--primary-color);
           font-weight: 700;
           font-size: 2.4rem;
         }
@@ -116,6 +115,9 @@
       .course-buy-btn {
         justify-content: center;
         padding: 0;
+        form {
+          width: 100%;
+        }
         button {
           width: 100%;
           padding: 10px;
