@@ -1,9 +1,11 @@
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import courseApi from "~/api/courseApi";
 import { star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
+import { addToCart } from "../cart/cartSlice";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
 
@@ -11,7 +13,7 @@ const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
 
 function CourseDetail(props) {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const [courseDetail, setCourseDetail] = useState({
     author: {
       avatar: "",
@@ -37,8 +39,7 @@ function CourseDetail(props) {
     will_learns: [],
   });
   let { courseId } = useParams();
-  const userName = localStorage.getItem("USER_LOGIN");
-
+  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       const { data } = await courseApi.get(courseId);
@@ -46,17 +47,42 @@ function CourseDetail(props) {
     })();
   }, [courseId]);
 
-  const handleLogin = () => {
-    userName ? navigate(`/personalInfo`) : navigate(`/login`);
-  };
+  // const handleLogin = () => {
+  //   userName ? navigate(`/personalInfo`) : navigate(`/login`);
+  // };
 
+  const handleBuyCourse = () => {
+    const action = addToCart({
+      id: courseDetail.id,
+      title: courseDetail.title,
+      img: courseDetail.image_url,
+      price: courseDetail.price,
+      old_price: courseDetail.old_price,
+      rate: courseDetail.rate,
+      rateAmount: courseDetail.rateAmount,
+      author: courseDetail.author,
+      level: courseDetail.level,
+      quantity: 1,
+    });
+
+    dispatch(action);
+  };
   return (
     <>
       <section className={cx("container")}>
         <Title title={"THÔNG TIN KHÓA HỌC"} />
         <div className={cx("wrapper")}>
           <div className={cx("row")}>
-            <div className={cx("col", "s-12", "m-12","ml-8","l-8", "main-content")}>
+            <div
+              className={cx(
+                "col",
+                "s-12",
+                "m-12",
+                "ml-8",
+                "l-8",
+                "main-content"
+              )}
+            >
               <div className={cx("title-detail")}>
                 {/* <h4>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</h4> */}
                 <h4>{courseDetail.title}</h4>
@@ -83,16 +109,17 @@ function CourseDetail(props) {
                   </div>
                   <div className={cx("instrutor-title")}>
                     <p>Lĩnh vực</p>
-                    <p className={cx("name")}>Lập trình {courseDetail.categoryId} </p>
+                    <p className={cx("name")}>
+                      Lập trình {courseDetail.categoryId}{" "}
+                    </p>
                   </div>
                 </div>
                 <div className={cx("col", "c-4", "detail-course-info")}>
                   <div className={cx("review-detail")}>
-                    <span>
-                      {courseDetail.rate }                    </span>
-                      {star}
-                 
-                    <p> {courseDetail.rateAmount } đánh giá</p>
+                    <span>{courseDetail.rate} </span>
+                    {star}
+
+                    <p> {courseDetail.rateAmount} đánh giá</p>
                   </div>
                 </div>
               </div>
@@ -116,7 +143,7 @@ function CourseDetail(props) {
                 </div>
               </div>
             </div>
-            <div className={cx("col", "s-12", "m-12","ml-4", "l-4")}>
+            <div className={cx("col", "s-12", "m-12", "ml-4", "l-4")}>
               <div className={cx("sidebar-course-detail")}>
                 <img src={courseDetail.image_url} alt={courseDetail.slug} />
                 <div className={cx("course-price")}>
@@ -143,8 +170,8 @@ function CourseDetail(props) {
                   ) : (
                     <button onClick={handleLogin}>Đăng ký</button>
                   )} */}
-                                      <button onClick={handleLogin}>Đăng ký</button>
-
+                  <button onClick={handleBuyCourse}>Đăng ký</button>
+                  {/* <button onClick={handleLogin}>Đăng ký</button> */}
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>
@@ -181,7 +208,6 @@ function CourseDetail(props) {
                     </li>
                   </ul>
                 </div>
-           
               </div>
             </div>
           </div>

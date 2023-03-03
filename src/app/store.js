@@ -1,8 +1,10 @@
 import userSlice from '~/features/Auth/userSlice';
+import cartSlice from '~/pages/cart/cartSlice';
 const { configureStore } = require('@reduxjs/toolkit');
 
 const rootReducer = {
-    userSlice
+    userSlice,
+    cart:cartSlice
 
 };
 const store = configureStore({

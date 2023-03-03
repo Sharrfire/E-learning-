@@ -8,16 +8,16 @@ export default function NotFoundPage() {
     <div className="notFound">
     {/* about */}
     <div className="about">
-      <a className="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+      <a className="bg_links social portfolio" href="!#" target="_blank" rel="noreferrer">
         <span className="icon" />
       </a>
-      <a className="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+      <a className="bg_links social dribbble" href="!#" target="_blank" rel="noreferrer">
         <span className="icon" />
       </a>
-      <a className="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+      <a className="bg_links social linkedin" href="!#" target="_blank" rel="noreferrer">
         <span className="icon" />
       </a>
-      <a className="bg_links logo" />
+      {/* <a className="bg_links logo" href="!#" /> */}
     </div>
     {/* end about */}
     <nav>

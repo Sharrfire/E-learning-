@@ -74,8 +74,8 @@ function App() {
           element={
             <>
               <Header />
-              <Cart />             
-               <Footer />
+              <Cart />
+              <Footer />
             </>
           }
         />
@@ -90,7 +90,7 @@ function App() {
           <Route path="/personalInfo" element={<Navigate replace to="/" />} />
         )}
         {!userName && <Route path="/login" element={<Login />} />}
-        <Route path="/*" element={<NotFoundPage/>}/>
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
