@@ -5,7 +5,7 @@ import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
 
-import logo from '~/assets/vendor/logoElearning.png';
+import logo from "~/assets/vendor/logoElearning.png";
 const cx = classnames.bind(styles);
 
 export default function Header() {
@@ -74,60 +74,65 @@ export default function Header() {
               Thông tin
             </Link>
           </li>
+          <li className={cx("header-item")}>
+            <Link className={cx("header-item-link")} to="/cart">
+              Giỏ hàng
+            </Link>
+          </li>
         </ul>
       </div>
-        <div className={cx("menuMobile")} onClick={handleOpenCourses}>
-          
-          <i className="fa fa-bars"></i>
-          {openCourses && (
-            <>
-              <div className={cx("overlay")} onClick={handleCloseCourses}></div>
-              <div className={cx("menuMobile-wrapper")}>
-                <div className={cx("courses-list")}>
-                  <div className={cx("courses-item")}>
-                    <ul className={cx("header-list")}>
-                      <li className={cx("header-item")}>
-                        <label htmlFor="nav-mobile-input"></label>
-                          <a href="#!" className={cx("header-item-link")}
-                           >
-                            Danh mục{" "}
-                          </a>
-                        <div className={cx("item-list-container")}>
-                          <ul className={cx("item-list")}>
-                            {cateList.map((cate, index) => (
-                              <li key={index}>
-                                <a href="#!">{cate.categoryName}</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </li>
-                      <li className={cx("header-item")}>
-                        <Link
-                          className={cx("header-item-link")}
-                          to="/courseList"
-                        >
-                          Khóa học
-                        </Link>
-                      </li>
-                      <li className={cx("header-item")}>
-                        <Link className={cx("header-item-link")} to="/blog">
-                          Blog
-                        </Link>
-                      </li>
-                      <li className={cx("header-item")}>
-                        <Link className={cx("header-item-link")} to="/about">
-                          Thông tin
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+      <div className={cx("menuMobile")} onClick={handleOpenCourses}>
+        <i className="fa fa-bars"></i>
+        {openCourses && (
+          <>
+            <div className={cx("overlay")} onClick={handleCloseCourses}></div>
+            <div className={cx("menuMobile-wrapper")}>
+              <div className={cx("courses-list")}>
+                <div className={cx("courses-item")}>
+                  <ul className={cx("header-list")}>
+                    <li className={cx("header-item")}>
+                      <label htmlFor="nav-mobile-input"></label>
+                      <a href="#!" className={cx("header-item-link")}>
+                        Danh mục{" "}
+                      </a>
+                      <div className={cx("item-list-container")}>
+                        <ul className={cx("item-list")}>
+                          {cateList.map((cate, index) => (
+                            <li key={index}>
+                              <a href="#!">{cate.categoryName}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className={cx("header-item")}>
+                      <Link className={cx("header-item-link")} to="/courseList">
+                        Khóa học
+                      </Link>
+                    </li>
+                    <li className={cx("header-item")}>
+                      <Link className={cx("header-item-link")} to="/blog">
+                        Blog
+                      </Link>
+                    </li>
+                    <li className={cx("header-item")}>
+                      <Link className={cx("header-item-link")} to="/about">
+                        Thông tin
+                      </Link>
+                    </li>{" "}
+                    <li className={cx("header-item")}>
+                      <Link className={cx("header-item-link")} to="/cart">
+                        Giỏ hàng
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </>
-          )}
-        </div>
-      
+            </div>
+          </>
+        )}
+      </div>
+
       <div className={cx("header-right")}>
         <Action />
       </div>

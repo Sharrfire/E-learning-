@@ -14,7 +14,7 @@ export const setLoginAction = (userData, onNavigate) => {
       .then((res) => {
         message.success("Đăng nhập thành công");
         // push user to local storage
-        const newUser = { ...res.data, cartItems: [] }
+        const newUser = { ...res.data, registeredCourses: [] }
         userLocal.set(newUser);
         // userLocal.set(res.data);
         // console.log('res data',res.data) 

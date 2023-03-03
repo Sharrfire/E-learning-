@@ -54,15 +54,18 @@ function CourseDetail(props) {
   const handleBuyCourse = () => {
     const action = addToCart({
       id: courseDetail.id,
-      title:courseDetail.title,
-      img:courseDetail.image_url,
-      price:courseDetail.price,
-      old_price:courseDetail.old_price,
-      quantity:1
+      title: courseDetail.title,
+      img: courseDetail.image_url,
+      price: courseDetail.price,
+      old_price: courseDetail.old_price,
+      rate: courseDetail.rate,
+      rateAmount: courseDetail.rateAmount,
+      author: courseDetail.author,
+      level: courseDetail.level,
+      quantity: 1,
     });
 
     dispatch(action);
-    console.log(action);
   };
   return (
     <>
@@ -167,8 +170,8 @@ function CourseDetail(props) {
                   ) : (
                     <button onClick={handleLogin}>Đăng ký</button>
                   )} */}
-                    <button onClick={handleBuyCourse}>Đăng ký</button>
-                    {/* <button onClick={handleLogin}>Đăng ký</button> */}
+                  <button onClick={handleBuyCourse}>Đăng ký</button>
+                  {/* <button onClick={handleLogin}>Đăng ký</button> */}
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>

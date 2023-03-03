@@ -1,19 +1,17 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import GlobalStyle from './components/GlobalStyle';
 import { Provider } from 'react-redux';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import App from './App';
 import store from './app/store';
-
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import GlobalStyle from './components/GlobalStyle';
+import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <GlobalStyle>
         <Provider store={store}>
-            <App />
+                <App />
         </Provider>
     </GlobalStyle>
 );
