@@ -10,9 +10,9 @@ const cx = classNames.bind(styles);
 
 
 export default function FormEditUser(props) {
-  // const user = useSelector((state)=>{
-  //   return state.userSlice.userInfor;
-  // });
+  const user = useSelector((state)=>{
+    return state.userSlice.userInfor;
+  });
   const dispatch = useDispatch();
   const handleEditUser = (values) => {
     userLocal.set(values);
@@ -25,10 +25,10 @@ export default function FormEditUser(props) {
       validationSchema={formEditUserSchema}
       onSubmit={handleEditUser}
       initialValues={{
-        taiKhoan:'',
-        hoTen:'',
-        matKhau:'',
-        email:'',
+        taiKhoan:user.taiKhoan,
+        hoTen:user.hoTen,
+        soDT:user.soDT,
+        email:user.email,
       }}
     >
       {({ handleChange, handleSubmit, handleReset }) => (
@@ -61,16 +61,15 @@ export default function FormEditUser(props) {
             </ErrorMessage>
           </div>
           <div>
-            <label>Mật khẩu</label>
+            <label>Số điện thoại</label>
             <Field
               className={cx("inputEditUser")}
               onChange={handleChange}
-              type="password"
-              placeholder="Mật khẩu"
-              name="matKhau"
-              autoComplete="on"
+              type="text"
+              placeholder="Số điện thoại"
+              name="soDT"
             />
-            <ErrorMessage name="matKhau">
+            <ErrorMessage name="soDT">
               {(msg) => <div className={cx("error")}>{msg}</div>}
             </ErrorMessage>
           </div>

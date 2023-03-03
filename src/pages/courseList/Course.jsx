@@ -9,7 +9,7 @@ import styles from "./course.module.scss";
 import CourseFilter from "./CourseFilter";
 import CourseList from "./CourseList";
 import CourseSkeletonList from "./CourseSkeletonList";
-
+let currentPage = 1;
 const theme = createTheme({
   palette: {
     primary: {
@@ -41,14 +41,25 @@ function Course(props) {
       }
     })();
   }, []);
+  const handlePagination = (event)=> {
+   setLoading(true);
+   currentPage = event.currentTarget.textContent*1;
+   courseApi.getAll({ _page: event.currentTarget.textContent,_limit: 12 })
+   .then((res)=>{
+     setcourseList(res.data)
+     setLoading(false);
+   })
+   .catch((error)=>{
+    console.log("Falied to fetch course list", error);
+   })
+  }
+  // const pageCount = () => {
+  //   if (courseList.length / 12 === 0) return courseList.length / 12;
+  //   else return courseList.length / 12 + 1;
+  // };
 
-  const pageCount = () => {
-    if (courseList.length / 12 === 0) return courseList.length / 12;
-    else return courseList.length / 12 + 1;
-  };
+  const star = <i className="fa fa-star"></i>;
 
-  const star =  <i className="fa fa-star"></i>;
-  
   const star2 = (
     <>
       {star}
@@ -73,6 +84,7 @@ function Course(props) {
       {star2}
     </>
   );
+ 
   return (
     <div>
       <section className={cx("container")}>
@@ -165,17 +177,21 @@ function Course(props) {
                 "course-list-item"
               )}
             >
-              {loading?<CourseSkeletonList length={12}/>:<CourseList courseList={courseList}/> }
-         
+              {loading ? (
+                <CourseSkeletonList length={12} />
+              ) : (
+                <CourseList courseList={courseList} />
+              )}
             </div>
           </div>
         </div>
         <div className={cx("pagination")}>
           <ThemeProvider theme={theme}>
             <Pagination
+              onChange={handlePagination}
               color="primary"
-              count={pageCount()}
-              page={1}
+              count={2}
+              page={currentPage}
               size="large"
             />
           </ThemeProvider>

@@ -2,17 +2,19 @@ import { message } from "antd";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import courseApi from "~/api/courseApi";
 import { star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import { addToCart } from "../cart/cartSlice";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
+import userLocal from "~/api/userLocal";
 
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
-
+const cart = JSON.parse(localStorage.getItem("CART")) || [];
+const user = userLocal.get();
 function CourseDetail(props) {
   // let navigate = useNavigate();
   const [courseDetail, setCourseDetail] = useState({
@@ -47,11 +49,31 @@ function CourseDetail(props) {
       setCourseDetail(data);
     })();
   }, [courseId]);
-
   // const handleLogin = () => {
   //   userName ? navigate(`/personalInfo`) : navigate(`/login`);
   // };
-
+  // let handleUserCourses = () => {
+  //   if (user !== null) {
+  //       if (user.registeredCourses.findIndex((item) =>{
+  //         return item.id === courseId;
+  //       })) {
+          
+  //         return <button>Bắt đầu học</button>;
+  //       }
+  //     if (cart.filter((item) => item.id !== courseId)) {
+  //       return <button onClick={handleBuyCourse}>Đăng kí</button>;
+  //     }
+  //     if (cart.filter((item) => item.id === courseId)) {
+  //       return <button>Thanh toán</button>;
+  //     }
+  //   } else {
+  //     return (
+  //       <NavLink to="/login">
+  //         <button>Đăng nhập</button>
+  //       </NavLink>
+  //     );
+  //   }
+  // };
   const handleBuyCourse = () => {
     const action = addToCart({
       id: courseDetail.id,
@@ -166,13 +188,7 @@ function CourseDetail(props) {
                   </div>
                 </div>
                 <div className={cx("course-buy-btn")}>
-                  {/* {userName ? (
-                    <button onClick={handleLogin}>Học</button>
-                  ) : (
-                    <button onClick={handleLogin}>Đăng ký</button>
-                  )} */}
-                  <button onClick={handleBuyCourse}>Đăng ký</button>
-                  {/* <button onClick={handleLogin}>Đăng ký</button> */}
+                  {/* {handleUserCourses()} */}
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>
