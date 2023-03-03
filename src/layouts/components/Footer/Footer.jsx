@@ -1,5 +1,6 @@
 import classnames from "classnames/bind";
 import styles from "./footer.module.scss";
+import logo from "~/assets/vendor/logoElearning.png";
 const cx = classnames.bind(styles);
 
 function Footer(props) {
@@ -13,7 +14,7 @@ function Footer(props) {
                 <a href="#!">
                   {" "}
                   <img
-                    src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                    src={logo}
                     alt="logo"
                   />
                 </a>{" "}
@@ -37,7 +38,7 @@ function Footer(props) {
           </section>{" "}
           <div className={cx("col", "s-12", "m-6","ml-3", "l-3","col-footer", "col-min")}>
             <div className={cx("footer-column")}>
-              <h2 className={cx("col-heading")}>VỀ F8</h2>
+              <h2 className={cx("col-heading")}>VỀ ChÚNG TÔI</h2>
               <ul className={cx("footer-list")}>
                 <li className={cx("footer-item")}>
                   <a href="#!">Giới thiệu</a>
@@ -111,14 +112,14 @@ function Footer(props) {
               rel="noreferrer"
             >
               <h2 className={cx("col-heading")}>
-                CÔNG TY CỔ PHẦN CÔNG NGHỆ GIÁO DỤC F8
+                CÔNG TY CỔ PHẦN CÔNG NGHỆ GIÁO DỤC E-LEARNING
               </h2>
             </a>
             <ul className={cx("footer-list")}>
               <li className={cx("footer-item")}>Mã số thuế: 0109922901</li>
               <li className={cx("footer-item")}>Ngày thành lập: 04/03/2022</li>
               <li className={cx("footer-item")}>
-                Lĩnh vực: Công nghệ, giáo dục, lập trình. F8 xây dựng và phát
+                Lĩnh vực: Công nghệ, giáo dục, lập trình, xây dựng và phát
                 triển những sản phẩm mang lại giá trị cho cộng đồng.
               </li>
             </ul>
@@ -127,7 +128,7 @@ function Footer(props) {
         <section className={cx("row")}>
           <section className={cx("footer-bottom")}>
             <p className={cx("footer-copyright")}>
-              © 2018 - 2023 F8. Nền tảng học lập trình hàng đầu Việt Nam
+              © 2022 - 2023 E-learning. Nền tảng học lập trình hàng đầu Việt Nam
             </p>
             <div className="social-list">
               <a
