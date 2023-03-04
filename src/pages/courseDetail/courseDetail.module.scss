@@ -121,7 +121,9 @@
         a{
           width: 100%;
         }
-        button {
+        .course-buy-container {
+         
+          text-align: center;
           width: 100%;
           padding: 10px;
           border: 1px solid var(--primary-color);
@@ -140,6 +142,7 @@
             color: var(--white-color);
             transform: scale(0.97);
           }
+
         }
       }
       .detail-content {
@@ -230,4 +233,7 @@
       object-fit: cover;
     }
   }
+}
+.disable{
+  
 }

@@ -1,56 +1,64 @@
 import React from "react";
 import styles from "./myCourse.module.scss";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 MyCourseList.propTypes = {};
 
-function  MyCourseList(props) {
-  return (
-    <div className={cx("my-courses")}>
-      {/* <p>
-        <span className={cx("my-courses_title")}>Các khóa học đã đăng ký</span>
-      </p> */}
-      <div className={cx("inner","row")}>
-        <a className={cx("thumb","col","c-3","m-5","s-12")} href="/courses/htmlcss">
-          <img
-            src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
-            className={cx("thumb-image")}
-            alt="HTML CSS Pro"
-          />
-        </a>
-        <div className={cx("info","col","c-8","m-6","s-12")}>
-          <h3 className={cx("info-title")}>
-            <a href="#!" style={{ color: "#000000" }} >
-              Xây Dựng Website với ReactJS
-            </a>
-          </h3>
-          <p>
-            <span
-              className={cx("info-desc")}
-              style={{
-                "-webkit-box-orient": "vertical",
-                "-webkit-line-clamp": "5",
-                display: "-webkit-box",
-                fontSize: "1.4rem",
-                lineHeight: "2.2rem",
-                fontWeight: "400",
-                marginTop: "4px",
-                overflow: "hidden",
-                wordWrap: "break-word",
-              }}
-            >
-              Từ cơ bản tới chuyên sâu, thực hành 8 dự án, hàng trăm bài tập,
-              trang hỏi đáp riêng, cấp chứng chỉ sau khóa học và mua một lần học
-              mãi mãi.
-            </span>
-          </p>
-        </div>
-      </div>
+function MyCourseList({ registeredCourses }) {
+  let filteredList = [...new Set(registeredCourses.map(JSON.stringify))].map(
+    JSON.parse
+  );
 
- 
-    </div>
+  // const newRegisteredCourses=  Array.from(new Set(registeredCourses))
+  console.log(filteredList);
+  return (
+    <>
+      {filteredList?.map((course) => (
+        <div key={course.id} className={cx("my-courses")}>
+          <div className={cx("inner", "row")}>
+            <Link
+              to={`/detail/${course.id}`}
+              className={cx("thumb", "col", "c-3", "m-5", "s-12")}
+              href="/courses/htmlcss"
+            >
+              <img
+                src={course.img}
+                className={cx("thumb-image")}
+                alt={course.title}
+              />
+            </Link>
+            <div className={cx("info", "col", "c-8", "m-6", "s-12")}>
+              <h3 className={cx("info-title")}>
+                <Link to={`/detail/${course.id}`} style={{ color: "#000000" }}>
+                  {course.title}{" "}
+                </Link>
+              </h3>
+              <p>
+                <span
+                  className={cx("info-desc")}
+                  style={{
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: "5",
+                    display: "-webkit-box",
+                    fontSize: "1.4rem",
+                    lineHeight: "2.2rem",
+                    fontWeight: "400",
+                    marginTop: "4px",
+                    overflow: "hidden",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  {course.description}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
   );
 }
 

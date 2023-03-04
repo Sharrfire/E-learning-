@@ -12,12 +12,10 @@ import FormEditUser from "./FormEditUser";
 import { FaAngleUp } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-
 const cx = classNames.bind(styles);
 
 export default function PersonalInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [courseList, setCourseList] = useState([]);
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -86,15 +84,14 @@ export default function PersonalInfo() {
             <span>Các khóa học đã đăng ký</span>
           </p>
           <div>
-            <MyCourseList courseList={courseList}/>
-            <MyCourseList courseList={courseList}/>
+            <MyCourseList registeredCourses={user.registeredCourses} />
           </div>
         </>
       ),
     },
   ];
   return (
-    <div  className={cx("personalInfo")}>
+    <div className={cx("personalInfo")}>
       <div className={cx("back-to-home")}>
         <NavLink to="/">
           <button className={cx("btn_back-to-home")}>
@@ -155,7 +152,7 @@ export default function PersonalInfo() {
           <div className={cx("userInfoBot")}>
             <h4>Kĩ năng của tôi</h4>
             <div className={cx("row")}>
-              <div className={cx("col", "c-8","s-12", "skillAll", "m-6")}>
+              <div className={cx("col", "c-8", "s-12", "skillAll", "m-6")}>
                 <div className={cx("mySkill", "skillBtnHtml")}>
                   <button className={cx("skillBtnCustom")}>Html</button>
                   <div className={cx("progress")}></div>
@@ -202,7 +199,7 @@ export default function PersonalInfo() {
                   />
                 </div>
               </div>
-              <div className={cx("col", "c-4", "m-6","s-12")}>
+              <div className={cx("col", "c-4", "m-6", "s-12")}>
                 <div className={cx("study_time")}>
                   <div className={cx("study_time-item")}>
                     <i className="fas fa-user-clock"></i>

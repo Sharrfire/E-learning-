@@ -2,21 +2,22 @@ import { message } from "antd";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import courseApi from "~/api/courseApi";
 import { star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import { addToCart } from "../cart/cartSlice";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
-import userLocal from "~/api/userLocal";
 
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
-const cart = JSON.parse(localStorage.getItem("CART")) || [];
-const user = userLocal.get();
+
 function CourseDetail(props) {
   // let navigate = useNavigate();
+  let { courseId } = useParams();
+  const dispatch = useDispatch();
+
   const [courseDetail, setCourseDetail] = useState({
     author: {
       avatar: "",
@@ -41,39 +42,13 @@ function CourseDetail(props) {
     tracks: [],
     will_learns: [],
   });
-  let { courseId } = useParams();
-  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       const { data } = await courseApi.get(courseId);
       setCourseDetail(data);
     })();
   }, [courseId]);
-  // const handleLogin = () => {
-  //   userName ? navigate(`/personalInfo`) : navigate(`/login`);
-  // };
-  // let handleUserCourses = () => {
-  //   if (user !== null) {
-  //       if (user.registeredCourses.findIndex((item) =>{
-  //         return item.id === courseId;
-  //       })) {
-          
-  //         return <button>Bắt đầu học</button>;
-  //       }
-  //     if (cart.filter((item) => item.id !== courseId)) {
-  //       return <button onClick={handleBuyCourse}>Đăng kí</button>;
-  //     }
-  //     if (cart.filter((item) => item.id === courseId)) {
-  //       return <button>Thanh toán</button>;
-  //     }
-  //   } else {
-  //     return (
-  //       <NavLink to="/login">
-  //         <button>Đăng nhập</button>
-  //       </NavLink>
-  //     );
-  //   }
-  // };
+
   const handleBuyCourse = () => {
     const action = addToCart({
       id: courseDetail.id,
@@ -85,6 +60,7 @@ function CourseDetail(props) {
       rateAmount: courseDetail.rateAmount,
       author: courseDetail.author,
       level: courseDetail.level,
+      description: courseDetail.description,
       quantity: 1,
     });
     message.success("Đăng ký thành công");
@@ -188,7 +164,13 @@ function CourseDetail(props) {
                   </div>
                 </div>
                 <div className={cx("course-buy-btn")}>
-                  {/* {handleUserCourses()} */}
+                  {/* <button onClick={handleBuyCourse}>Đăng kí</button>*/}
+                  <div
+                    className={cx("course-buy-container")}
+                    onClick={handleBuyCourse}
+                  >
+                    <span>Đăng kí khóa học</span>
+                  </div>
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>
