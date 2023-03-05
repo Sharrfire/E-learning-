@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
-
+import userLocal from "~/api/userLocal";
 import logo from "~/assets/vendor/logoElearning.png";
 const cx = classnames.bind(styles);
-
+let handleLogout = () => {
+  userLocal.remove();
+};
 export default function Header() {
   // const heading = "Học Lập Trình Để Đi Làm";
 
@@ -85,51 +87,27 @@ export default function Header() {
           <>
             <div className={cx("overlay")} onClick={handleCloseCourses}></div>
             <div className={cx("menuMobile-wrapper")}>
-              <div className={cx("courses-list")}>
-                <div className={cx("courses-item")}>
-                  <ul className={cx("header-list")}>
-                    <li className={cx("header-item")}>
-                      <label htmlFor="nav-mobile-input"></label>
-                      <Link className={cx("header-item-link")} to="/courseList">
-                        Khóa học
-                      </Link>
-                      <div className={cx("item-list-container")}>
-                        <ul className={cx("item-list")}>
-                          {cateList.map((cate, index) => (
-                            <li key={index}>
-                              <Link
-                                to={`/courseList?categoryId=${cate.categoryId}`}
-                              >
-                                {cate.categoryName}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className={cx("header-item")}>
-                      <Link className={cx("header-item-link")} to="/blog">
-                        Blog
-                      </Link>
-                    </li>
-                    <li className={cx("header-item")}>
-                      <Link className={cx("header-item-link")} to="/about">
-                        Thông tin
-                      </Link>
-                    </li>{" "}
-                    <li className={cx("header-item")}>
-                      <Link className={cx("header-item-link")} to="/cart">
-                        Giỏ hàng
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <ul className={cx("header-list")}>
+                <li className={cx("header-item")}>
+                  <a href="/courseList">Khóa học</a>
+                </li>
+                <li className={cx("header-item")}>
+                  <a href="/blog">Blog</a>
+                </li>
+                <li className={cx("header-item")}>
+                  <a href="/about">Thông tin</a>
+                </li>
+                <li className={cx("header-item")}>
+                  <a href="/cart">Giỏ hàng</a>
+                </li>
+                <li className={cx("header-item")}>
+                  <a onClick={handleLogout} href="">Đăng xuất</a>
+                </li>
+              </ul>
             </div>
           </>
         )}
       </div>
-
       <div className={cx("header-right")}>
         <Action />
       </div>

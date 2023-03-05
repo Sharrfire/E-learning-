@@ -19,7 +19,6 @@ function Cart(props) {
     return state.cart.cart;
   });
 
-  console.log(cartItems);
 
   let cartTotal = cartItems.reduce((curr, item) => curr + item.price, 0) || 0;
   let cartOldTotal =

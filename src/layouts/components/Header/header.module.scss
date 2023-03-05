@@ -113,8 +113,8 @@
   min-height: 220px;
   min-width: 180px;
   position: absolute;
-  top: 32px;
-  right: 0;
+  top: 52px;
+  left: -200%;
   box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 3px 1px 9px 7px rgba(0, 0, 0, 0.06);
@@ -178,7 +178,7 @@
 
 .menuMobile-wrapper {
   animation: slideIn 1s ease-in-out;
-  width: 100%;
+  width: 50vw;
   text-align: center;
   .header-list {
     flex-direction: column;
