@@ -13,7 +13,7 @@ function CourseSection({ tracks }) {
   return (
     <>
       {tracks.map((track,index) => (
-        <div key={track.id}>
+        <div key={index}>
           <div className={cx("course-section")}>
             <span>
               Mục {track.position}. {track.title}

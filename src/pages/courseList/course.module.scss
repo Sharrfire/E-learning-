@@ -9,9 +9,9 @@
 }
 .wrapper {
     padding: 20px 50px;
-// display: flex;
-// justify-content: space-between;
-// align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
     .nav-filter {
         h3 {
             font-size: 2.5rem;
@@ -28,32 +28,54 @@
                 margin-bottom: 10px;
                 ul {
                     list-style-type: none;
-                    li {
+                    .filter-item {
                         padding: 5px 0;
+                        padding-left: 15px;
+                        position: relative;
+
+                        &.active::before {
+                            position: absolute;
+                            content: "";
+                            color: var(--primary-color);
+                            width: 0px;
+                            height: 0px;
+                            border-top: 10px solid transparent;
+                            border-right: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                            border-left: 10px solid var(--primary-color);
+                            top: 10px;
+                            left: 0;
+                        }
+                        &:hover {
+                            color: var(--primary-color);
+                            font-weight: 500;
+                        }
                     }
                 }
             }
         }
     }
-    .course-list-item{
+    .course-list-item {
         width: 83.3333%;
         align-items: flex-start;
-        box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
-        -webkit-box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
-        -moz-box-shadow: -7px 0px 5px -3px rgba(0,0,0,0.04);
+        box-shadow: -7px 0px 5px -3px rgba(0, 0, 0, 0.04);
+        -webkit-box-shadow: -7px 0px 5px -3px rgba(0, 0, 0, 0.04);
+        -moz-box-shadow: -7px 0px 5px -3px rgba(0, 0, 0, 0.04);
+       
     }
-
 }
 
-.pagination {
+.pagination, .notice {
     padding: 30px;
     text-transform: uppercase;
     background-color: var(--white-color);
     display: flex;
-   align-items: center;
-   justify-content: center;
-   li{
-    font-size: 20px;
-
-   }
+    align-items: center;
+    justify-content: center;
+    li {
+        font-size: 20px;
+    }
+}
+.notice {
+    margin:  auto;
 }

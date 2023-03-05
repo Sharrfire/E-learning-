@@ -2,13 +2,14 @@ import { message } from "antd";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import courseApi from "~/api/courseApi";
 import { star } from "~/constants/rate";
 import Title from "~/layouts/components/TitleLayout/TitleLayout";
 import { addToCart } from "../cart/cartSlice";
 import styles from "./courseDetail.module.scss";
 import CourseSection from "./CourseSection";
+import userLocal from "~/api/userLocal";
 
 const cx = classNames.bind(styles);
 CourseDetail.propTypes = {};
@@ -17,7 +18,8 @@ function CourseDetail(props) {
   // let navigate = useNavigate();
   let { courseId } = useParams();
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const user = userLocal.get();
   const [courseDetail, setCourseDetail] = useState({
     author: {
       avatar: "",
@@ -65,6 +67,9 @@ function CourseDetail(props) {
     });
     message.success("Đăng ký thành công");
     dispatch(action);
+  };
+  const handleLogin = () => {
+    navigate("/login");
   };
   return (
     <>
@@ -165,12 +170,28 @@ function CourseDetail(props) {
                 </div>
                 <div className={cx("course-buy-btn")}>
                   {/* <button onClick={handleBuyCourse}>Đăng kí</button>*/}
-                  <div
+                  {user && (
+                    <div
+                      className={cx("course-buy-container")}
+                      onClick={handleBuyCourse}
+                    >
+                      <span>Đăng kí khóa học</span>
+                    </div>
+                  )}{" "}
+                  {!user && (
+                    <div
+                      className={cx("course-buy-container")}
+                      onClick={handleLogin}
+                    >
+                      <span>Đăng kí </span>
+                    </div>
+                  )}
+                  {/* <div
                     className={cx("course-buy-container")}
                     onClick={handleBuyCourse}
                   >
                     <span>Đăng kí khóa học</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className={cx("detail-content")}>
                   <ul>

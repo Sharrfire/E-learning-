@@ -45,25 +45,23 @@ export default function Header() {
       <div className={cx("header-menu")}>
         <ul className={cx("header-list")}>
           <li className={cx("header-item")}>
-            <a className={cx("header-item-link")} href="#!">
-              Danh mục{" "}
-            </a>
+            <Link className={cx("header-item-link")} to="/courseList">
+              Khóa học
+            </Link>
 
             <div className={cx("item-list-container")}>
               <ul className={cx("item-list")}>
                 {cateList.map((cate, index) => (
                   <li key={index}>
-                    <a href="#!">{cate.categoryName}</a>
+                    <Link to={`/courseList?category=${cate.categoryId}`}>
+                      {cate.categoryName}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li className={cx("header-item")}>
-            <Link className={cx("header-item-link")} to="/courseList">
-              Khóa học
-            </Link>
-          </li>
+
           <li className={cx("header-item")}>
             <Link className={cx("header-item-link")} to="/blog">
               Blog
@@ -92,23 +90,22 @@ export default function Header() {
                   <ul className={cx("header-list")}>
                     <li className={cx("header-item")}>
                       <label htmlFor="nav-mobile-input"></label>
-                      <a href="#!" className={cx("header-item-link")}>
-                        Danh mục{" "}
-                      </a>
+                      <Link className={cx("header-item-link")} to="/courseList">
+                        Khóa học
+                      </Link>
                       <div className={cx("item-list-container")}>
                         <ul className={cx("item-list")}>
                           {cateList.map((cate, index) => (
                             <li key={index}>
-                              <a href="#!">{cate.categoryName}</a>
+                              <Link
+                                to={`/courseList?categoryId=${cate.categoryId}`}
+                              >
+                                {cate.categoryName}
+                              </Link>
                             </li>
                           ))}
                         </ul>
                       </div>
-                    </li>
-                    <li className={cx("header-item")}>
-                      <Link className={cx("header-item-link")} to="/courseList">
-                        Khóa học
-                      </Link>
                     </li>
                     <li className={cx("header-item")}>
                       <Link className={cx("header-item-link")} to="/blog">

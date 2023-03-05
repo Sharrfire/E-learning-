@@ -6,8 +6,7 @@ const cx = classNames.bind(styles);
 function CourseFilter({labelName}) {
   return (
     <div className={cx("label-container")} >
-      <label className={cx("control", "control-checkbox")}>
-        <input type="checkbox" />
+      <label className={cx("control")}>
 
         <span>{labelName}</span>
       </label>
