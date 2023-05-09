@@ -1,15 +1,16 @@
-import React from "react";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
-import { setLoginAction, setRegisterAction } from "./../../../../redux/actions/userAction";
-import { ErrorMessage, Field, Form, Formik } from "formik";
 import { signInSchema } from "../validation/signInSchema";
 import { signUpSchema } from "../validation/signUpSchema";
+import { setLoginAction, setRegisterAction } from "./../../../../redux/actions/userAction";
+import "./login.css";
 
 const Login = () => {
+
+  const navigate = useNavigate()
   let dispatch = useDispatch();
-  let navigate = useNavigate();
+
   const  onNavigate = () => {
     setTimeout(() => {
       navigate("/");
@@ -87,7 +88,7 @@ const Login = () => {
           <Formik
             validationSchema={signInSchema}
             initialValues={{
-              taiKhoan: "",
+              email: "",
               matKhau: "",
             }}
             onSubmit={handleLoginSubmit}
@@ -100,7 +101,7 @@ const Login = () => {
               >
                 <h1>Đăng nhập</h1>
                 <span>hoặc sử dụng tài khoản đã đăng ký của bạn</span>
-                <Field
+                {/* <Field
                   type="text"
                   placeholder="Tài khoản"
                   name="taiKhoan"
@@ -108,7 +109,11 @@ const Login = () => {
                 />
                 <ErrorMessage name="taiKhoan">
                   {(msg) => <div className="errorMessage">{msg}</div>}
-                </ErrorMessage>
+                </ErrorMessage> */}
+
+
+                <Field onChange={handleChange} type="email" placeholder="Email" name="email" />
+              <ErrorMessage name="email">{(msg)=><div className="errorMessage">{msg}</div>}</ErrorMessage>
                 <Field
                   onChange={handleChange}
                   autoComplete="on"

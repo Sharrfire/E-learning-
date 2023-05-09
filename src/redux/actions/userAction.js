@@ -1,54 +1,49 @@
 
 import { message } from "antd";
 import userLocal from "~/api/userLocal";
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
+import auth from "~/api/firebase";
 
 
-// redux thunk
 export const setLoginAction = (userData, onNavigate) => {
   // api Login action
   return (dispatch) => {
-
-    message.success("Đăng nhập thành công");
-    const newUser = { ...userData, registeredCourses: [] }
-    userLocal.set(newUser);
-    onNavigate();
-   
-    // userApi
-    //   .postLogin(userData)
-    //   // .postLogin(userData)
-    //   .then((res) => {
-    //     message.success("Đăng nhập thành công");
-    //     // push user to local storage
-    //     const newUser = { ...res.data, registeredCourses: [] }
-    //     userLocal.set(newUser);
-    //     // userLocal.set(res.data);
-    //     // console.log('res data',res.data) 
-    //     // dispatch action to redux
-    //     dispatch(setUserInfor(res.data));
-    //     onNavigate();
-    //   })
-    //   .catch((err) => {
-    //     message.error(err.response.data);
-    //     console.log(err);
-    //   });
+    signInWithEmailAndPassword(auth, userData.email, userData.matKhau)
+      .then(() => {  
+        message.success("Đăng nhập thành công");
+        const newUser = { ...userData, registeredCourses: [] }
+        userLocal.set(newUser);
+        onNavigate();
+      
+      })   
+      .catch((err) => {
+        switch (err.code) {
+          case "auth/wrong-password": alert('Sai mật khẩu')
+            break;
+          default: alert(err.message)
+        }
+      })
   };
 };
-export const setRegisterAction = (userData,onNavigate) => {
+export const setRegisterAction = (userData, onNavigate) => {
   // api Register action to new user account
   return () => {
-    
-    message.success("Tài khoản đã được đăng kí thành công")
-    const newUser = { ...userData, registeredCourses: [] }
-    userLocal.set(newUser);
-    onNavigate();
+    createUserWithEmailAndPassword(auth, userData.email, userData.matKhau)
+      .then(() => {
+        sendEmailVerification(auth.currentUser)
+        message.success("Tài khoản đã được đăng kí thành công")
+      }).then(() => {
+        const newUser = { ...userData, registeredCourses: [] }
+        userLocal.set(newUser);
+        onNavigate();
+      })
+      .catch((err) => {
+        switch (err.code) {
+          case "auth/email-already-in-use": alert('Email đã được đăng kí ')
+            break;
 
-    // userApi
-    //   .postRegister(userData)
-    //   .then((res) => {
-    //     message.success("Tài khoản đã được đăng kí thành công")
-    //   }).catch((err) => {
-    //     message.error(err.response.data);
-    //     console.log(err);
-    //   });
+          default: alert(err.message)
+        }
+      })
   };
 };
