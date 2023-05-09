@@ -84,7 +84,7 @@ export default function PersonalInfo() {
             <span>Các khóa học đã đăng ký</span>
           </p>
           <div>
-            <MyCourseList registeredCourses={user.registeredCourses} />
+            <MyCourseList registeredCourses={user.registeredCourses||[]} />
           </div>
         </>
       ),

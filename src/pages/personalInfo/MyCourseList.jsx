@@ -8,6 +8,8 @@ const cx = classNames.bind(styles);
 MyCourseList.propTypes = {};
 
 function MyCourseList({ registeredCourses }) {
+
+
   let filteredList = [...new Set(registeredCourses.map(JSON.stringify))].map(
     JSON.parse
   );

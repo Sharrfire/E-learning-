@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import userLocal from "~/api/userLocal";
+// import userLocal from "~/api/userLocal";
 let cartItemsStore = [];
-let getUser = userLocal.get();
+// let getUser = userLocal.get();
 if (localStorage.getItem('CART')) cartItemsStore = JSON.parse(localStorage.getItem('CART'));
 
 const cartSlice = createSlice({

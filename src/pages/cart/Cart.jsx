@@ -1,6 +1,5 @@
 import { message } from "antd";
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { star } from "~/constants/rate";
@@ -12,7 +11,6 @@ const cx = classNames.bind(styles);
 Cart.propTypes = {};
 
 function Cart(props) {
-  const [cartPresent, setCartPresent] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => {

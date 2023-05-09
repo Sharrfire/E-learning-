@@ -10,15 +10,15 @@ import { signUpSchema } from "../validation/signUpSchema";
 const Login = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
+  const  onNavigate = () => {
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
+  };
   let handleRegisterSubmit = (values) => {
-    dispatch(setRegisterAction(values));
+    dispatch(setRegisterAction(values, onNavigate));
   };
   let handleLoginSubmit = (values) => {
-    let onNavigate = () => {
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    };
     // dispatch data login action with navigation to redux 
     dispatch(setLoginAction(values, onNavigate));
   };

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import Action from "../Action/Action";
 import Search from "../Search/Search";
 import styles from "./header.module.scss";
-import userLocal from "~/api/userLocal";
+// import userLocal from "~/api/userLocal";
 import logo from "~/assets/vendor/logoElearning.png";
 const cx = classnames.bind(styles);
-let handleLogout = () => {
-  userLocal.remove();
-};
+// let handleLogout = () => {
+//   userLocal.remove();
+// };
 export default function Header() {
   // const heading = "Học Lập Trình Để Đi Làm";
 
@@ -100,9 +100,9 @@ export default function Header() {
                 <li className={cx("header-item")}>
                   <a href="/cart">Giỏ hàng</a>
                 </li>
-                <li className={cx("header-item")}>
+                {/* <li className={cx("header-item")}>
                   <a onClick={handleLogout} href="">Đăng xuất</a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </>
