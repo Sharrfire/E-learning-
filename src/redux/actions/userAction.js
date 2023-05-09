@@ -1,7 +1,8 @@
 
 import { message } from "antd";
 import userLocal from "~/api/userLocal";
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
+
 import auth from "~/api/firebase";
 import { useNavigate } from "react-router-dom";
 
